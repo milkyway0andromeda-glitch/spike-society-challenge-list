@@ -1,0 +1,319 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #101216,
+            #171a20
+        );
+
+    color: white;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    min-height: 100vh;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    height: 70px;
+
+    background: #20242b;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 40px;
+
+    border-bottom: 1px solid #30353e;
+}
+
+.site-title {
+    font-size: 22px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+nav {
+    height: 100%;
+
+    display: flex;
+}
+
+.nav-button {
+    border: none;
+    background: transparent;
+
+    color: #999;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    padding: 0 25px;
+
+    cursor: pointer;
+
+    border-bottom: 3px solid transparent;
+
+    transition: 0.15s;
+}
+
+.nav-button:hover {
+    color: white;
+}
+
+.nav-button.active {
+    color: white;
+
+    border-bottom-color: #55aaff;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+main {
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 40px 20px;
+}
+
+.page {
+    display: none;
+}
+
+.page.active-page {
+    display: block;
+}
+
+.page-header {
+    margin-bottom: 30px;
+}
+
+.page-header h1 {
+    margin: 0;
+
+    font-size: 32px;
+}
+
+.page-header p {
+    margin-top: 8px;
+
+    color: #888;
+}
+
+
+/* =========================
+   LEVEL LIST
+========================= */
+
+.level-card {
+    height: 135px;
+
+    display: flex;
+    align-items: center;
+
+    background: #22262d;
+
+    margin-bottom: 10px;
+
+    border-radius: 4px;
+
+    overflow: hidden;
+
+    transition:
+        background 0.15s,
+        transform 0.15s;
+}
+
+.level-card:hover {
+    background: #292e36;
+
+    transform: translateX(4px);
+}
+
+
+/* RANK */
+
+.level-rank {
+    width: 90px;
+
+    flex-shrink: 0;
+
+    text-align: center;
+
+    font-size: 28px;
+    font-weight: bold;
+
+    color: #b6bac2;
+}
+
+
+/* IMAGE */
+
+.level-image {
+    width: 230px;
+    height: 135px;
+
+    object-fit: cover;
+
+    flex-shrink: 0;
+}
+
+
+/* LEVEL INFORMATION */
+
+.level-info {
+    flex: 1;
+
+    padding: 20px 25px;
+}
+
+.level-name {
+    font-size: 25px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+.level-points {
+    color: #5eb5ff;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   PLAYER LEADERBOARD
+========================= */
+
+.player-card {
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+
+    background: #22262d;
+
+    border-bottom: 1px solid #30353e;
+
+    padding: 0 25px;
+}
+
+.player-card:hover {
+    background: #292e36;
+}
+
+.player-rank {
+    width: 90px;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    color: #aaa;
+}
+
+.player-name {
+    flex: 1;
+
+    font-size: 19px;
+
+    font-weight: bold;
+}
+
+.player-points {
+    font-size: 17px;
+
+    color: #5eb5ff;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   TOP 3
+========================= */
+
+.player-card:nth-child(1) .player-rank {
+    color: #ffd54a;
+}
+
+.player-card:nth-child(2) .player-rank {
+    color: #c8c8c8;
+}
+
+.player-card:nth-child(3) .player-rank {
+    color: #cd7f32;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 0 15px;
+    }
+
+    .site-title {
+        font-size: 15px;
+    }
+
+    .nav-button {
+        padding: 0 10px;
+
+        font-size: 12px;
+    }
+
+    .level-card {
+        height: 95px;
+    }
+
+    .level-rank {
+        width: 55px;
+
+        font-size: 19px;
+    }
+
+    .level-image {
+        width: 130px;
+        height: 95px;
+    }
+
+    .level-info {
+        padding: 10px;
+    }
+
+    .level-name {
+        font-size: 17px;
+    }
+
+    .level-points {
+        font-size: 11px;
+    }
+}

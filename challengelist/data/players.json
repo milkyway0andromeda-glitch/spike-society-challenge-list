@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Andromeda",
+    "completed": [
+      "final-trial",
+      "pain-trials"
+    ]
+  },
+  {
+    "name": "PlayerTwo",
+    "completed": [
+      "chaos-trials",
+      "pain-trials"
+    ]
+  },
+  {
+    "name": "PlayerThree",
+    "completed": [
+      "pain-trials"
+    ]
+  }
+]

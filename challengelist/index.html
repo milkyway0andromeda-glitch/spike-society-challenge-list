@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Challenge List</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="site-title">
+        CHALLENGE LIST
+    </div>
+
+    <nav>
+        <button class="nav-button active" data-page="list">
+            LIST
+        </button>
+
+        <button class="nav-button" data-page="leaderboard">
+            LEADERBOARD
+        </button>
+    </nav>
+</header>
+
+
+<main>
+
+    <!-- LEVEL LIST -->
+    <section id="list-page" class="page active-page">
+
+        <div class="page-header">
+            <h1>Challenge List</h1>
+            <p>The hardest challenges on the server.</p>
+        </div>
+
+        <div id="level-list"></div>
+
+    </section>
+
+
+    <!-- PLAYER LEADERBOARD -->
+    <section id="leaderboard-page" class="page">
+
+        <div class="page-header">
+            <h1>Leaderboard</h1>
+            <p>Top players ranked by points.</p>
+        </div>
+
+        <div id="player-list"></div>
+
+    </section>
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
