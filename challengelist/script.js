@@ -4,123 +4,100 @@ const playerList = document.getElementById("player-list");
 let levels = [];
 let players = [];
 
-
-// ==========================
-// LOAD DATA
-// ==========================
-
 async function loadData() {
     try {
-        const [levelsResponse, playersResponse] = await Promise.all([
+        const [levelResponse, playerResponse] = await Promise.all([
             fetch("data/levels.json"),
             fetch("data/players.json")
         ]);
 
-        if (!levelsResponse.ok) {
-            throw new Error("Could not load levels.json");
+        if (!levelResponse.ok) {
+            throw new Error(`levels.json returned ${levelResponse.status}`);
         }
 
-        if (!playersResponse.ok) {
-            throw new Error("Could not load players.json");
+        if (!playerResponse.ok) {
+            throw new Error(`players.json returned ${playerResponse.status}`);
         }
 
-        levels = await levelsResponse.json();
-        players = await playersResponse.json();
+        levels = await levelResponse.json();
+        players = await playerResponse.json();
 
         renderLevels();
         renderLeaderboard();
-
     } catch (error) {
-        console.error("Failed to load data:", error);
+        console.error(error);
 
-        levelList.innerHTML = `
+        const message = `
             <div class="error-message">
-                Failed to load level data.
+                Failed to load the list data. If you're opening index.html directly,
+                use Live Server or GitHub Pages so fetch() can read the JSON files.
             </div>
         `;
 
-        playerList.innerHTML = `
-            <div class="error-message">
-                Failed to load player data.
-            </div>
-        `;
+        levelList.innerHTML = message;
+        playerList.innerHTML = message;
     }
 }
-
-
-// ==========================
-// LEVEL LIST
-// ==========================
 
 function renderLevels() {
     levelList.innerHTML = "";
 
-    const sortedLevels = [...levels].sort(
-        (a, b) => a.rank - b.rank
-    );
+    const sortedLevels = [...levels].sort((a, b) => a.rank - b.rank);
 
-    sortedLevels.forEach(level => {
-        const levelElement = document.createElement("div");
+    for (const level of sortedLevels) {
+        const card = document.createElement("article");
+        card.className = `level-card rank-${level.rank}`;
 
-        levelElement.className = "level-card";
+        const victorText = level.victors && level.victors.length
+            ? level.victors.join(", ")
+            : "None yet";
 
-        levelElement.innerHTML = `
-            <div class="level-rank">
-                #${level.rank}
+        const videoMarkup = level.video
+            ? `<a class="video-link" href="${escapeAttribute(level.video)}" target="_blank" rel="noopener noreferrer">YOUTUBE</a>`
+            : `<span class="video-link disabled">N/A</span>`;
+
+        card.innerHTML = `
+            <div class="level-rank">#${level.rank}</div>
+
+            <div class="level-image-wrap">
+                <img
+                    class="level-image"
+                    src="${escapeAttribute(level.image)}"
+                    alt="${escapeAttribute(level.name)} thumbnail"
+                    loading="lazy"
+                >
             </div>
 
-            <img
-                class="level-image"
-                src="${level.image}"
-                alt="${level.name}"
-            >
-
             <div class="level-info">
+                <div class="level-name">${escapeHTML(level.name)}</div>
 
-                <div class="level-name">
-                    ${level.name}
+                <div class="level-meta">
+                    <span><strong>Creator:</strong> ${escapeHTML(level.creator)}</span>
+                    <span><strong>Verifier:</strong> ${escapeHTML(level.verifier)}</span>
+                    <span><strong>Level ID:</strong> ${level.gdId}</span>
                 </div>
 
-                <div class="level-id">
-                    Level ID: ${level.gdId}
+                <div class="level-victors">
+                    <strong>Victors:</strong> ${escapeHTML(victorText)}
                 </div>
+            </div>
 
-                <div class="level-points">
-                    ${level.points} POINTS
-                </div>
-
+            <div class="level-side">
+                <div class="level-points">${level.points} POINT${level.points === 1 ? "" : "S"}</div>
+                ${videoMarkup}
             </div>
         `;
 
-        levelList.appendChild(levelElement);
-    });
+        levelList.appendChild(card);
+    }
 }
-
-
-// ==========================
-// PLAYER POINT CALCULATION
-// ==========================
 
 function calculatePlayerPoints(player) {
-    let total = 0;
-
-    player.completed.forEach(levelId => {
-        const level = levels.find(
-            level => level.id === levelId
-        );
-
-        if (level) {
-            total += level.points;
-        }
-    });
-
-    return total;
+    return player.completed.reduce((total, levelId) => {
+        const level = levels.find(level => level.id === levelId);
+        return total + (level ? level.points : 0);
+    }, 0);
 }
-
-
-// ==========================
-// LEADERBOARD
-// ==========================
 
 function renderLeaderboard() {
     playerList.innerHTML = "";
@@ -139,63 +116,45 @@ function renderLeaderboard() {
         });
 
     rankedPlayers.forEach((player, index) => {
-        const playerElement = document.createElement("div");
+        const row = document.createElement("div");
+        row.className = "player-card";
 
-        playerElement.className = "player-card";
-
-        const rank = index + 1;
-
-        playerElement.innerHTML = `
-            <div class="player-rank">
-                #${rank}
-            </div>
-
-            <div class="player-name">
-                ${player.name}
-            </div>
-
-            <div class="player-points">
-                ${player.points} pts
-            </div>
+        row.innerHTML = `
+            <div class="player-rank">#${index + 1}</div>
+            <div class="player-name">${escapeHTML(player.name)}</div>
+            <div class="player-points">${player.points} Points</div>
         `;
 
-        playerList.appendChild(playerElement);
+        playerList.appendChild(row);
     });
 }
 
-
-// ==========================
-// TAB SWITCHING
-// ==========================
-
-const buttons = document.querySelectorAll(".nav-button");
-const pages = document.querySelectorAll(".page");
-
-buttons.forEach(button => {
-
+document.querySelectorAll(".nav-button").forEach(button => {
     button.addEventListener("click", () => {
-
-        buttons.forEach(btn => {
+        document.querySelectorAll(".nav-button").forEach(btn => {
             btn.classList.remove("active");
         });
 
-        pages.forEach(page => {
+        document.querySelectorAll(".page").forEach(page => {
             page.classList.remove("active-page");
         });
 
         button.classList.add("active");
-
-        const pageName = button.dataset.page;
-
-        document
-            .getElementById(`${pageName}-page`)
-            .classList.add("active-page");
+        document.getElementById(`${button.dataset.page}-page`).classList.add("active-page");
     });
 });
 
+function escapeHTML(value) {
+    return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+}
 
-// ==========================
-// START
-// ==========================
+function escapeAttribute(value) {
+    return escapeHTML(value);
+}
 
 loadData();

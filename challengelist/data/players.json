@@ -1,20 +1,93 @@
 [
-  {
-    "name": "Andromeda",
-    "completed": [
-      "mega-trials"
-    ]
-  },
-  {
-    "name": "PlayerTwo",
-    "completed": [
-      
-    ]
-  },
-  {
-    "name": "PlayerThree",
-    "completed": [
-
-    ]
-  }
+    {
+        "name": "Andromeda",
+        "completed": [
+            "buff-trials",
+            "true-toppa-material",
+            "4u2beat",
+            "light-breeze",
+            "huh",
+            "challenge-v1",
+            "c",
+            "circuspircus",
+            "muffels-challenge",
+            "bloodwinder-outdated",
+            "big-steppin"
+        ]
+    },
+    {
+        "name": "LimeTime",
+        "completed": [
+            "buff-trials",
+            "true-toppa-material",
+            "4u2beat",
+            "light-breeze",
+            "huh",
+            "challenge-v1",
+            "c",
+            "circuspircus",
+            "muffels-challenge",
+            "bloodwinder-outdated",
+            "big-steppin"
+        ]
+    },
+    {
+        "name": "Quova",
+        "completed": [
+            "mega-trials",
+            "buff-trials",
+            "huh"
+        ]
+    },
+    {
+        "name": "LMB8",
+        "completed": [
+            "buff-trials",
+            "4u2beat",
+            "muffels-challenge",
+            "bloodwinder-outdated",
+            "big-steppin"
+        ]
+    },
+    {
+        "name": "Muffles",
+        "completed": [
+            "4u2beat",
+            "circuspircus",
+            "muffels-challenge",
+            "bloodwinder-outdated"
+        ]
+    },
+    {
+        "name": "Cheddar",
+        "completed": [
+            "light-breeze",
+            "c",
+            "big-steppin"
+        ]
+    },
+    {
+        "name": "Arcadyng",
+        "completed": [
+            "buff-trials"
+        ]
+    },
+    {
+        "name": "Myst",
+        "completed": [
+            "muffels-challenge"
+        ]
+    },
+    {
+        "name": "Floppa",
+        "completed": [
+            "bloodwinder-outdated"
+        ]
+    },
+    {
+        "name": "beeguy",
+        "completed": [
+            "bloodwinder-outdated"
+        ]
+    }
 ]

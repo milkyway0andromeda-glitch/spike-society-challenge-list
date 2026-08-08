@@ -1,10 +1,187 @@
 [
     {
         "id": "mega-trials",
-        "gdId": 555555555,
+        "gdId": 120911543,
         "rank": 1,
         "name": "Mega Trials",
-        "points": 100,
-        "image": "https://media.discordapp.net/attachments/1515111392825446530/1535598670244872252/image.png?ex=6a785935&is=6a7707b5&hm=c0487ffba4d2ffee2c0a1885c128bd02c5b7d5dbdb56d5d5ab724e68d5c8549e&=&format=webp&quality=lossless&width=512&height=319"
+        "points": 25,
+        "creator": "Quova",
+        "verifier": "Quova",
+        "video": "",
+        "image": "images/mega-trials.png",
+        "victors": []
+    },
+    {
+        "id": "buff-trials",
+        "gdId": 114124401,
+        "rank": 2,
+        "name": "Buff Trials",
+        "points": 20,
+        "creator": "Quova",
+        "verifier": "Quova",
+        "video": "",
+        "image": "images/buff-trials.png",
+        "victors": [
+            "Arcadyng",
+            "LMB8",
+            "Andromeda",
+            "LimeTime"
+        ]
+    },
+    {
+        "id": "true-toppa-material",
+        "gdId": 108491792,
+        "rank": 3,
+        "name": "True Toppa Material",
+        "points": 18,
+        "creator": "Playerano6",
+        "verifier": "Playerano6",
+        "video": "",
+        "image": "images/true-toppa-material.png",
+        "victors": [
+            "Andromeda",
+            "LimeTime"
+        ]
+    },
+    {
+        "id": "4u2beat",
+        "gdId": 118045844,
+        "rank": 4,
+        "name": "4u2Beat",
+        "points": 16,
+        "creator": "Muffles",
+        "verifier": "Muffles",
+        "video": "",
+        "image": "images/4u2beat.png",
+        "victors": [
+            "LMB8",
+            "Andromeda",
+            "LimeTime"
+        ]
+    },
+    {
+        "id": "light-breeze",
+        "gdId": 114725754,
+        "rank": 5,
+        "name": "LIGHT BREEZE",
+        "points": 14,
+        "creator": "Cheddar",
+        "verifier": "Cheddar",
+        "video": "",
+        "image": "images/light-breeze.png",
+        "victors": [
+            "LimeTime",
+            "Andromeda"
+        ]
+    },
+    {
+        "id": "huh",
+        "gdId": 118138753,
+        "rank": 6,
+        "name": "Huh",
+        "points": 12,
+        "creator": "Quova",
+        "verifier": "Quova",
+        "video": "",
+        "image": "images/huh.png",
+        "victors": [
+            "LimeTime",
+            "Andromeda"
+        ]
+    },
+    {
+        "id": "challenge-v1",
+        "gdId": 118095937,
+        "rank": 7,
+        "name": "Challenge V1",
+        "points": 10,
+        "creator": "Tox1cKat",
+        "verifier": "Andromeda",
+        "video": "",
+        "image": "images/challenge-v1.png",
+        "victors": [
+            "LimeTime"
+        ]
+    },
+    {
+        "id": "c",
+        "gdId": 114860572,
+        "rank": 8,
+        "name": "C",
+        "points": 8,
+        "creator": "Cheddar",
+        "verifier": "Cheddar",
+        "video": "",
+        "image": "images/c.png",
+        "victors": [
+            "LimeTime",
+            "Andromeda"
+        ]
+    },
+    {
+        "id": "circuspircus",
+        "gdId": 118051289,
+        "rank": 9,
+        "name": "CircusPircus",
+        "points": 6,
+        "creator": "Muffles",
+        "verifier": "LimeTime",
+        "video": "",
+        "image": "images/circuspircus.png",
+        "victors": [
+            "Muffles",
+            "Andromeda"
+        ]
+    },
+    {
+        "id": "muffels-challenge",
+        "gdId": 115935975,
+        "rank": 10,
+        "name": "Muffels Challenge",
+        "points": 4,
+        "creator": "Myst",
+        "verifier": "Myst",
+        "video": "",
+        "image": "images/muffels-challenge.png",
+        "victors": [
+            "LimeTime",
+            "LMB8",
+            "Muffles",
+            "Andromeda"
+        ]
+    },
+    {
+        "id": "bloodwinder-outdated",
+        "gdId": 121128118,
+        "rank": 11,
+        "name": "Bloodwinder OUTDATED",
+        "points": 2,
+        "creator": "Floppa",
+        "verifier": "Floppa",
+        "video": "",
+        "image": "images/bloodwinder-outdated.png",
+        "victors": [
+            "LimeTime",
+            "Muffles",
+            "Andromeda",
+            "beeguy",
+            "LMB8"
+        ]
+    },
+    {
+        "id": "big-steppin",
+        "gdId": 114860847,
+        "rank": 12,
+        "name": "Big Steppin",
+        "points": 1,
+        "creator": "Cheddar",
+        "verifier": "Cheddar",
+        "video": "",
+        "image": "images/big-steppin.png",
+        "victors": [
+            "LimeTime",
+            "Andromeda",
+            "LMB8"
+        ]
     }
 ]

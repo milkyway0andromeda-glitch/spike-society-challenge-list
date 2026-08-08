@@ -3,57 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Challenge List</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
-    <div class="site-title">
-        CHALLENGE LIST
-    </div>
+<header class="topbar">
+    <div class="brand">CHALLENGE LIST</div>
 
-    <nav>
-        <button class="nav-button active" data-page="list">
-            LIST
-        </button>
-
-        <button class="nav-button" data-page="leaderboard">
-            LEADERBOARD
-        </button>
+    <nav class="tabs" aria-label="Main navigation">
+        <button class="nav-button active" data-page="list">LIST</button>
+        <button class="nav-button" data-page="leaderboard">LEADERBOARD</button>
     </nav>
 </header>
 
 <main>
-
     <section id="list-page" class="page active-page">
-
         <div class="page-header">
             <h1>Challenge List</h1>
-            <p>The hardest challenges on the server.</p>
+            <p>The server's ranked challenge list.</p>
         </div>
 
         <div id="level-list"></div>
-
     </section>
 
     <section id="leaderboard-page" class="page">
-
         <div class="page-header">
             <h1>Leaderboard</h1>
-            <p>Top players ranked by challenge points.</p>
+            <p>Points are calculated automatically from completed challenges.</p>
         </div>
 
-        <div id="player-list"></div>
-
+        <div id="player-list" class="leaderboard"></div>
     </section>
-
 </main>
 
 <script src="script.js"></script>
-
 </body>
 </html>
