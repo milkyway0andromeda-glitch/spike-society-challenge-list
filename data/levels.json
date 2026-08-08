@@ -29,15 +29,15 @@
         ]
     },
     {
-        "id": "true-toppa-material",
+        "id": "true-toppat-material",
         "gdId": 108491792,
         "rank": 3,
-        "name": "True Toppa Material",
+        "name": "True Toppat Material",
         "points": 18,
         "creator": "Playerano6",
         "verifier": "Playerano6",
         "video": "",
-        "image": "images/true-toppa-material.png",
+        "image": "images/true-toppat-material.png",
         "victors": [
             "Andromeda",
             "LimeTime"
