@@ -1,52 +1,47 @@
 [
     {
-        "name": "Andromeda",
+        "name": "AegisXD0",
         "completed": [
-            "buff-trials",
-            "true-toppat-material",
             "4u2beat",
-            "light-breeze",
-            "huh",
-            "challenge-v1",
+            "big-steppin",
+            "buff-trials",
             "c",
             "circuspircus",
+            "huh",
+            "light-breeze",
             "muffles-challenge",
-            "bloodwinder-outdated",
-            "big-steppin"
+            "true-toppat-material"
         ]
     },
     {
         "name": "LimeTime",
         "completed": [
-            "buff-trials",
-            "true-toppat-material",
             "4u2beat",
-            "light-breeze",
-            "huh",
-            "challenge-v1",
+            "big-steppin",
+            "buff-trials",
             "c",
             "circuspircus",
+            "huh",
+            "light-breeze",
             "muffles-challenge",
-            "bloodwinder-outdated",
-            "big-steppin"
+            "true-toppat-material"
         ]
     },
     {
         "name": "Quova",
         "completed": [
-            "mega-trials",
             "buff-trials",
-            "huh"
+            "huh",
+            "mega-trials"
         ]
     },
     {
         "name": "LMB8",
         "completed": [
-            "buff-trials",
             "4u2beat",
-            "muffles-challenge",
-            "bloodwinder-outdated",
-            "big-steppin"
+            "big-steppin",
+            "buff-trials",
+            "muffles-challenge"
         ]
     },
     {
@@ -54,16 +49,21 @@
         "completed": [
             "4u2beat",
             "circuspircus",
-            "muffles-challenge",
-            "bloodwinder-outdated"
+            "muffles-challenge"
         ]
     },
     {
         "name": "Cheddar",
         "completed": [
-            "light-breeze",
+            "big-steppin",
             "c",
-            "big-steppin"
+            "light-breeze"
+        ]
+    },
+    {
+        "name": "Arcadyng",
+        "completed": [
+            "buff-trials"
         ]
     },
     {
@@ -74,14 +74,10 @@
     },
     {
         "name": "Floppa",
-        "completed": [
-            "bloodwinder-outdated"
-        ]
+        "completed": []
     },
     {
         "name": "beeguy",
-        "completed": [
-            "bloodwinder-outdated"
-        ]
+        "completed": []
     }
 ]

@@ -24,7 +24,7 @@
         "victors": [
             "Arcadyng",
             "LMB8",
-            "Andromeda",
+            "AegisXD0",
             "LimeTime"
         ]
     },
@@ -39,7 +39,7 @@
         "video": "https://youtu.be/qxlAZ92AbLc?si=DA22GPD9HnyVR-Oe",
         "image": "images/true-toppat-material.png",
         "victors": [
-            "Andromeda",
+            "AegisXD0",
             "LimeTime"
         ]
     },
@@ -55,7 +55,7 @@
         "image": "images/4u2beat.png",
         "victors": [
             "LMB8",
-            "Andromeda",
+            "AegisXD0",
             "LimeTime"
         ]
     },
@@ -71,7 +71,7 @@
         "image": "images/light-breeze.png",
         "victors": [
             "LimeTime",
-            "Andromeda"
+            "AegisXD0"
         ]
     },
     {
@@ -86,27 +86,13 @@
         "image": "images/huh.png",
         "victors": [
             "LimeTime",
-            "Andromeda"
-        ]
-    },
-    {
-        "id": "challenge-v1",
-        "gdId": 118095937,
-        "rank": 7,
-        "name": "Challenge V1",
-        "points": 10,
-        "creator": "Tox1cKat",
-        "verifier": "Andromeda",
-        "video": "",
-        "image": "images/challenge-v1.png",
-        "victors": [
-            "LimeTime"
+            "AegisXD0"
         ]
     },
     {
         "id": "c",
         "gdId": 114860572,
-        "rank": 8,
+        "rank": 7,
         "name": "C",
         "points": 8,
         "creator": "Cheddar",
@@ -115,13 +101,13 @@
         "image": "images/c.png",
         "victors": [
             "LimeTime",
-            "Andromeda"
+            "AegisXD0"
         ]
     },
     {
         "id": "circuspircus",
         "gdId": 118051289,
-        "rank": 9,
+        "rank": 8,
         "name": "CircusPircus",
         "points": 6,
         "creator": "Muffles",
@@ -130,13 +116,13 @@
         "image": "images/circuspircus.png",
         "victors": [
             "Muffles",
-            "Andromeda"
+            "AegisXD0"
         ]
     },
     {
         "id": "muffles-challenge",
         "gdId": 115935975,
-        "rank": 10,
+        "rank": 9,
         "name": "Muffles Challenge",
         "points": 4,
         "creator": "Myst",
@@ -147,31 +133,13 @@
             "LimeTime",
             "LMB8",
             "Muffles",
-            "Andromeda"
-        ]
-    },
-    {
-        "id": "bloodwinder-outdated",
-        "gdId": 121128118,
-        "rank": 11,
-        "name": "Bloodwinder OUTDATED",
-        "points": 2,
-        "creator": "Floppa",
-        "verifier": "Floppa",
-        "video": "",
-        "image": "images/bloodwinder-outdated.png",
-        "victors": [
-            "LimeTime",
-            "Muffles",
-            "Andromeda",
-            "beeguy",
-            "LMB8"
+            "AegisXD0"
         ]
     },
     {
         "id": "big-steppin",
         "gdId": 114860847,
-        "rank": 12,
+        "rank": 10,
         "name": "Big Steppin",
         "points": 1,
         "creator": "Cheddar",
@@ -180,7 +148,7 @@
         "image": "images/big-steppin.png",
         "victors": [
             "LimeTime",
-            "Andromeda",
+            "AegisXD0",
             "LMB8"
         ]
     }
