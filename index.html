@@ -3,40 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Challenge List</title>
+    <title>Spike Society Challenge List</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header class="topbar">
-    <div class="brand">CHALLENGE LIST</div>
+    <div class="brand">SPIKE SOCIETY CHALLENGE LIST</div>
 
-    <nav class="tabs" aria-label="Main navigation">
-        <button class="nav-button active" data-page="list">LIST</button>
-        <button class="nav-button" data-page="leaderboard">LEADERBOARD</button>
+    <nav class="tabs">
+        <button class="nav-button active" data-page="list">
+            LIST
+        </button>
+
+        <button class="nav-button" data-page="leaderboard">
+            LEADERBOARD
+        </button>
     </nav>
 </header>
 
+
 <main>
+
+    <!-- =========================
+         CHALLENGE LIST
+    ========================== -->
+
     <section id="list-page" class="page active-page">
+
         <div class="page-header">
             <h1>Challenge List</h1>
             <p>The server's ranked challenge list.</p>
         </div>
 
         <div id="level-list"></div>
+
     </section>
 
+
+    <!-- =========================
+         LEADERBOARD
+    ========================== -->
+
     <section id="leaderboard-page" class="page">
+
         <div class="page-header">
             <h1>Leaderboard</h1>
             <p>Points are calculated automatically from completed challenges.</p>
         </div>
 
         <div id="player-list" class="leaderboard"></div>
+
     </section>
+
 </main>
 
+
 <script src="script.js"></script>
+
 </body>
 </html>
