@@ -16,6 +16,14 @@ async function loadData() {
             fetch("data/players.json")
         ]);
 
+        if (!levelsResponse.ok) {
+            throw new Error("Could not load levels.json");
+        }
+
+        if (!playersResponse.ok) {
+            throw new Error("Could not load players.json");
+        }
+
         levels = await levelsResponse.json();
         players = await playersResponse.json();
 
@@ -24,6 +32,18 @@ async function loadData() {
 
     } catch (error) {
         console.error("Failed to load data:", error);
+
+        levelList.innerHTML = `
+            <div class="error-message">
+                Failed to load level data.
+            </div>
+        `;
+
+        playerList.innerHTML = `
+            <div class="error-message">
+                Failed to load player data.
+            </div>
+        `;
     }
 }
 
@@ -56,13 +76,19 @@ function renderLevels() {
             >
 
             <div class="level-info">
+
                 <div class="level-name">
                     ${level.name}
+                </div>
+
+                <div class="level-id">
+                    Level ID: ${level.gdId}
                 </div>
 
                 <div class="level-points">
                     ${level.points} POINTS
                 </div>
+
             </div>
         `;
 
@@ -72,7 +98,7 @@ function renderLevels() {
 
 
 // ==========================
-// CALCULATE PLAYER POINTS
+// PLAYER POINT CALCULATION
 // ==========================
 
 function calculatePlayerPoints(player) {
@@ -100,13 +126,17 @@ function renderLeaderboard() {
     playerList.innerHTML = "";
 
     const rankedPlayers = players
-        .map(player => {
-            return {
-                ...player,
-                points: calculatePlayerPoints(player)
-            };
-        })
-        .sort((a, b) => b.points - a.points);
+        .map(player => ({
+            ...player,
+            points: calculatePlayerPoints(player)
+        }))
+        .sort((a, b) => {
+            if (b.points !== a.points) {
+                return b.points - a.points;
+            }
+
+            return a.name.localeCompare(b.name);
+        });
 
     rankedPlayers.forEach((player, index) => {
         const playerElement = document.createElement("div");
@@ -142,15 +172,16 @@ const buttons = document.querySelectorAll(".nav-button");
 const pages = document.querySelectorAll(".page");
 
 buttons.forEach(button => {
+
     button.addEventListener("click", () => {
 
-        buttons.forEach(btn =>
-            btn.classList.remove("active")
-        );
+        buttons.forEach(btn => {
+            btn.classList.remove("active");
+        });
 
-        pages.forEach(page =>
-            page.classList.remove("active-page")
-        );
+        pages.forEach(page => {
+            page.classList.remove("active-page");
+        });
 
         button.classList.add("active");
 
@@ -164,7 +195,7 @@ buttons.forEach(button => {
 
 
 // ==========================
-// START SITE
+// START
 // ==========================
 
 loadData();

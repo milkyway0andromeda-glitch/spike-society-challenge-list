@@ -1,23 +1,10 @@
 [
-  {
-    "id": "final-trial",
-    "rank": 1,
-    "name": "The Final Trial",
-    "points": 150,
-    "image": "https://example.com/final-trial.png"
-  },
-  {
-    "id": "chaos-trials",
-    "rank": 2,
-    "name": "Chaos Trials",
-    "points": 125,
-    "image": "https://example.com/chaos-trials.png"
-  },
-  {
-    "id": "pain-trials",
-    "rank": 3,
-    "name": "Pain Trials",
-    "points": 100,
-    "image": "https://example.com/pain-trials.png"
-  }
+    {
+        "id": "mega-trials",
+        "gdId": 555555555,
+        "rank": 1,
+        "name": "Mega Trials",
+        "points": 100,
+        "image": "https://example.com/pain-trials.png"
+    }
 ]

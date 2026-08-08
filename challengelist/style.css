@@ -39,6 +39,10 @@ header {
     padding: 0 40px;
 
     border-bottom: 1px solid #30353e;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .site-title {
@@ -127,7 +131,7 @@ main {
 ========================= */
 
 .level-card {
-    height: 135px;
+    height: 140px;
 
     display: flex;
     align-items: center;
@@ -172,11 +176,13 @@ main {
 
 .level-image {
     width: 230px;
-    height: 135px;
+    height: 140px;
 
     object-fit: cover;
 
     flex-shrink: 0;
+
+    background: #111;
 }
 
 
@@ -193,7 +199,15 @@ main {
 
     font-weight: bold;
 
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+}
+
+.level-id {
+    color: #9a9a9a;
+
+    font-size: 13px;
+
+    margin-bottom: 8px;
 }
 
 .level-points {
@@ -210,7 +224,7 @@ main {
 ========================= */
 
 .player-card {
-    height: 75px;
+    min-height: 75px;
 
     display: flex;
     align-items: center;
@@ -220,6 +234,8 @@ main {
     border-bottom: 1px solid #30353e;
 
     padding: 0 25px;
+
+    transition: background 0.15s;
 }
 
 .player-card:hover {
@@ -271,6 +287,23 @@ main {
 
 
 /* =========================
+   ERROR MESSAGE
+========================= */
+
+.error-message {
+    padding: 20px;
+
+    background: #3a1d22;
+
+    color: #ff8a98;
+
+    border: 1px solid #6c2c36;
+
+    border-radius: 4px;
+}
+
+
+/* =========================
    MOBILE
 ========================= */
 
@@ -290,8 +323,12 @@ main {
         font-size: 12px;
     }
 
+    main {
+        padding: 25px 10px;
+    }
+
     .level-card {
-        height: 95px;
+        height: 100px;
     }
 
     .level-rank {
@@ -302,7 +339,7 @@ main {
 
     .level-image {
         width: 130px;
-        height: 95px;
+        height: 100px;
     }
 
     .level-info {
@@ -311,9 +348,33 @@ main {
 
     .level-name {
         font-size: 17px;
+        margin-bottom: 5px;
+    }
+
+    .level-id {
+        font-size: 11px;
+        margin-bottom: 5px;
     }
 
     .level-points {
         font-size: 11px;
+    }
+
+    .player-card {
+        padding: 0 12px;
+    }
+
+    .player-rank {
+        width: 55px;
+
+        font-size: 17px;
+    }
+
+    .player-name {
+        font-size: 16px;
+    }
+
+    .player-points {
+        font-size: 14px;
     }
 }
