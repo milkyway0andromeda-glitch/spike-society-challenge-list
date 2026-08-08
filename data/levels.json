@@ -134,15 +134,15 @@
         ]
     },
     {
-        "id": "muffels-challenge",
+        "id": "muffles-challenge",
         "gdId": 115935975,
         "rank": 10,
-        "name": "Muffels Challenge",
+        "name": "Muffles Challenge",
         "points": 4,
         "creator": "Myst",
         "verifier": "Myst",
         "video": "",
-        "image": "images/muffels-challenge.png",
+        "image": "images/muffles-challenge.png",
         "victors": [
             "LimeTime",
             "LMB8",
