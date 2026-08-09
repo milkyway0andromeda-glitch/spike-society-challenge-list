@@ -54,10 +54,23 @@ function renderLevels() {
 }
 
 function calculatePlayerPoints(player) {
-  return player.completed.reduce((total, levelId) => {
-    const level = levels.find(level => level.id === levelId);
-    return total + (level ? level.points : 0);
-  }, 0);
+    const completedIds = new Set(player.completed);
+
+    let total = 0;
+
+    levels.forEach(level => {
+        const completedNormally =
+            completedIds.has(level.id);
+
+        const isVerifier =
+            level.verifier === player.name;
+
+        if (completedNormally || isVerifier) {
+            total += level.points;
+        }
+    });
+
+    return total;
 }
 
 function renderLeaderboard() {
