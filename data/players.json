@@ -11,7 +11,9 @@
             "light-breeze",
             "muffles-challenge",
             "true-toppat-material",
-            "spring"
+            "spring",
+            "the-red-haze",
+            "unnamed-concrete"
         ]
     },
     {
@@ -25,7 +27,8 @@
             "huh",
             "light-breeze",
             "muffles-challenge",
-            "true-toppat-material"
+            "true-toppat-material",
+            "the-red-haze"
         ]
     },
     {
@@ -33,7 +36,9 @@
         "completed": [
             "buff-trials",
             "huh",
-            "mega-trials"
+            "mega-trials",
+            "the-red-haze",
+            ""
         ]
     },
     {
@@ -43,7 +48,8 @@
             "big-steppin",
             "buff-trials",
             "muffles-challenge",
-            "circuspircus"
+            "circuspircus",
+            "mega-trials"
         ]
     },
     {
@@ -51,7 +57,10 @@
         "completed": [
             "4u2beat",
             "circuspircus",
-            "muffles-challenge"
+            "muffles-challenge",
+            "big-steppin",
+            "huh",
+            "the-red-haze"
         ]
     },
     {
