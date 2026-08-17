@@ -22,7 +22,7 @@
         "creator": "Muffles",
         "verifier": "AegisXD0",
         "video": "https://www.youtube.com/watch?v=gWJEgVGYfLM",
-        "image": "images/unnamed-conrete.png",
+        "image": "images/unnamed-concrete.png",
         "victors": []
     },
     {
@@ -129,7 +129,8 @@
         "image": "images/huh.png",
         "victors": [
             "LimeTime",
-            "AegisXD0"
+            "AegisXD0",
+            "Muffles"
         ]
     },
     {
@@ -193,7 +194,8 @@
         "victors": [
             "LimeTime",
             "AegisXD0",
-            "LMB8"
+            "LMB8",
+            "Muffles"
         ]
     }
 ]
