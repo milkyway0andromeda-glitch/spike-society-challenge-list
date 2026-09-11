@@ -3,29 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mod - Spike Society Challenge List</title>
+  <title>MOD - Spike Society Challenge List</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="mod.css">
+  <link rel="stylesheet" href="admin.css">
 </head>
 <body>
 <header class="topbar">
   <a class="back-arrow" href="index.html" aria-label="Back to list">←</a>
   <div class="brand detail-brand">SPIKE SOCIETY MOD</div>
-  <div class="header-spacer"></div>
+  <nav class="tabs"><span id="auth-nav-slot" class="auth-nav-slot"></span></nav>
 </header>
 
 <main class="admin-main">
-  <section class="admin-panel auth-panel">
-    <div class="panel-title">MOD ACCESS</div>
-    <div class="admin-panel-body">
-      <div id="connection-status" class="admin-status muted">Checking GitHub account…</div>
-      <div class="admin-actions">
-        <button id="logout-button" class="admin-button" type="button">SIGN OUT</button>
-      </div>
-    </div>
+  <section id="mod-loading" class="admin-panel">
+    <div class="admin-panel-body"><div class="admin-status muted">Checking GitHub permission…</div></div>
   </section>
 
-  <div id="admin-workspace" class="admin-workspace disabled-workspace">
+  <div id="admin-workspace" class="admin-workspace disabled-workspace" hidden>
     <section class="admin-panel">
       <div class="panel-title">ADD LEVEL</div>
       <form id="add-level-form" class="admin-panel-body admin-form">
@@ -42,9 +36,7 @@
             <span class="field-note">Optional. If selected, it is uploaded to /images automatically.</span>
           </label>
         </div>
-        <div class="admin-actions">
-          <button type="submit" class="admin-button primary">ADD LEVEL</button>
-        </div>
+        <div class="admin-actions"><button type="submit" class="admin-button primary">ADD LEVEL</button></div>
       </form>
     </section>
 
@@ -89,7 +81,6 @@
     </section>
   </div>
 </main>
-<script src="auth-config.js"></script>
 <script src="auth.js"></script>
 <script src="mod.js"></script>
 </body>
