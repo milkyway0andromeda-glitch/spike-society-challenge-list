@@ -1,87 +1,87 @@
 [
-    {
-        "name": "AegisXD0",
-        "completed": [
-            "4u2beat",
-            "big-steppin",
-            "buff-trials",
-            "c",
-            "circuspircus",
-            "huh",
-            "light-breeze",
-            "muffles-challenge",
-            "true-toppat-material",
-            "spring",
-            "the-red-haze",
-            "unnamed-concrete"
-        ]
-    },
-    {
-        "name": "LimeTime",
-        "completed": [
-            "4u2beat",
-            "big-steppin",
-            "buff-trials",
-            "c",
-            "circuspircus",
-            "huh",
-            "light-breeze",
-            "muffles-challenge",
-            "true-toppat-material",
-            "the-red-haze"
-        ]
-    },
-    {
-        "name": "Quova",
-        "completed": [
-            "buff-trials",
-            "huh",
-            "mega-trials",
-            "the-red-haze"
-        ]
-    },
-    {
-        "name": "LMB8",
-        "completed": [
-            "4u2beat",
-            "big-steppin",
-            "buff-trials",
-            "muffles-challenge",
-            "circuspircus",
-            "mega-trials"
-        ]
-    },
-    {
-        "name": "Muffles",
-        "completed": [
-            "4u2beat",
-            "circuspircus",
-            "muffles-challenge",
-            "big-steppin",
-            "huh",
-            "the-red-haze"
-        ]
-    },
-    {
-        "name": "Cheddar",
-        "completed": [
-            "big-steppin",
-            "c",
-            "light-breeze"
-        ]
-    },
-    {
-        "name": "Myst",
-        "completed": [
-            "muffles-challenge"
-        ]
-    },
-    {
-        "name": "Floppa",
-        "completed": []
-    },
-    {
-        "name": "beeguy",
-        "completed": []
-    }
+  {
+    "name": "AegisXD0",
+    "completed": [
+      "4u2beat",
+      "big-steppin",
+      "buff-trials",
+      "c",
+      "circuspircus",
+      "huh",
+      "light-breeze",
+      "muffles-challenge",
+      "true-toppat-material",
+      "spring",
+      "the-red-haze",
+      "unnamed-concrete"
+    ]
+  },
+  {
+    "name": "LimeTime",
+    "completed": [
+      "4u2beat",
+      "big-steppin",
+      "buff-trials",
+      "c",
+      "circuspircus",
+      "huh",
+      "light-breeze",
+      "muffles-challenge",
+      "true-toppat-material",
+      "the-red-haze"
+    ]
+  },
+  {
+    "name": "Quova",
+    "completed": [
+      "buff-trials",
+      "huh",
+      "mega-trials",
+      "the-red-haze"
+    ]
+  },
+  {
+    "name": "LMB8",
+    "completed": [
+      "4u2beat",
+      "big-steppin",
+      "buff-trials",
+      "muffles-challenge",
+      "circuspircus",
+      "mega-trials"
+    ]
+  },
+  {
+    "name": "Muffles",
+    "completed": [
+      "4u2beat",
+      "circuspircus",
+      "muffles-challenge",
+      "big-steppin",
+      "huh",
+      "the-red-haze"
+    ]
+  },
+  {
+    "name": "Cheddar",
+    "completed": [
+      "big-steppin",
+      "c",
+      "light-breeze"
+    ]
+  },
+  {
+    "name": "Myst",
+    "completed": [
+      "muffles-challenge"
+    ]
+  },
+  {
+    "name": "Floppa",
+    "completed": []
+  },
+  {
+    "name": "beeguy",
+    "completed": []
+  }
 ]
