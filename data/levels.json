@@ -68,9 +68,24 @@
     ]
   },
   {
+    "id": "true-toppat-material",
+    "gdId": 108491792,
+    "rank": 6,
+    "name": "True Toppat Material",
+    "points": 14,
+    "creator": "Playerano6",
+    "verifier": "Playerano6",
+    "video": "https://youtu.be/qxlAZ92AbLc?si=DA22GPD9HnyVR-Oe",
+    "image": "images/true-toppat-material.png",
+    "victors": [
+      "AegisXD0",
+      "LimeTime"
+    ]
+  },
+  {
     "id": "the-red-haze",
     "gdId": 146884854,
-    "rank": 6,
+    "rank": 7,
     "name": "The Red Haze",
     "points": 16,
     "creator": "Muffles",
@@ -79,21 +94,6 @@
     "image": "images/the-red-haze.png",
     "victors": [
       "Quova",
-      "AegisXD0",
-      "LimeTime"
-    ]
-  },
-  {
-    "id": "true-toppat-material",
-    "gdId": 108491792,
-    "rank": 7,
-    "name": "True Toppat Material",
-    "points": 14,
-    "creator": "Playerano6",
-    "verifier": "Playerano6",
-    "video": "https://youtu.be/qxlAZ92AbLc?si=DA22GPD9HnyVR-Oe",
-    "image": "images/true-toppat-material.png",
-    "victors": [
       "AegisXD0",
       "LimeTime"
     ]
