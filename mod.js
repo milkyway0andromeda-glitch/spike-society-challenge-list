@@ -48,9 +48,9 @@ async function initMod() {
     $("discard-button").addEventListener("click", discardChanges);
     refreshUI();
   } catch (error) {
-    console.error(error);
-    denyAccess("Could not load MOD tools.");
-  }
+  console.error(error);
+  denyAccess("Could not load MOD tools: " + (error.message || error));
+}
 }
 
 function consumeRedirectSession() {
