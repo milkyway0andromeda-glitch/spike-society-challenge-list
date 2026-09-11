@@ -1,201 +1,213 @@
 [
-    {
-        "id": "mega-trials",
-        "gdId": 120911543,
-        "rank": 1,
-        "name": "Mega Trials",
-        "points": 30,
-        "creator": "Quova",
-        "verifier": "Quova",
-        "video": "https://www.youtube.com/watch?v=j9_zXbNkRC4",
-        "image": "images/mega-trials.png",
-        "victors": [
-            "LMB8"
-        ]
-    },
-    {
-        "id": "unnamed-concrete",
-        "gdId": 147091256,
-        "rank": 2,
-        "name": "UNNAMED CONCRETE",
-        "points": 25,
-        "creator": "Muffles",
-        "verifier": "AegisXD0",
-        "video": "https://www.youtube.com/watch?v=gWJEgVGYfLM",
-        "image": "images/unnamed-concrete.png",
-        "victors": []
-    },
-    {
-        "id": "buff-trials",
-        "gdId": 114124401,
-        "rank": 3,
-        "name": "Buff Trials",
-        "points": 20,
-        "creator": "Quova",
-        "verifier": "Quova",
-        "video": "https://www.youtube.com/watch?v=14jaDs7Yamk",
-        "image": "images/buff-trials.png",
-        "victors": [
-            "LMB8",
-            "AegisXD0",
-            "LimeTime"
-        ]
-    },
-    {
-        "id": "spring",
-        "gdId": 146606522,
-        "rank": 4,
-        "name": "Spring",
-        "points": 18,
-        "creator": "AegisXD0",
-        "verifier": "LimeTime",
-        "video": "https://youtu.be/QC_AWYvo0t4",
-        "image": "images/spring.png",
-        "victors": [
-            "AegisXD0"
-        ]
-    },
-    {
-        "id": "the-red-haze",
-        "gdId": 146884854,
-        "rank": 5,
-        "name": "The Red Haze",
-        "points": 16,
-        "creator": "Muffles",
-        "verifier": "Muffles",
-        "video": "https://www.youtube.com/watch?v=6jfQ0vSiyEo",
-        "image": "images/the-red-haze.png",
-        "victors": [
-            "Quova",
-            "AegisXD0",
-            "LimeTime"
-        ]
-    },
-    {
-        "id": "true-toppat-material",
-        "gdId": 108491792,
-        "rank": 6,
-        "name": "True Toppat Material",
-        "points": 14,
-        "creator": "Playerano6",
-        "verifier": "Playerano6",
-        "video": "https://youtu.be/qxlAZ92AbLc?si=DA22GPD9HnyVR-Oe",
-        "image": "images/true-toppat-material.png",
-        "victors": [
-            "AegisXD0",
-            "LimeTime"
-        ]
-    },
-    {
-        "id": "4u2beat",
-        "gdId": 118045844,
-        "rank": 7,
-        "name": "4u2Beat",
-        "points": 12,
-        "creator": "Muffles",
-        "verifier": "Muffles",
-        "video": "https://youtu.be/8luO6qyZQpQ",
-        "image": "images/4u2beat.png",
-        "victors": [
-            "LMB8",
-            "AegisXD0",
-            "LimeTime"
-        ]
-    },
-    {
-        "id": "light-breeze",
-        "gdId": 114725754,
-        "rank": 8,
-        "name": "LIGHT BREEZE",
-        "points": 10,
-        "creator": "Cheddar",
-        "verifier": "Cheddar",
-        "video": "https://youtube.com/shorts/03jbPsbt-gg",
-        "image": "images/light-breeze.png",
-        "victors": [
-            "LimeTime",
-            "AegisXD0"
-        ]
-    },
-    {
-        "id": "huh",
-        "gdId": 118138753,
-        "rank": 9,
-        "name": "Huh",
-        "points": 8,
-        "creator": "Quova",
-        "verifier": "Quova",
-        "video": "https://www.youtube.com/watch?v=bCyKX3Id6IA",
-        "image": "images/huh.png",
-        "victors": [
-            "LimeTime",
-            "AegisXD0",
-            "Muffles"
-        ]
-    },
-    {
-        "id": "c",
-        "gdId": 114860572,
-        "rank": 10,
-        "name": "C",
-        "points": 6,
-        "creator": "Cheddar",
-        "verifier": "Cheddar",
-        "video": "https://youtube.com/shorts/t7xyGCf5_6M",
-        "image": "images/c.png",
-        "victors": [
-            "LimeTime",
-            "AegisXD0"
-        ]
-    },
-    {
-        "id": "circuspircus",
-        "gdId": 118051289,
-        "rank": 11,
-        "name": "CircusPircus",
-        "points": 4,
-        "creator": "Muffles",
-        "verifier": "LimeTime",
-        "video": "https://www.youtube.com/watch?v=yBkfJzh8cvQ",
-        "image": "images/circuspircus.png",
-        "victors": [
-            "Muffles",
-            "AegisXD0",
-            "LMB8"
-        ]
-    },
-    {
-        "id": "muffles-challenge",
-        "gdId": 115935975,
-        "rank": 12,
-        "name": "Muffles Challenge",
-        "points": 2,
-        "creator": "Myst",
-        "verifier": "Myst",
-        "video": "https://www.youtube.com/watch?v=nL-BvQYFB2U",
-        "image": "images/muffles-challenge.png",
-        "victors": [
-            "LimeTime",
-            "LMB8",
-            "Muffles",
-            "AegisXD0"
-        ]
-    },
-    {
-        "id": "big-steppin",
-        "gdId": 114860847,
-        "rank": 13,
-        "name": "Big Steppin",
-        "points": 1,
-        "creator": "Cheddar",
-        "verifier": "Cheddar",
-        "video": "https://youtube.com/shorts/-4xxlof2RwI",
-        "image": "images/big-steppin.png",
-        "victors": [
-            "LimeTime",
-            "AegisXD0",
-            "LMB8",
-            "Muffles"
-        ]
-    }
+  {
+    "id": "absolute-garbage",
+    "gdId": 147540400,
+    "rank": 1,
+    "name": "Absolute Garbage",
+    "points": 35,
+    "creator": "Blu",
+    "verifier": "AegisXD0",
+    "video": "https://www.youtube.com/watch?v=9PqVFynRnqQ",
+    "image": "images/absolute-garbage.png",
+    "victors": []
+  },
+  {
+    "id": "mega-trials",
+    "gdId": 120911543,
+    "rank": 2,
+    "name": "Mega Trials",
+    "points": 30,
+    "creator": "Quova",
+    "verifier": "Quova",
+    "video": "https://www.youtube.com/watch?v=j9_zXbNkRC4",
+    "image": "images/mega-trials.png",
+    "victors": [
+      "LMB8"
+    ]
+  },
+  {
+    "id": "unnamed-concrete",
+    "gdId": 147091256,
+    "rank": 3,
+    "name": "UNNAMED CONCRETE",
+    "points": 25,
+    "creator": "Muffles",
+    "verifier": "AegisXD0",
+    "video": "https://www.youtube.com/watch?v=gWJEgVGYfLM",
+    "image": "images/unnamed-concrete.png",
+    "victors": []
+  },
+  {
+    "id": "buff-trials",
+    "gdId": 114124401,
+    "rank": 4,
+    "name": "Buff Trials",
+    "points": 20,
+    "creator": "Quova",
+    "verifier": "Quova",
+    "video": "https://www.youtube.com/watch?v=14jaDs7Yamk",
+    "image": "images/buff-trials.png",
+    "victors": [
+      "LMB8",
+      "AegisXD0",
+      "LimeTime"
+    ]
+  },
+  {
+    "id": "spring",
+    "gdId": 146606522,
+    "rank": 5,
+    "name": "Spring",
+    "points": 18,
+    "creator": "AegisXD0",
+    "verifier": "LimeTime",
+    "video": "https://youtu.be/QC_AWYvo0t4",
+    "image": "images/spring.png",
+    "victors": [
+      "AegisXD0"
+    ]
+  },
+  {
+    "id": "the-red-haze",
+    "gdId": 146884854,
+    "rank": 6,
+    "name": "The Red Haze",
+    "points": 16,
+    "creator": "Muffles",
+    "verifier": "Muffles",
+    "video": "https://www.youtube.com/watch?v=6jfQ0vSiyEo",
+    "image": "images/the-red-haze.png",
+    "victors": [
+      "Quova",
+      "AegisXD0",
+      "LimeTime"
+    ]
+  },
+  {
+    "id": "true-toppat-material",
+    "gdId": 108491792,
+    "rank": 7,
+    "name": "True Toppat Material",
+    "points": 14,
+    "creator": "Playerano6",
+    "verifier": "Playerano6",
+    "video": "https://youtu.be/qxlAZ92AbLc?si=DA22GPD9HnyVR-Oe",
+    "image": "images/true-toppat-material.png",
+    "victors": [
+      "AegisXD0",
+      "LimeTime"
+    ]
+  },
+  {
+    "id": "4u2beat",
+    "gdId": 118045844,
+    "rank": 8,
+    "name": "4u2Beat",
+    "points": 12,
+    "creator": "Muffles",
+    "verifier": "Muffles",
+    "video": "https://youtu.be/8luO6qyZQpQ",
+    "image": "images/4u2beat.png",
+    "victors": [
+      "LMB8",
+      "AegisXD0",
+      "LimeTime"
+    ]
+  },
+  {
+    "id": "light-breeze",
+    "gdId": 114725754,
+    "rank": 9,
+    "name": "LIGHT BREEZE",
+    "points": 10,
+    "creator": "Cheddar",
+    "verifier": "Cheddar",
+    "video": "https://youtube.com/shorts/03jbPsbt-gg",
+    "image": "images/light-breeze.png",
+    "victors": [
+      "LimeTime",
+      "AegisXD0"
+    ]
+  },
+  {
+    "id": "huh",
+    "gdId": 118138753,
+    "rank": 10,
+    "name": "Huh",
+    "points": 8,
+    "creator": "Quova",
+    "verifier": "Quova",
+    "video": "https://www.youtube.com/watch?v=bCyKX3Id6IA",
+    "image": "images/huh.png",
+    "victors": [
+      "LimeTime",
+      "AegisXD0",
+      "Muffles"
+    ]
+  },
+  {
+    "id": "c",
+    "gdId": 114860572,
+    "rank": 11,
+    "name": "C",
+    "points": 6,
+    "creator": "Cheddar",
+    "verifier": "Cheddar",
+    "video": "https://youtube.com/shorts/t7xyGCf5_6M",
+    "image": "images/c.png",
+    "victors": [
+      "LimeTime",
+      "AegisXD0"
+    ]
+  },
+  {
+    "id": "circuspircus",
+    "gdId": 118051289,
+    "rank": 12,
+    "name": "CircusPircus",
+    "points": 4,
+    "creator": "Muffles",
+    "verifier": "LimeTime",
+    "video": "https://www.youtube.com/watch?v=yBkfJzh8cvQ",
+    "image": "images/circuspircus.png",
+    "victors": [
+      "Muffles",
+      "AegisXD0",
+      "LMB8"
+    ]
+  },
+  {
+    "id": "muffles-challenge",
+    "gdId": 115935975,
+    "rank": 13,
+    "name": "Muffles Challenge",
+    "points": 2,
+    "creator": "Myst",
+    "verifier": "Myst",
+    "video": "https://www.youtube.com/watch?v=nL-BvQYFB2U",
+    "image": "images/muffles-challenge.png",
+    "victors": [
+      "LimeTime",
+      "LMB8",
+      "Muffles",
+      "AegisXD0"
+    ]
+  },
+  {
+    "id": "big-steppin",
+    "gdId": 114860847,
+    "rank": 14,
+    "name": "Big Steppin",
+    "points": 1,
+    "creator": "Cheddar",
+    "verifier": "Cheddar",
+    "video": "https://youtube.com/shorts/-4xxlof2RwI",
+    "image": "images/big-steppin.png",
+    "victors": [
+      "LimeTime",
+      "AegisXD0",
+      "LMB8",
+      "Muffles"
+    ]
+  }
 ]
