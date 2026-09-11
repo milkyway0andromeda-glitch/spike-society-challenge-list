@@ -1,6 +1,3 @@
-const AUTH_WORKER = "https://spike-society-auth.milkyway0andromeda.workers.dev";
-const SESSION_KEY = "spike_github_session";
-
 let levels = [];
 let players = [];
 let originalLevels = [];
