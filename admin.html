@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Spike Society Challenge List</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="back-arrow" href="index.html" aria-label="Back to list">←</a>
+  <div class="brand detail-brand">SPIKE SOCIETY ADMIN</div>
+  <div class="header-spacer"></div>
+</header>
+
+<main class="admin-main">
+  <section class="admin-panel auth-panel">
+    <div class="panel-title">GITHUB CONNECTION</div>
+    <div class="admin-panel-body">
+      <p class="admin-help">Enter a fine-grained GitHub token with <strong>Contents: Read and write</strong> access to this repository. It is kept only in this tab's memory and is not saved.</p>
+      <div class="admin-inline">
+        <input id="github-token" type="password" autocomplete="off" placeholder="github_pat_...">
+        <button id="connect-button" class="admin-button primary">CONNECT</button>
+      </div>
+      <div id="connection-status" class="admin-status muted">Not connected.</div>
+    </div>
+  </section>
+
+  <div id="admin-workspace" class="admin-workspace disabled-workspace">
+    <section class="admin-panel">
+      <div class="panel-title">ADD LEVEL</div>
+      <form id="add-level-form" class="admin-panel-body admin-form">
+        <div class="form-grid">
+          <label>Level name<input id="level-name" required></label>
+          <label>Placement<input id="level-rank" type="number" min="1" required></label>
+          <label>GD Level ID<input id="level-gd-id" type="number" min="1" required></label>
+          <label>Points<input id="level-points" type="number" min="0" required></label>
+          <label>Creator<input id="level-creator" required></label>
+          <label>Verifier<input id="level-verifier" required></label>
+          <label class="wide-field">Verification video<input id="level-video" type="url" placeholder="https://youtu.be/..."></label>
+          <label class="wide-field">Thumbnail image
+            <input id="level-image-file" type="file" accept="image/png,image/jpeg,image/webp">
+            <span class="field-note">Optional. If selected, it is uploaded to /images automatically.</span>
+          </label>
+        </div>
+        <div class="admin-actions">
+          <button type="submit" class="admin-button primary">ADD LEVEL</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="admin-panel">
+      <div class="panel-title">CHANGE PLACEMENT</div>
+      <form id="move-level-form" class="admin-panel-body admin-form compact-form">
+        <label>Level<select id="move-level-select" required></select></label>
+        <label>New placement<input id="move-level-rank" type="number" min="1" required></label>
+        <button type="submit" class="admin-button">MOVE LEVEL</button>
+      </form>
+    </section>
+
+    <section class="admin-panel">
+      <div class="panel-title">ADD VICTOR</div>
+      <form id="add-victor-form" class="admin-panel-body admin-form compact-form">
+        <label>Level<select id="victor-level-select" required></select></label>
+        <label>Player<input id="victor-player" list="player-options" required></label>
+        <datalist id="player-options"></datalist>
+        <button type="submit" class="admin-button primary">ADD VICTOR</button>
+      </form>
+    </section>
+
+    <section class="admin-panel">
+      <div class="panel-title">REMOVE VICTOR</div>
+      <form id="remove-victor-form" class="admin-panel-body admin-form compact-form">
+        <label>Level<select id="remove-victor-level-select" required></select></label>
+        <label>Victor<select id="remove-victor-player-select" required></select></label>
+        <button type="submit" class="admin-button danger">REMOVE VICTOR</button>
+      </form>
+    </section>
+
+    <section class="admin-panel pending-panel">
+      <div class="panel-title">PENDING CHANGES</div>
+      <div class="admin-panel-body">
+        <div id="pending-summary" class="pending-summary">No changes yet.</div>
+        <div id="save-status" class="admin-status muted"></div>
+        <div class="admin-actions">
+          <button id="discard-button" class="admin-button">DISCARD</button>
+          <button id="save-button" class="admin-button primary" disabled>SAVE TO GITHUB</button>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+<script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+.admin-main{width:min(980px,calc(100% - 30px))}
+.admin-panel{margin-bottom:16px;background:var(--panel);border:1px solid var(--border);border-radius:7px;overflow:hidden}
+.admin-panel-body{padding:20px}
+.admin-help{margin:0 0 14px;color:var(--muted);line-height:1.55}
+.admin-inline{display:flex;gap:10px}
+.admin-inline input{flex:1}
+.admin-form label{display:flex;flex-direction:column;gap:7px;color:#c6cbd2;font-size:12px;font-weight:800;letter-spacing:.3px}
+.admin-form input,.admin-form select,.admin-inline input{width:100%;min-height:42px;padding:9px 11px;border:1px solid var(--border-light);border-radius:5px;outline:none;background:#101318;color:var(--text);font:inherit}
+.admin-form input:focus,.admin-form select:focus,.admin-inline input:focus{border-color:var(--blue)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.wide-field{grid-column:1/-1}
+.field-note{color:var(--muted-dark);font-size:11px;font-weight:400}
+.compact-form{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;gap:14px;align-items:end}
+.admin-button{min-height:42px;padding:0 17px;border:1px solid var(--border-light);border-radius:5px;background:#252a32;color:#e8ebef;font-weight:900;cursor:pointer}
+.admin-button:hover:not(:disabled){background:#303640}.admin-button.primary{background:#1767a8;border-color:#287fc5}.admin-button.primary:hover:not(:disabled){background:#1d78be}.admin-button.danger{background:#652b35;border-color:#88404c}.admin-button.danger:hover:not(:disabled){background:#7a3440}.admin-button:disabled{opacity:.45;cursor:not-allowed}
+.admin-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:18px}
+.admin-status{margin-top:12px;font-size:13px}.admin-status.success{color:#72e59a}.admin-status.error{color:#ff8c9a}.admin-status.muted{color:var(--muted)}
+.admin-workspace{transition:opacity .15s}.disabled-workspace{opacity:.45;pointer-events:none}
+.pending-summary{color:#d7dbe1;line-height:1.6}.pending-summary ul{margin:8px 0 0;padding-left:20px}.pending-summary li{margin:3px 0;color:var(--muted)}
+@media(max-width:700px){.form-grid,.compact-form{grid-template-columns:1fr}.wide-field{grid-column:auto}.admin-inline{flex-direction:column}}

@@ -54,23 +54,17 @@ function renderLevels() {
 }
 
 function calculatePlayerPoints(player) {
-    const completedIds = new Set(player.completed);
+  let total = 0;
 
-    let total = 0;
+  levels.forEach(level => {
+    const victors = Array.isArray(level.victors) ? level.victors : [];
+    const completedNormally = victors.includes(player.name);
+    const isVerifier = level.verifier === player.name;
 
-    levels.forEach(level => {
-        const completedNormally =
-            completedIds.has(level.id);
+    if (completedNormally || isVerifier) total += level.points;
+  });
 
-        const isVerifier =
-            level.verifier === player.name;
-
-        if (completedNormally || isVerifier) {
-            total += level.points;
-        }
-    });
-
-    return total;
+  return total;
 }
 
 function renderLeaderboard() {
@@ -92,9 +86,9 @@ function renderLeaderboard() {
   });
 }
 
-document.querySelectorAll(".nav-button").forEach(button => {
+document.querySelectorAll(".nav-button[data-page]").forEach(button => {
   button.addEventListener("click", () => {
-    document.querySelectorAll(".nav-button").forEach(btn => btn.classList.remove("active"));
+    document.querySelectorAll(".nav-button[data-page]").forEach(btn => btn.classList.remove("active"));
     document.querySelectorAll(".page").forEach(page => page.classList.remove("active-page"));
     button.classList.add("active");
     document.getElementById(`${button.dataset.page}-page`).classList.add("active-page");
