@@ -2,7 +2,6 @@ const REPO_OWNER = "milkyway0andromeda-glitch";
 const REPO_NAME = "spike-society-challenge-list";
 const BRANCH = "main";
 
-let token = "";
 let levels = [];
 let players = [];
 let originalLevels = [];
@@ -13,7 +12,6 @@ let changes = [];
 
 const $ = id => document.getElementById(id);
 
-$("connect-button").addEventListener("click", connect);
 $("add-level-form").addEventListener("submit", addLevel);
 $("move-level-form").addEventListener("submit", moveLevel);
 $("add-victor-form").addEventListener("submit", addVictor);
@@ -22,43 +20,45 @@ $("remove-victor-level-select").addEventListener("change", refreshRemoveVictorOp
 $("save-button").addEventListener("click", saveChanges);
 $("discard-button").addEventListener("click", discardChanges);
 
-async function connect() {
-  const value = $("github-token").value.trim();
-  if (!value) return setConnectionStatus("Enter a GitHub token first.", "error");
-
-  token = value;
-  setConnectionStatus("Connecting…", "muted");
-  $("connect-button").disabled = true;
-
+async function initializeMod() {
+  const auth = window.SpikeAuth;
+  if (!auth || !auth.token) {
+    window.location.replace("index.html");
+    return;
+  }
   try {
+    await auth.refreshIdentity();
+    if (!auth.canModerate()) {
+      setConnectionStatus(`@${auth.user?.login || "This account"} does not have write access to the repository.`, "error");
+      $("admin-workspace").classList.add("disabled-workspace");
+      return;
+    }
     const [levelsFile, playersFile] = await Promise.all([
       getRepoFile("data/levels.json"),
       getRepoFile("data/players.json")
     ]);
-
     levels = JSON.parse(decodeBase64Utf8(levelsFile.content));
     players = JSON.parse(decodeBase64Utf8(playersFile.content));
     normalizeRanks();
-
     originalLevels = structuredClone(levels);
     originalPlayers = structuredClone(players);
     fileShas.levels = levelsFile.sha;
     fileShas.players = playersFile.sha;
     changes = [];
     pendingImages = [];
-
-    $("github-token").value = "";
     $("admin-workspace").classList.remove("disabled-workspace");
     refreshUI();
-    setConnectionStatus(`Connected to ${REPO_OWNER}/${REPO_NAME}.`, "success");
+    setConnectionStatus(`Signed in as @${auth.user.login} • ${auth.permission} access`, "success");
   } catch (error) {
     console.error(error);
-    token = "";
     setConnectionStatus(error.message || "Could not connect to GitHub.", "error");
-  } finally {
-    $("connect-button").disabled = false;
   }
 }
+
+$("logout-button").addEventListener("click", () => {
+  SpikeAuth.logout();
+  window.location.replace("index.html");
+});
 
 async function getRepoFile(path) {
   const response = await githubFetch(`/repos/${REPO_OWNER}/${REPO_NAME}/contents/${encodePath(path)}?ref=${encodeURIComponent(BRANCH)}`);
@@ -71,7 +71,7 @@ async function githubFetch(path, options = {}) {
     ...options,
     headers: {
       "Accept": "application/vnd.github+json",
-      "Authorization": `Bearer ${token}`,
+      "Authorization": `Bearer ${SpikeAuth.token}`,
       "X-GitHub-Api-Version": "2022-11-28",
       ...(options.headers || {})
     }
@@ -324,3 +324,5 @@ function setConnectionStatus(message, type) { const el=$("connection-status"); e
 function setSaveStatus(message, type) { const el=$("save-status"); el.textContent=message; el.className=`admin-status ${type}`; }
 function escapeHTML(value) { return String(value ?? "").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#039;"); }
 function escapeAttribute(value) { return escapeHTML(value); }
+
+initializeMod();

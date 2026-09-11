@@ -3,27 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin - Spike Society Challenge List</title>
+  <title>Mod - Spike Society Challenge List</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="mod.css">
 </head>
 <body>
 <header class="topbar">
   <a class="back-arrow" href="index.html" aria-label="Back to list">←</a>
-  <div class="brand detail-brand">SPIKE SOCIETY ADMIN</div>
+  <div class="brand detail-brand">SPIKE SOCIETY MOD</div>
   <div class="header-spacer"></div>
 </header>
 
 <main class="admin-main">
   <section class="admin-panel auth-panel">
-    <div class="panel-title">GITHUB CONNECTION</div>
+    <div class="panel-title">MOD ACCESS</div>
     <div class="admin-panel-body">
-      <p class="admin-help">Enter a fine-grained GitHub token with <strong>Contents: Read and write</strong> access to this repository. It is kept only in this tab's memory and is not saved.</p>
-      <div class="admin-inline">
-        <input id="github-token" type="password" autocomplete="off" placeholder="github_pat_...">
-        <button id="connect-button" class="admin-button primary">CONNECT</button>
+      <div id="connection-status" class="admin-status muted">Checking GitHub account…</div>
+      <div class="admin-actions">
+        <button id="logout-button" class="admin-button" type="button">SIGN OUT</button>
       </div>
-      <div id="connection-status" class="admin-status muted">Not connected.</div>
     </div>
   </section>
 
@@ -91,6 +89,8 @@
     </section>
   </div>
 </main>
-<script src="admin.js"></script>
+<script src="auth-config.js"></script>
+<script src="auth.js"></script>
+<script src="mod.js"></script>
 </body>
 </html>

@@ -106,3 +106,52 @@ function escapeHTML(value) {
 function escapeAttribute(value) { return escapeHTML(value); }
 
 loadData();
+
+// GitHub sign-in / MOD button
+(async function setupModAuth(){
+  const button = document.getElementById("mod-auth-button");
+  if (!button || !window.SpikeAuth) return;
+
+  const render = () => {
+    if (SpikeAuth.user) {
+      if (SpikeAuth.canModerate()) {
+        button.textContent = "MOD";
+        button.title = `Signed in as ${SpikeAuth.user.login} (${SpikeAuth.permission})`;
+        button.classList.remove("mod-denied");
+      } else {
+        button.textContent = SpikeAuth.user.login.toUpperCase();
+        button.title = "Signed in, but this account does not have write access to the repository.";
+        button.classList.add("mod-denied");
+      }
+    } else {
+      button.textContent = "SIGN IN WITH GITHUB";
+      button.title = "Sign in with GitHub to access moderation tools.";
+      button.classList.remove("mod-denied");
+    }
+  };
+
+  button.addEventListener("click", async () => {
+    try {
+      if (!SpikeAuth.user) {
+        await SpikeAuth.beginLogin();
+        return;
+      }
+      if (SpikeAuth.canModerate()) {
+        window.location.href = "mod.html";
+      } else {
+        alert(`@${SpikeAuth.user.login} is signed in, but does not have write access to this repository.`);
+      }
+    } catch (error) {
+      alert(error.message);
+    }
+  });
+
+  try {
+    await SpikeAuth.finishLoginFromCallback();
+    if (SpikeAuth.token && !SpikeAuth.user) await SpikeAuth.refreshIdentity();
+  } catch (error) {
+    console.error(error);
+    alert(error.message);
+  }
+  render();
+})();
