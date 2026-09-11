@@ -259,7 +259,11 @@ async function workerError(response) {
 }
 
 function sortedLevels() { return [...levels].sort((a,b)=>a.rank-b.rank); }
-function normalizeRanks() { levels = sortedLevels(); levels.forEach((level,index)=>level.rank=index+1); }
+function normalizeRanks() {
+  levels.forEach((level, index) => {
+    level.rank = index + 1;
+  });
+}
 function clampRank(rank,max) { return Math.max(1, Math.min(Number.isFinite(rank)?Math.floor(rank):max,max)); }
 function uniqueSlug(base) { let id=base||"level"; let n=2; while(levels.some(level=>level.id===id)) id=`${base}-${n++}`; return id; }
 function slugify(value) { return value.toLowerCase().trim().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,""); }
