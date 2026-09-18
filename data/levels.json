@@ -111,9 +111,23 @@
     ]
   },
   {
+    "id": "ach-funk",
+    "gdId": 148859634,
+    "rank": 9,
+    "name": "ACH Funk",
+    "points": 18,
+    "creator": "Maow",
+    "verifier": "Maow",
+    "video": "https://www.youtube.com/watch?v=92e2N33CYVE",
+    "image": "images/ach-funk.png",
+    "victors": [
+      "AegisXD0"
+    ]
+  },
+  {
     "id": "true-toppat-material",
     "gdId": 108491792,
-    "rank": 9,
+    "rank": 10,
     "name": "True Toppat Material",
     "points": 18,
     "creator": "Playerano6",
@@ -129,7 +143,7 @@
   {
     "id": "the-red-haze",
     "gdId": 146884854,
-    "rank": 10,
+    "rank": 11,
     "name": "The Red Haze",
     "points": 16,
     "creator": "Muffles",
@@ -141,20 +155,6 @@
       "AegisXD0",
       "LimeTime",
       "Maow"
-    ]
-  },
-  {
-    "id": "ach-funk",
-    "gdId": 148859634,
-    "rank": 11,
-    "name": "ACH Funk",
-    "points": 14,
-    "creator": "Maow",
-    "verifier": "Maow",
-    "video": "https://www.youtube.com/watch?v=92e2N33CYVE",
-    "image": "images/ach-funk.png",
-    "victors": [
-      "AegisXD0"
     ]
   },
   {
