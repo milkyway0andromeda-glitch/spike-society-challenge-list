@@ -98,11 +98,26 @@
     ]
   },
   {
+    "id": "ach-funk",
+    "gdId": 148859634,
+    "rank": 8,
+    "name": "ACH Funk",
+    "points": 20,
+    "creator": "Maow",
+    "verifier": "Maow",
+    "video": "https://www.youtube.com/watch?v=92e2N33CYVE",
+    "image": "images/ach-funk.png",
+    "victors": [
+      "AegisXD0",
+      "Quova"
+    ]
+  },
+  {
     "id": "absolute-masterpeice",
     "gdId": 147539403,
-    "rank": 8,
+    "rank": 9,
     "name": "Absolute Masterpeice",
-    "points": 20,
+    "points": 18,
     "creator": "Blu",
     "verifier": "AegisXD0",
     "video": "https://youtu.be/ebK_620FcWQ",
@@ -110,21 +125,6 @@
     "victors": [
       "LimeTime",
       "Maow",
-      "Quova"
-    ]
-  },
-  {
-    "id": "ach-funk",
-    "gdId": 148859634,
-    "rank": 9,
-    "name": "ACH Funk",
-    "points": 18,
-    "creator": "Maow",
-    "verifier": "Maow",
-    "video": "https://www.youtube.com/watch?v=92e2N33CYVE",
-    "image": "images/ach-funk.png",
-    "victors": [
-      "AegisXD0",
       "Quova"
     ]
   },
