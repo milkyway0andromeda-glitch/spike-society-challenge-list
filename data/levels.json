@@ -195,9 +195,26 @@
     ]
   },
   {
+    "id": "circuspircus",
+    "gdId": 118051289,
+    "rank": 14,
+    "name": "CircusPircus",
+    "points": 10,
+    "creator": "Muffles",
+    "verifier": "LimeTime",
+    "video": "https://www.youtube.com/watch?v=yBkfJzh8cvQ",
+    "image": "images/circuspircus.png",
+    "victors": [
+      "Muffles",
+      "AegisXD0",
+      "LMB8",
+      "Quova"
+    ]
+  },
+  {
     "id": "light-breeze",
     "gdId": 114725754,
-    "rank": 14,
+    "rank": 15,
     "name": "LIGHT BREEZE",
     "points": 10,
     "creator": "Cheddar",
@@ -210,9 +227,21 @@
     ]
   },
   {
+    "id": "ship-challenge",
+    "gdId": 148605172,
+    "rank": 16,
+    "name": "Ship Challenge",
+    "points": 8,
+    "creator": "mrchuppins",
+    "verifier": "mrchuppins",
+    "video": "https://www.youtube.com/watch?v=UAWA-F5jCFo",
+    "image": "images/ship-challenge.png",
+    "victors": []
+  },
+  {
     "id": "huh",
     "gdId": 118138753,
-    "rank": 15,
+    "rank": 17,
     "name": "Huh",
     "points": 8,
     "creator": "Quova",
@@ -229,7 +258,7 @@
   {
     "id": "c",
     "gdId": 114860572,
-    "rank": 16,
+    "rank": 18,
     "name": "C",
     "points": 6,
     "creator": "Cheddar",
@@ -243,26 +272,9 @@
     ]
   },
   {
-    "id": "circuspircus",
-    "gdId": 118051289,
-    "rank": 17,
-    "name": "CircusPircus",
-    "points": 4,
-    "creator": "Muffles",
-    "verifier": "LimeTime",
-    "video": "https://www.youtube.com/watch?v=yBkfJzh8cvQ",
-    "image": "images/circuspircus.png",
-    "victors": [
-      "Muffles",
-      "AegisXD0",
-      "LMB8",
-      "Quova"
-    ]
-  },
-  {
     "id": "muffles-challenge",
     "gdId": 115935975,
-    "rank": 18,
+    "rank": 19,
     "name": "Muffles Challenge",
     "points": 2,
     "creator": "Myst",
@@ -281,7 +293,7 @@
   {
     "id": "big-steppin",
     "gdId": 114860847,
-    "rank": 19,
+    "rank": 20,
     "name": "Big Steppin",
     "points": 1,
     "creator": "Cheddar",
@@ -293,7 +305,8 @@
       "AegisXD0",
       "LMB8",
       "Muffles",
-      "Maow"
+      "Maow",
+      "mrchuppins"
     ]
   }
 ]
