@@ -28,11 +28,25 @@
     ]
   },
   {
+    "id": "mega-trials",
+    "gdId": 120911543,
+    "rank": 3,
+    "name": "Mega Trials",
+    "points": 60,
+    "creator": "Quova",
+    "verifier": "Quova",
+    "video": "https://www.youtube.com/watch?v=j9_zXbNkRC4",
+    "image": "images/mega-trials.png",
+    "victors": [
+      "LMB8"
+    ]
+  },
+  {
     "id": "unnamed-concrete",
     "gdId": 147091256,
-    "rank": 3,
+    "rank": 4,
     "name": "UNNAMED CONCRETE",
-    "points": 60,
+    "points": 55,
     "creator": "Muffles",
     "verifier": "AegisXD0",
     "video": "https://www.youtube.com/watch?v=gWJEgVGYfLM",
@@ -45,9 +59,9 @@
   {
     "id": "dysphoria",
     "gdId": 148811532,
-    "rank": 4,
+    "rank": 5,
     "name": "Dysphoria",
-    "points": 55,
+    "points": 50,
     "creator": "Maow",
     "verifier": "Maow",
     "video": "https://www.youtube.com/watch?v=xqOPolzAGXs",
@@ -55,20 +69,6 @@
     "victors": [
       "AegisXD0",
       "LimeTime"
-    ]
-  },
-  {
-    "id": "mega-trials",
-    "gdId": 120911543,
-    "rank": 5,
-    "name": "Mega Trials",
-    "points": 50,
-    "creator": "Quova",
-    "verifier": "Quova",
-    "video": "https://www.youtube.com/watch?v=j9_zXbNkRC4",
-    "image": "images/mega-trials.png",
-    "victors": [
-      "LMB8"
     ]
   },
   {
