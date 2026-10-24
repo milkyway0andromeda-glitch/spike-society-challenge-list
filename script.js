@@ -62,7 +62,7 @@ function renderLevels() {
         <div class="level-creator">Created by ${escapeHTML(level.creator)}</div>
       </div>
       <div class="level-side">
-        <div class="level-points">${SSCLPoints.formatPoints(level.points)}<span>POINT${level.points === 1 ? "" : "S"}</span></div>
+        <div class="level-points">${SSCLPoints.formatPointsHTML(level.points)}<span class="points-label">POINT${level.points === 1 ? "" : "S"}</span></div>
       </div>
     `;
     levelList.appendChild(card);
@@ -116,7 +116,7 @@ function renderLeaderboard() {
     row.innerHTML = `
       <div class="player-rank">#${index + 1}</div>
       <div class="player-name">${escapeHTML(player.name)}</div>
-      <div class="player-points">${SSCLPoints.formatPoints(player.points)} Points <span aria-hidden="true">›</span></div>
+      <div class="player-points">${SSCLPoints.formatPointsHTML(player.points)} Points <span aria-hidden="true">›</span></div>
     `;
     playerList.appendChild(row);
   });

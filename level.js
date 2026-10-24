@@ -113,8 +113,8 @@ function renderLevel(level, packs = []) {
         <div class="detail-creator">Created by <strong>${escapeHTML(level.creator)}</strong></div>
       </div>
       <div class="detail-points">
-        ${SSCLPoints.formatPoints(level.points)}
-        <span>POINT${level.points === 1 ? "" : "S"}</span>
+        ${SSCLPoints.formatPointsHTML(level.points)}
+        <span class="points-label">POINT${level.points === 1 ? "" : "S"}</span>
       </div>
     </section>
 
@@ -149,7 +149,7 @@ function renderLevel(level, packs = []) {
         </div>
         <div class="info-row">
           <div class="info-label">POINTS</div>
-          <div class="info-value blue-value">${SSCLPoints.formatPoints(level.points)}</div>
+          <div class="info-value blue-value">${SSCLPoints.formatPointsHTML(level.points)}</div>
         </div>
       </aside>
     </section>

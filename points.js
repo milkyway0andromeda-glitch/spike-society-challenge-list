@@ -1,16 +1,16 @@
-// SSCL automatic scoring. Main List: #1-25; Extended List: #26 onward.
-// Values are calculated from placement, never from a manually entered points field.
+// SSCL automatic scoring: 50.00 at #1, 10.00 at #25; extended levels earn less.
+// Display decimals in a smaller font without changing the underlying score.
 (function (global) {
   function pointsForRank(rank) {
     rank = Math.floor(Number(rank));
     if (!Number.isFinite(rank) || rank < 1) return 0;
-    let points;
+    let value;
     if (rank <= 25) {
-      points = 5 + 45 * Math.pow((25 - rank) / 24, 1.55);
+      value = 10 + 40 * Math.pow((25 - rank) / 24, 1.35);
     } else {
-      points = 0.5 + 4.2 * Math.exp(-(rank - 26) / 35);
+      value = 1 + 8.75 * Math.exp(-(rank - 26) / 32);
     }
-    return Math.round(points * 100) / 100;
+    return Math.round(value * 100) / 100;
   }
   function applyPoints(levels) {
     if (!Array.isArray(levels)) return levels;
@@ -18,7 +18,11 @@
     return levels;
   }
   function formatPoints(points) {
-    return Number(Number(points || 0).toFixed(2)).toString();
+    return (Number(points) || 0).toFixed(2);
   }
-  global.SSCLPoints = { pointsForRank, applyPoints, formatPoints, MAIN_LIST_END: 25 };
+  function formatPointsHTML(points) {
+    const [whole, fraction] = formatPoints(points).split('.');
+    return `<span class="points-number">${whole}<span class="points-fraction">.${fraction}</span></span>`;
+  }
+  global.SSCLPoints = { pointsForRank, applyPoints, formatPoints, formatPointsHTML, MAIN_LIST_END: 25 };
 })(window);

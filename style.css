@@ -26,7 +26,7 @@ main{width:min(1120px,calc(100% - 30px));margin:0 auto;padding:38px 0 60px}
 .level-creator{color:var(--muted);font-size:13px}
 .level-side{padding:18px 20px;display:flex;align-items:center;justify-content:flex-end;border-left:1px solid var(--border)}
 .level-points{text-align:right;color:var(--blue);font-size:26px;font-weight:900}
-.level-points span{display:block;margin-top:3px;color:var(--muted-dark);font-size:10px;letter-spacing:1px}
+.level-points > .points-label{display:block;margin-top:3px;color:var(--muted-dark);font-size:10px;letter-spacing:1px}
 
 .leaderboard{overflow:hidden;border:1px solid var(--border);border-radius:6px}
 .player-card{min-height:76px;padding:0 24px;display:grid;grid-template-columns:78px 1fr auto;gap:12px;align-items:center;background:var(--panel);border-bottom:1px solid var(--border)}
@@ -45,7 +45,7 @@ main{width:min(1120px,calc(100% - 30px));margin:0 auto;padding:38px 0 60px}
 .detail-title-area{min-width:0;padding:24px 26px;display:flex;flex-direction:column;justify-content:center}.detail-title-area h1{margin:0;font-size:31px;overflow-wrap:anywhere}
 .detail-creator{margin-top:9px;color:var(--muted);font-size:14px}.detail-creator strong{color:#d7dbe1}
 .detail-points{padding:20px;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;border-left:1px solid var(--border);color:var(--blue);font-size:30px;font-weight:900}
-.detail-points span{margin-top:4px;color:var(--muted-dark);font-size:10px;letter-spacing:1px}
+.detail-points > .points-label{margin-top:4px;color:var(--muted-dark);font-size:10px;letter-spacing:1px}
 
 .detail-grid{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(260px,.75fr);gap:14px}
 .video-panel,.info-panel,.victors-panel{background:var(--panel);border:1px solid var(--border);border-radius:7px;overflow:hidden}
@@ -73,11 +73,11 @@ main{width:min(1120px,calc(100% - 30px));margin:0 auto;padding:38px 0 60px}
   main{width:min(100% - 18px,1120px);padding-top:24px}
   .level-card{min-height:105px;grid-template-columns:48px 125px minmax(0,1fr)}
   .level-rank{font-size:18px}.level-image-wrap{width:125px;height:105px}.level-info{padding:10px 12px}.level-name{margin-bottom:6px;font-size:17px}.level-creator{font-size:11px}
-  .level-side{grid-column:1/-1;min-height:42px;padding:7px 12px;border-left:0;border-top:1px solid var(--border)}.level-points{font-size:15px}.level-points span{display:inline;margin-left:4px}
+  .level-side{grid-column:1/-1;min-height:42px;padding:7px 12px;border-left:0;border-top:1px solid var(--border)}.level-points{font-size:15px}.level-points > .points-label{display:inline;margin-left:4px}
   .player-card{grid-template-columns:52px 1fr auto;padding:0 12px}
   .detail-hero{grid-template-columns:48px 125px minmax(0,1fr);min-height:110px}
   .detail-rank{font-size:19px}.detail-thumbnail-wrap{width:125px;height:110px}.detail-title-area{padding:10px 12px}.detail-title-area h1{font-size:19px}.detail-creator{font-size:11px}
-  .detail-points{grid-column:1/-1;min-height:48px;padding:8px 14px;flex-direction:row;gap:6px;align-items:center;justify-content:flex-end;border-left:0;border-top:1px solid var(--border);font-size:17px}.detail-points span{margin:0}
+  .detail-points{grid-column:1/-1;min-height:48px;padding:8px 14px;flex-direction:row;gap:6px;align-items:center;justify-content:flex-end;border-left:0;border-top:1px solid var(--border);font-size:17px}.detail-points > .points-label{margin:0}
   .detail-grid{grid-template-columns:1fr}.victor-row{grid-template-columns:48px 1fr}
 }
 
@@ -138,3 +138,7 @@ main{width:min(1120px,calc(100% - 30px));margin:0 auto;padding:38px 0 60px}
 .extended-list-divider small{color:#b5b6c5}
 .extended-list-complete{border-color:#6872a3;background:linear-gradient(95deg,#2b3049,#1b1c27);color:#c7d1ff}
 .extended-list-complete span{color:#c1c8e5}
+
+/* Decimal points: keep the whole-number value prominent, decimals quieter. */
+.points-number{display:inline!important;margin:0!important;color:inherit!important;font-size:inherit!important;font-weight:inherit!important;letter-spacing:normal!important;white-space:nowrap;font-variant-numeric:tabular-nums;}
+.points-fraction{display:inline!important;margin:0!important;color:inherit!important;font-size:.62em!important;font-weight:700!important;letter-spacing:0!important;opacity:.72;vertical-align:baseline;}
