@@ -6,6 +6,7 @@ let packs = [];
 let originalPacks = [];
 let fileShas = { levels: null, players: null, packs: null };
 let pendingImages = [];
+let pendingRenames = [];
 let changes = [];
 
 const $ = id => document.getElementById(id);
@@ -66,6 +67,8 @@ async function initMod() {
       "submit",
       addLevel
     );
+
+    $("move-level-select").addEventListener("change", syncEditLevelFields);
 
     $("move-level-form").addEventListener(
       "submit",
@@ -347,6 +350,41 @@ function moveLevel(event) {
   const oldRank =
     oldIndex + 1;
 
+  const newName = $("move-level-name").value.trim();
+  if (!newName) { alert("Enter a level name."); return; }
+  const oldName = level.name;
+  if (newName !== oldName) {
+    const newId = slugify(newName);
+    if (!newId || levels.some(other => other !== level && other.id === newId)) {
+      alert("That name conflicts with another level. Choose a unique name.");
+      return;
+    }
+    const oldId = level.id;
+    const oldImage = level.image;
+    const ext = /\.(png|jpg|jpeg|webp)$/i.exec(oldImage || "")?.[1];
+    const newImage = ext ? `images/${newId}.${ext}` : oldImage;
+    // Stage the image copy. The Worker copies it on Save, then deletes the old image.
+    if (newImage !== oldImage && oldImage) {
+      const pendingUpload = pendingImages.find(img => img.path === oldImage);
+      if (pendingUpload) pendingUpload.path = newImage;
+      else pendingRenames.push({ oldPath: oldImage, newPath: newImage });
+    }
+    level.name = newName;
+    level.id = newId;
+    level.image = newImage;
+    players.forEach(player => {
+      if (Array.isArray(player.completed)) {
+        player.completed = player.completed.map(id => id === oldId ? newId : id);
+      }
+    });
+    packs.forEach(pack => {
+      if (Array.isArray(pack.levelIds)) {
+        pack.levelIds = pack.levelIds.map(id => id === oldId ? newId : id);
+      }
+    });
+    changes.push(`Renamed ${oldName} to ${newName}`);
+  }
+
   const oldPoints =
     Number(
       level.points
@@ -625,6 +663,8 @@ function syncEditLevelFields() {
   $("move-level-rank").value =
     level.rank;
 
+  $("move-level-name").value = level.name;
+
   pointsInput.value =
     Number(
       level.points
@@ -754,6 +794,7 @@ function refreshPendingSummary() {
 }
 
 function discardChanges() {
+  pendingRenames = [];
   levels =
     structuredClone(
       originalLevels
@@ -832,6 +873,17 @@ async function saveChanges() {
       );
     }
 
+    for (const rename of pendingRenames) {
+      const response = await workerFetch("/rename-image", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(rename)
+      });
+      if (!response.ok) throw new Error(await workerError(response));
+    }
+
+    recordPositionHistoryForSave();
+
     fileShas.levels =
       await putJsonFile(
         "data/levels.json",
@@ -862,6 +914,7 @@ async function saveChanges() {
       );
 
     pendingImages = [];
+    pendingRenames = [];
 
     changes = [];
 
@@ -887,6 +940,25 @@ async function saveChanges() {
   } finally {
     $("discard-button").disabled =
       false;
+  }
+}
+
+function recordPositionHistoryForSave() {
+  const now = new Date().toISOString();
+  for (const level of levels) {
+    const previous = originalLevels.find(old => old.id === level.id ||
+      (old.gdId && old.gdId === level.gdId));
+    const history = Array.isArray(previous?.positionHistory)
+      ? structuredClone(previous.positionHistory) : [];
+    if (!previous) {
+      level.positionHistory = [{rank:level.rank,date:now,type:"added"}];
+    } else {
+      if (Number(previous.rank) !== Number(level.rank)) {
+        if (!history.length) history.push({rank:previous.rank,date:null,type:"initial"});
+        history.push({rank:level.rank,date:now,type:"moved"});
+      }
+      level.positionHistory = history;
+    }
   }
 }
 

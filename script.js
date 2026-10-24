@@ -98,12 +98,13 @@ function renderLeaderboard() {
     .sort((a, b) => b.points !== a.points ? b.points - a.points : a.name.localeCompare(b.name));
 
   rankedPlayers.forEach((player, index) => {
-    const row = document.createElement("div");
+    const row = document.createElement("a");
     row.className = "player-card";
+    row.href = `player.html?name=${encodeURIComponent(player.name)}`;
     row.innerHTML = `
       <div class="player-rank">#${index + 1}</div>
       <div class="player-name">${escapeHTML(player.name)}</div>
-      <div class="player-points">${player.points} Points</div>
+      <div class="player-points">${player.points} Points <span aria-hidden="true">›</span></div>
     `;
     playerList.appendChild(row);
   });
@@ -128,6 +129,9 @@ function escapeHTML(value) {
 }
 function escapeAttribute(value) { return escapeHTML(value); }
 
+if (location.hash === "#leaderboard") {
+  document.querySelector('.nav-button[data-page="leaderboard"]').click();
+}
 if (location.hash === "#packs") {
   document.querySelector('.nav-button[data-page="packs"]').click();
 }

@@ -30,6 +30,10 @@ export default {
         return getMe(request, env);
       }
 
+      if (url.pathname === "/rename-image") {
+        return renameImage(request, env);
+      }
+
       if (url.pathname === "/repo-file") {
         return repoFile(request, env);
       }
@@ -614,6 +618,37 @@ async function getMe(
 // ============================================================
 // REPO FILE
 // ============================================================
+
+
+// Copy the thumbnail to its new slug, then remove the old GitHub file.
+// Requires the same authenticated MOD permissions as /repo-file.
+async function renameImage(request, env) {
+  if (request.method !== "POST") return json({message:"Method not allowed"},405,env);
+  const auth = await authorize(request, env);
+  if (!auth.ok || !auth.canMod) return json({message:"MOD access required"},403,env);
+  const {oldPath, newPath} = await request.json();
+  const valid = path => typeof path === "string" && /^images\/[A-Za-z0-9._-]+\.(png|jpe?g|webp)$/i.test(path) && safeRepoPath(path);
+  if (!valid(oldPath) || !valid(newPath) || oldPath === newPath) return json({message:"Invalid image paths"},400,env);
+  const base = `https://api.github.com/repos/${OWNER}/${REPO}/contents/`;
+  const oldResp = await githubApi(base + encodeRepoPath(oldPath) + `?ref=${encodeURIComponent(BRANCH)}`,auth.session.githubToken);
+  if (!oldResp.ok) return json({message:"Original thumbnail could not be found"},oldResp.status,env);
+  const oldFile = await oldResp.json();
+  if (oldFile.type !== "file" || !oldFile.content || !oldFile.sha) return json({message:"Invalid thumbnail"},400,env);
+  const destResp = await githubApi(base + encodeRepoPath(newPath) + `?ref=${encodeURIComponent(BRANCH)}`,auth.session.githubToken);
+  if (destResp.ok) return json({message:"New thumbnail filename already exists"},409,env);
+  if (destResp.status !== 404) return json({message:"Could not check destination"},destResp.status,env);
+  const put = await githubApi(base + encodeRepoPath(newPath),auth.session.githubToken,{
+    method:"PUT",headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({message:`Rename thumbnail to ${newPath}`,content:oldFile.content.replace(/\s/g,""),branch:BRANCH})
+  });
+  if (!put.ok) {const data=await put.json();return json({message:data.message || "Image copy failed"},put.status,env);}
+  const del = await githubApi(base + encodeRepoPath(oldPath),auth.session.githubToken,{
+    method:"DELETE",headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({message:`Remove old thumbnail ${oldPath}`,sha:oldFile.sha,branch:BRANCH})
+  });
+  if (!del.ok) {const data=await del.json();return json({message:`New thumbnail saved but old file removal failed: ${data.message || del.status}`},del.status,env);}
+  return json({ok:true},200,env);
+}
 
 async function repoFile(
   request,

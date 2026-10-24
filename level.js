@@ -18,7 +18,21 @@ async function loadLevel() {
     renderLevel(level, packs);
   } catch (error) {
     console.error(error);
-    levelPage.innerHTML = `
+    const history = Array.isArray(level.positionHistory) ? level.positionHistory : [];
+  const reversed = [...history].reverse();
+  const positionHistoryHTML = history.length ? `<div class="position-history-list">${reversed.map((entry, i) => {
+    const older = reversed[i+1];
+    const from = older ? Number(older.rank) : null;
+    const to = Number(entry.rank);
+    const movement = from === null ? "First recorded position"
+      : to < from ? `Moved up ${from-to} place(s)`
+      : to > from ? `Moved down ${to-from} place(s)` : "Position unchanged";
+    const date = entry.date && !Number.isNaN(Date.parse(entry.date))
+      ? new Date(entry.date).toLocaleDateString() : "Earlier position (date unavailable)";
+    return `<div class="position-history-row"><strong>#${to}</strong><div>${escapeHTML(movement)}<small>${escapeHTML(date)}</small></div></div>`;
+  }).join("")}</div>` : `<div class="no-victors">Current position: #${level.rank}. History begins with the next saved placement change.</div>`;
+
+  levelPage.innerHTML = `
       <div class="error-message">
         Challenge could not be loaded.<br><br>
         <a href="index.html">← Back to list</a>
@@ -116,6 +130,10 @@ function renderLevel(level, packs = []) {
     </section>
 
     ${packs.some(pack => (pack.levelIds || []).includes(level.id)) ? `<section class="victors-panel"><div class="panel-title">FEATURED IN PACKS</div><div class="pack-tag-list">${packs.filter(pack => (pack.levelIds || []).includes(level.id)).map(pack => `<a class="pack-tag" style="--pack-color:${/^#[0-9a-fA-F]{6}$/.test(pack.color || "") ? pack.color : "#55aaff"}" href="pack.html?id=${encodeURIComponent(pack.id)}">${escapeHTML(pack.name)}</a>`).join("")}</div></section>` : ""}
+    <section class="victors-panel position-history-panel">
+      <div class="panel-title">POSITION HISTORY</div>
+      ${positionHistoryHTML}
+    </section>
     <section class="victors-panel">
       <div class="panel-title victors-title">
         <span>VICTORS</span>
