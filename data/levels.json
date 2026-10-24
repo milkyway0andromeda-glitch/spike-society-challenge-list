@@ -4,7 +4,7 @@
     "gdId": 148983932,
     "rank": 1,
     "name": "Pain Trials",
-    "points": 70,
+    "points": 75,
     "creator": "Quova",
     "verifier": "Quova",
     "video": "https://www.youtube.com/watch?v=WBrgR9oxKcA",
@@ -16,7 +16,7 @@
     "gdId": 147540400,
     "rank": 2,
     "name": "Absolute Garbage",
-    "points": 65,
+    "points": 70,
     "creator": "Blu",
     "verifier": "AegisXD0",
     "video": "https://www.youtube.com/watch?v=9PqVFynRnqQ",
@@ -30,7 +30,7 @@
     "gdId": 147091256,
     "rank": 3,
     "name": "UNNAMED CONCRETE",
-    "points": 60,
+    "points": 65,
     "creator": "Muffles",
     "verifier": "AegisXD0",
     "video": "https://www.youtube.com/watch?v=gWJEgVGYfLM",
@@ -41,9 +41,23 @@
     ]
   },
   {
+    "id": "denial",
+    "gdId": 149890326,
+    "rank": 4,
+    "name": "Denial",
+    "points": 60,
+    "creator": "Maow",
+    "verifier": "Maow",
+    "video": "https://youtu.be/Zh0hjkGiWrE",
+    "image": "images/denial.png",
+    "victors": [
+      "AegisXD0"
+    ]
+  },
+  {
     "id": "dysphoria",
     "gdId": 148811532,
-    "rank": 4,
+    "rank": 5,
     "name": "Dysphoria",
     "points": 55,
     "creator": "Maow",
@@ -58,7 +72,7 @@
   {
     "id": "mega-trials",
     "gdId": 120911543,
-    "rank": 5,
+    "rank": 6,
     "name": "Mega Trials",
     "points": 50,
     "creator": "Quova",
@@ -72,7 +86,7 @@
   {
     "id": "buff-trials",
     "gdId": 114124401,
-    "rank": 6,
+    "rank": 7,
     "name": "Buff Trials",
     "points": 45,
     "creator": "Quova",
@@ -89,7 +103,7 @@
   {
     "id": "spring",
     "gdId": 146606522,
-    "rank": 7,
+    "rank": 8,
     "name": "Spring",
     "points": 40,
     "creator": "AegisXD0",
@@ -103,7 +117,7 @@
   {
     "id": "waveplex",
     "gdId": 149125551,
-    "rank": 8,
+    "rank": 9,
     "name": "WAVEPLEX",
     "points": 35,
     "creator": "Blu",
@@ -117,7 +131,7 @@
   {
     "id": "dead-love",
     "gdId": 149168359,
-    "rank": 9,
+    "rank": 10,
     "name": "DEAD LOVE",
     "points": 30,
     "creator": "Muffles",
@@ -131,7 +145,7 @@
   {
     "id": "ach-funk",
     "gdId": 148859634,
-    "rank": 10,
+    "rank": 11,
     "name": "ACH Funk",
     "points": 25,
     "creator": "Maow",
@@ -147,7 +161,7 @@
   {
     "id": "absolute-masterpeice",
     "gdId": 147539403,
-    "rank": 11,
+    "rank": 12,
     "name": "Absolute Masterpeice",
     "points": 20,
     "creator": "Blu",
@@ -163,7 +177,7 @@
   {
     "id": "true-toppat-material",
     "gdId": 108491792,
-    "rank": 12,
+    "rank": 13,
     "name": "True Toppat Material",
     "points": 18,
     "creator": "Playerano6",
@@ -179,7 +193,7 @@
   {
     "id": "the-red-haze",
     "gdId": 146884854,
-    "rank": 13,
+    "rank": 14,
     "name": "The Red Haze",
     "points": 16,
     "creator": "Muffles",
@@ -196,7 +210,7 @@
   {
     "id": "4u2beat",
     "gdId": 118045844,
-    "rank": 14,
+    "rank": 15,
     "name": "4u2Beat",
     "points": 14,
     "creator": "Muffles",
@@ -213,7 +227,7 @@
   {
     "id": "circuspircus",
     "gdId": 118051289,
-    "rank": 15,
+    "rank": 16,
     "name": "CircusPircus",
     "points": 12,
     "creator": "Muffles",
@@ -230,7 +244,7 @@
   {
     "id": "light-breeze",
     "gdId": 114725754,
-    "rank": 16,
+    "rank": 17,
     "name": "LIGHT BREEZE",
     "points": 10,
     "creator": "Cheddar",
@@ -245,7 +259,7 @@
   {
     "id": "huh",
     "gdId": 118138753,
-    "rank": 17,
+    "rank": 18,
     "name": "Huh",
     "points": 8,
     "creator": "Quova",
@@ -262,7 +276,7 @@
   {
     "id": "ship-challenge",
     "gdId": 148605172,
-    "rank": 18,
+    "rank": 19,
     "name": "Ship Challenge",
     "points": 6,
     "creator": "mrchuppins",
@@ -279,7 +293,7 @@
   {
     "id": "c",
     "gdId": 114860572,
-    "rank": 19,
+    "rank": 20,
     "name": "C",
     "points": 4,
     "creator": "Cheddar",
@@ -295,7 +309,7 @@
   {
     "id": "muffles-challenge",
     "gdId": 115935975,
-    "rank": 20,
+    "rank": 21,
     "name": "Muffles Challenge",
     "points": 2,
     "creator": "Myst",
@@ -314,7 +328,7 @@
   {
     "id": "big-steppin",
     "gdId": 114860847,
-    "rank": 21,
+    "rank": 22,
     "name": "Big Steppin",
     "points": 1,
     "creator": "Cheddar",
