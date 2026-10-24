@@ -17,7 +17,22 @@
     <div class="loading-message">Loading challenge...</div>
   </div>
 </main>
-<script src="auth.js"></script>
-<script src="level.js"></script>
+<script src="auth.js?v=sscl-20261024-fix"></script>
+<script>
+  // Show an actionable error instead of leaving the loading screen forever.
+  window.addEventListener("error", function (event) {
+    const container = document.getElementById("level-page");
+    if (container && container.textContent.includes("Loading challenge")) {
+      container.innerHTML = '<div class="error-message">Challenge script failed to load or run. Refresh the page or check the browser console.<br><a href="index.html">← Back to list</a></div>';
+    }
+  });
+  window.setTimeout(function () {
+    const container = document.getElementById("level-page");
+    if (container && container.textContent.includes("Loading challenge")) {
+      container.innerHTML = '<div class="error-message">Challenge loading timed out. Check that level.js and data/levels.json are published on GitHub Pages.<br><a href="index.html">← Back to list</a></div>';
+    }
+  }, 15000);
+</script>
+<script src="level.js?v=sscl-20261024-fix" onerror="document.getElementById('level-page').textContent='Unable to load level.js from the website. Check GitHub Pages deployment.'"></script>
 </body>
 </html>

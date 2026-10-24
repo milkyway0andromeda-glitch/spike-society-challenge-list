@@ -17,3 +17,16 @@
 .admin-workspace{transition:opacity .15s}.disabled-workspace{opacity:.45;pointer-events:none}
 .pending-summary{color:#d7dbe1;line-height:1.6}.pending-summary ul{margin:8px 0 0;padding-left:20px}.pending-summary li{margin:3px 0;color:var(--muted)}
 @media(max-width:700px){.form-grid,.compact-form{grid-template-columns:1fr}.wide-field{grid-column:auto}.admin-inline{flex-direction:column}}
+
+/* Organized MOD workspace */
+.mod-jump-nav{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 22px;position:sticky;top:62px;z-index:5;background:#101217;padding:12px;border:1px solid #333943;border-radius:10px}
+.mod-jump-nav a{color:#e4ebf7;text-decoration:none;padding:10px 17px;background:#222831;border:1px solid #3a4350;border-radius:7px;font-weight:700;font-size:13px}
+.mod-jump-nav a:hover,.mod-jump-nav a:focus{background:#30425a;border-color:#6399d4}
+.mod-tool-group{border:1px solid #313947;border-radius:13px;padding:18px;margin:0 0 26px;background:rgba(255,255,255,.015);scroll-margin-top:145px}
+.mod-group-heading{margin:0 0 18px;padding:0 4px 12px;border-bottom:1px solid #343b47}
+.mod-group-heading h2{font-size:18px;letter-spacing:1px;margin:0 0 6px;color:#f4f6fa}
+.mod-group-heading p{font-size:13px;margin:0;color:#aab4c3}
+.mod-tool-group .admin-panel{margin-bottom:15px}
+.mod-tool-group .admin-panel:last-child{margin-bottom:0}
+#mod-save{scroll-margin-top:145px;border-color:#45658c}
+@media(max-width:600px){.mod-tool-group{padding:10px}.mod-jump-nav{top:0;position:relative}}

@@ -1,13 +1,1 @@
-[
-  {
-    "id": "trial-pack",
-    "name": "Trial Pack",
-    "color": "#ff0000",
-    "gradient": "#00fbff",
-    "levelIds": [
-      "pain-trials",
-      "mega-trials",
-      "buff-trials"
-    ]
-  }
-]
+[]

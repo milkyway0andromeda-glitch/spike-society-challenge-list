@@ -6,13 +6,15 @@ async function loadLevel() {
     const levelId = params.get("id");
     if (!levelId) throw new Error("No challenge ID supplied.");
 
-    const response = await fetch("data/levels.json");
+    const response = await fetch("data/levels.json", { cache: "no-store", signal: AbortSignal.timeout(12000) });
     if (!response.ok) throw new Error(`levels.json returned ${response.status}`);
 
     const levels = await response.json();
-    const packsResponse = await fetch("data/packs.json").catch(() => null);
-    const packs = packsResponse && packsResponse.ok ? await packsResponse.json() : [];
-    const level = levels.find(item => item.id === levelId);
+    const packsResponse = await fetch("data/packs.json", { cache: "no-store", signal: AbortSignal.timeout(6000) }).catch(() => null);
+    const packData = packsResponse && packsResponse.ok ? await packsResponse.json().catch(() => []) : [];
+    const packs = Array.isArray(packData) ? packData : [];
+    if (!Array.isArray(levels)) throw new Error("levels.json is not an array");
+    const level = levels.find(item => String(item.id) === String(levelId));
     if (!level) throw new Error(`Challenge "${levelId}" was not found.`);
 
     renderLevel(level, packs);
@@ -34,7 +36,7 @@ async function loadLevel() {
 
   levelPage.innerHTML = `
       <div class="error-message">
-        Challenge could not be loaded.<br><br>
+        Challenge could not be loaded.<br><small>${escapeHTML(error.message)}</small><br><br>
         <a href="index.html">← Back to list</a>
       </div>
     `;

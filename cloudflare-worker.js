@@ -623,6 +623,7 @@ async function getMe(
 // Copy the thumbnail to its new slug, then remove the old GitHub file.
 // Requires the same authenticated MOD permissions as /repo-file.
 async function renameImage(request, env) {
+  if (request.method === "OPTIONS") return corsPreflight(env);
   if (request.method !== "POST") return json({message:"Method not allowed"},405,env);
   const auth = await authorize(request, env);
   if (!auth.ok || !auth.canMod) return json({message:"MOD access required"},403,env);
