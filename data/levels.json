@@ -665,11 +665,32 @@
     ]
   },
   {
+    "id": "bloodied-grounds",
+    "gdId": 151172450,
+    "rank": 24,
+    "name": "Bloodied Grounds",
+    "points": 10.55,
+    "creator": "Floppa",
+    "verifier": "Floppa",
+    "video": "https://youtu.be/VIUuYc8o6eU",
+    "image": "images/bloodied-grounds.jpg",
+    "victors": [
+      "AegisXD0"
+    ],
+    "positionHistory": [
+      {
+        "rank": 24,
+        "date": "2026-10-24T22:03:49.613Z",
+        "type": "added"
+      }
+    ]
+  },
+  {
     "id": "muffles-challenge",
     "gdId": 115935975,
-    "rank": 24,
+    "rank": 25,
     "name": "Muffles Challenge",
-    "points": 10.55,
+    "points": 10,
     "creator": "Myst",
     "verifier": "Myst",
     "video": "https://www.youtube.com/watch?v=nL-BvQYFB2U",
@@ -697,15 +718,20 @@
         "rank": 24,
         "date": "2026-10-24T20:06:40.401Z",
         "type": "moved"
+      },
+      {
+        "rank": 25,
+        "date": "2026-10-24T22:03:49.613Z",
+        "type": "moved"
       }
     ]
   },
   {
     "id": "big-steppin",
     "gdId": 114860847,
-    "rank": 25,
+    "rank": 26,
     "name": "Big Steppin",
-    "points": 10,
+    "points": 9.75,
     "creator": "Cheddar",
     "verifier": "Cheddar",
     "video": "https://youtube.com/shorts/-4xxlof2RwI",
@@ -732,6 +758,11 @@
       {
         "rank": 25,
         "date": "2026-10-24T20:06:40.401Z",
+        "type": "moved"
+      },
+      {
+        "rank": 26,
+        "date": "2026-10-24T22:03:49.613Z",
         "type": "moved"
       }
     ]
