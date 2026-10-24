@@ -9,7 +9,10 @@
     "verifier": "Quova",
     "video": "https://www.youtube.com/watch?v=WBrgR9oxKcA",
     "image": "images/pain-trials.jpg",
-    "victors": []
+    "victors": [
+      "AegisXD0"
+    ],
+    "positionHistory": []
   },
   {
     "id": "absolute-garbage",
@@ -23,7 +26,8 @@
     "image": "images/absolute-garbage.png",
     "victors": [
       "Maow"
-    ]
+    ],
+    "positionHistory": []
   },
   {
     "id": "unnamed-concrete",
@@ -38,7 +42,8 @@
     "victors": [
       "Quova",
       "Maow"
-    ]
+    ],
+    "positionHistory": []
   },
   {
     "id": "dysphoria",
@@ -53,7 +58,8 @@
     "victors": [
       "AegisXD0",
       "LimeTime"
-    ]
+    ],
+    "positionHistory": []
   },
   {
     "id": "mega-trials",
@@ -66,8 +72,10 @@
     "video": "https://www.youtube.com/watch?v=j9_zXbNkRC4",
     "image": "images/mega-trials.png",
     "victors": [
-      "LMB8"
-    ]
+      "LMB8",
+      "AegisXD0"
+    ],
+    "positionHistory": []
   },
   {
     "id": "buff-trials",
@@ -84,7 +92,8 @@
       "AegisXD0",
       "LimeTime",
       "Maow"
-    ]
+    ],
+    "positionHistory": []
   },
   {
     "id": "spring",
@@ -98,7 +107,8 @@
     "image": "images/spring.png",
     "victors": [
       "AegisXD0"
-    ]
+    ],
+    "positionHistory": []
   },
   {
     "id": "waveplex",
@@ -112,7 +122,8 @@
     "image": "images/waveplex.jpg",
     "victors": [
       "Quova"
-    ]
+    ],
+    "positionHistory": []
   },
   {
     "id": "dead-love",
@@ -126,7 +137,8 @@
     "image": "images/dead-love.png",
     "victors": [
       "AegisXD0"
-    ]
+    ],
+    "positionHistory": []
   },
   {
     "id": "ach-funk",
@@ -142,7 +154,8 @@
       "AegisXD0",
       "Quova",
       "LimeTime"
-    ]
+    ],
+    "positionHistory": []
   },
   {
     "id": "absolute-masterpeice",
@@ -158,7 +171,8 @@
       "LimeTime",
       "Maow",
       "Quova"
-    ]
+    ],
+    "positionHistory": []
   },
   {
     "id": "true-toppat-material",
@@ -174,7 +188,8 @@
       "AegisXD0",
       "LimeTime",
       "Maow"
-    ]
+    ],
+    "positionHistory": []
   },
   {
     "id": "the-red-haze",
@@ -191,7 +206,8 @@
       "AegisXD0",
       "LimeTime",
       "Maow"
-    ]
+    ],
+    "positionHistory": []
   },
   {
     "id": "4u2beat",
@@ -208,7 +224,8 @@
       "AegisXD0",
       "LimeTime",
       "Maow"
-    ]
+    ],
+    "positionHistory": []
   },
   {
     "id": "circuspircus",
@@ -225,7 +242,8 @@
       "AegisXD0",
       "LMB8",
       "Quova"
-    ]
+    ],
+    "positionHistory": []
   },
   {
     "id": "light-breeze",
@@ -240,7 +258,8 @@
     "victors": [
       "LimeTime",
       "AegisXD0"
-    ]
+    ],
+    "positionHistory": []
   },
   {
     "id": "huh",
@@ -257,7 +276,8 @@
       "AegisXD0",
       "Muffles",
       "Maow"
-    ]
+    ],
+    "positionHistory": []
   },
   {
     "id": "ship-challenge",
@@ -274,7 +294,8 @@
       "AegisXD0",
       "Muffles",
       "Maow"
-    ]
+    ],
+    "positionHistory": []
   },
   {
     "id": "c",
@@ -290,7 +311,8 @@
       "LimeTime",
       "AegisXD0",
       "Maow"
-    ]
+    ],
+    "positionHistory": []
   },
   {
     "id": "muffles-challenge",
@@ -309,7 +331,8 @@
       "AegisXD0",
       "Maow",
       "Quova"
-    ]
+    ],
+    "positionHistory": []
   },
   {
     "id": "big-steppin",
@@ -328,6 +351,7 @@
       "Muffles",
       "Maow",
       "mrchuppins"
-    ]
+    ],
+    "positionHistory": []
   }
 ]
