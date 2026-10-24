@@ -65,20 +65,42 @@ function renderLevel(level, packs = []) {
       </div>
     `;
 
-    const history = Array.isArray(level.positionHistory) ? level.positionHistory : [];
-  const reversed = [...history].reverse();
-  const positionHistoryHTML = history.length ? `<div class="position-history-list">${reversed.map((entry, i) => {
-    const older = reversed[i+1];
-    const from = older ? Number(older.rank) : null;
-    const to = Number(entry.rank);
-    const movement = from === null ? "First recorded position"
-      : to < from ? `Moved up ${from-to} place(s)`
-      : to > from ? `Moved down ${to-from} place(s)` : "Position unchanged";
-    const date = entry.date && !Number.isNaN(Date.parse(entry.date))
-      ? new Date(entry.date).toLocaleDateString() : "Earlier position (date unavailable)";
-    return `<div class="position-history-row"><strong>#${to}</strong><div>${escapeHTML(movement)}<small>${escapeHTML(date)}</small></div></div>`;
-  }).join("")}</div>` : `<div class="no-victors">Current position: #${level.rank}. History begins with the next saved placement change.</div>`;
-
+  const history = Array.isArray(level.positionHistory) ? level.positionHistory : [];
+  // History is stored oldest first. Display the most recent placement first.
+  const orderedHistory = [...history].reverse();
+  const positionHistoryHTML = history.length
+    ? `<div class="position-history-scroll"><table class="position-history-table">
+        <thead><tr><th scope="col">Position</th><th scope="col">Change</th><th scope="col">Cause</th><th scope="col">Date</th></tr></thead>
+        <tbody>${orderedHistory.map((entry, index) => {
+          const older = orderedHistory[index + 1];
+          const current = Number(entry.rank);
+          const previous = older ? Number(older.rank) : null;
+          const validRanks = Number.isFinite(current) && (previous === null || Number.isFinite(previous));
+          const diff = validRanks && previous !== null ? previous - current : 0;
+          const direction = diff > 0 ? "up" : diff < 0 ? "down" : "none";
+          const change = diff > 0
+            ? `<span class="history-arrow" aria-label="Up">↑</span><span>${Math.abs(diff)}</span>`
+            : diff < 0
+              ? `<span class="history-arrow" aria-label="Down">↓</span><span>${Math.abs(diff)}</span>`
+              : `<span class="history-no-change">—</span>`;
+          const cause = typeof entry.cause === "string" && entry.cause.trim()
+            ? entry.cause.trim()
+            : previous === null
+              ? (entry.type === "added" ? "Added to the list" : "First recorded position")
+              : diff > 0 ? `Moved up to #${current}`
+              : diff < 0 ? `Moved down to #${current}`
+              : "Position unchanged";
+          const date = entry.date && !Number.isNaN(Date.parse(entry.date))
+            ? new Date(entry.date).toLocaleDateString("en-US", { year: "numeric", month: "numeric", day: "numeric" })
+            : "Date unavailable";
+          return `<tr class="history-${direction}">
+            <td class="history-rank">#${escapeHTML(current)}</td>
+            <td><span class="history-change">${change}</span></td>
+            <td class="history-cause">${escapeHTML(cause)}</td>
+            <td class="history-date">${escapeHTML(date)}</td>
+          </tr>`;
+        }).join("")}</tbody></table></div>`
+    : `<div class="no-victors">No placement changes recorded yet. Current position: #${escapeHTML(level.rank)}.</div>`;
 
   levelPage.innerHTML = `
     <section class="detail-hero">
@@ -133,10 +155,10 @@ function renderLevel(level, packs = []) {
     </section>
 
     ${packs.some(pack => (pack.levelIds || []).includes(level.id)) ? `<section class="victors-panel"><div class="panel-title">FEATURED IN PACKS</div><div class="pack-tag-list">${packs.filter(pack => (pack.levelIds || []).includes(level.id)).map(pack => `<a class="pack-tag" style="--pack-color:${/^#[0-9a-fA-F]{6}$/.test(pack.color || "") ? pack.color : "#55aaff"}" href="pack.html?id=${encodeURIComponent(pack.id)}">${escapeHTML(pack.name)}</a>`).join("")}</div></section>` : ""}
-    <section class="victors-panel position-history-panel">
-      <div class="panel-title">POSITION HISTORY</div>
-      ${positionHistoryHTML}
-    </section>
+    <details class="victors-panel position-history-panel">
+      <summary class="panel-title position-history-toggle"><span>POSITION HISTORY</span><span class="position-history-toggle-right"><span class="position-history-count">${history.length} ${history.length === 1 ? "ENTRY" : "ENTRIES"}</span><span class="position-history-chevron" aria-hidden="true"></span></span></summary>
+      <div class="position-history-content">${positionHistoryHTML}</div>
+    </details>
     <section class="victors-panel">
       <div class="panel-title victors-title">
         <span>VICTORS</span>
