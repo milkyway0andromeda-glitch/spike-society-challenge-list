@@ -4,7 +4,7 @@
     "gdId": 148983932,
     "rank": 1,
     "name": "Pain Trials",
-    "points": 75,
+    "points": 80,
     "creator": "Quova",
     "verifier": "Quova",
     "video": "https://www.youtube.com/watch?v=WBrgR9oxKcA",
@@ -19,7 +19,7 @@
     "gdId": 147540400,
     "rank": 2,
     "name": "Absolute Garbage",
-    "points": 70,
+    "points": 75,
     "creator": "Blu",
     "verifier": "AegisXD0",
     "video": "https://www.youtube.com/watch?v=9PqVFynRnqQ",
@@ -34,7 +34,7 @@
     "gdId": 147091256,
     "rank": 3,
     "name": "UNNAMED CONCRETE",
-    "points": 65,
+    "points": 70,
     "creator": "Muffles",
     "verifier": "AegisXD0",
     "video": "https://www.youtube.com/watch?v=gWJEgVGYfLM",
@@ -50,7 +50,7 @@
     "gdId": 149890326,
     "rank": 4,
     "name": "Denial",
-    "points": 60,
+    "points": 65,
     "creator": "Maow",
     "verifier": "Maow",
     "video": "https://youtu.be/Zh0hjkGiWrE",
@@ -71,7 +71,7 @@
     "gdId": 148811532,
     "rank": 5,
     "name": "Disphoria",
-    "points": 55,
+    "points": 60,
     "creator": "Maow",
     "verifier": "Maow",
     "video": "https://www.youtube.com/watch?v=xqOPolzAGXs",
@@ -98,7 +98,7 @@
     "gdId": 120911543,
     "rank": 6,
     "name": "Mega Trials",
-    "points": 50,
+    "points": 55,
     "creator": "Quova",
     "verifier": "Quova",
     "video": "https://www.youtube.com/watch?v=j9_zXbNkRC4",
@@ -121,9 +121,28 @@
     ]
   },
   {
+    "id": "super-clutter",
+    "gdId": 148695265,
+    "rank": 7,
+    "name": "Super Clutter",
+    "points": 50,
+    "creator": "Blu",
+    "verifier": "AegisXD0",
+    "video": "https://www.youtube.com/watch?v=ID1DagOfYSw",
+    "image": "images/super-clutter.jpg",
+    "victors": [],
+    "positionHistory": [
+      {
+        "rank": 7,
+        "date": "2026-10-24T18:44:52.329Z",
+        "type": "added"
+      }
+    ]
+  },
+  {
     "id": "buff-trials",
     "gdId": 114124401,
-    "rank": 7,
+    "rank": 8,
     "name": "Buff Trials",
     "points": 45,
     "creator": "Quova",
@@ -146,13 +165,18 @@
         "rank": 7,
         "date": "2026-10-24T05:30:05.681Z",
         "type": "moved"
+      },
+      {
+        "rank": 8,
+        "date": "2026-10-24T18:44:52.329Z",
+        "type": "moved"
       }
     ]
   },
   {
     "id": "spring",
     "gdId": 146606522,
-    "rank": 8,
+    "rank": 9,
     "name": "Spring",
     "points": 40,
     "creator": "AegisXD0",
@@ -173,13 +197,18 @@
         "rank": 8,
         "date": "2026-10-24T05:30:05.681Z",
         "type": "moved"
+      },
+      {
+        "rank": 9,
+        "date": "2026-10-24T18:44:52.329Z",
+        "type": "moved"
       }
     ]
   },
   {
     "id": "waveplex",
     "gdId": 149125551,
-    "rank": 9,
+    "rank": 10,
     "name": "WAVEPLEX",
     "points": 35,
     "creator": "Blu",
@@ -201,13 +230,18 @@
         "rank": 9,
         "date": "2026-10-24T05:30:05.681Z",
         "type": "moved"
+      },
+      {
+        "rank": 10,
+        "date": "2026-10-24T18:44:52.329Z",
+        "type": "moved"
       }
     ]
   },
   {
     "id": "dead-love",
     "gdId": 149168359,
-    "rank": 10,
+    "rank": 11,
     "name": "DEAD LOVE",
     "points": 30,
     "creator": "Muffles",
@@ -228,13 +262,18 @@
         "rank": 10,
         "date": "2026-10-24T05:30:05.681Z",
         "type": "moved"
+      },
+      {
+        "rank": 11,
+        "date": "2026-10-24T18:44:52.329Z",
+        "type": "moved"
       }
     ]
   },
   {
     "id": "ach-funk",
     "gdId": 148859634,
-    "rank": 11,
+    "rank": 12,
     "name": "ACH Funk",
     "points": 25,
     "creator": "Maow",
@@ -256,13 +295,18 @@
         "rank": 11,
         "date": "2026-10-24T05:30:05.681Z",
         "type": "moved"
+      },
+      {
+        "rank": 12,
+        "date": "2026-10-24T18:44:52.329Z",
+        "type": "moved"
       }
     ]
   },
   {
     "id": "absolute-masterpeice",
     "gdId": 147539403,
-    "rank": 12,
+    "rank": 13,
     "name": "Absolute Masterpeice",
     "points": 20,
     "creator": "Blu",
@@ -284,13 +328,18 @@
         "rank": 12,
         "date": "2026-10-24T05:30:05.681Z",
         "type": "moved"
+      },
+      {
+        "rank": 13,
+        "date": "2026-10-24T18:44:52.329Z",
+        "type": "moved"
       }
     ]
   },
   {
     "id": "true-toppat-material",
     "gdId": 108491792,
-    "rank": 13,
+    "rank": 14,
     "name": "True Toppat Material",
     "points": 18,
     "creator": "Playerano6",
@@ -312,13 +361,18 @@
         "rank": 13,
         "date": "2026-10-24T05:30:05.681Z",
         "type": "moved"
+      },
+      {
+        "rank": 14,
+        "date": "2026-10-24T18:44:52.329Z",
+        "type": "moved"
       }
     ]
   },
   {
     "id": "the-red-haze",
     "gdId": 146884854,
-    "rank": 14,
+    "rank": 15,
     "name": "The Red Haze",
     "points": 16,
     "creator": "Muffles",
@@ -341,13 +395,18 @@
         "rank": 14,
         "date": "2026-10-24T05:30:05.681Z",
         "type": "moved"
+      },
+      {
+        "rank": 15,
+        "date": "2026-10-24T18:44:52.329Z",
+        "type": "moved"
       }
     ]
   },
   {
     "id": "4u2beat",
     "gdId": 118045844,
-    "rank": 15,
+    "rank": 16,
     "name": "4u2Beat",
     "points": 14,
     "creator": "Muffles",
@@ -370,13 +429,18 @@
         "rank": 15,
         "date": "2026-10-24T05:30:05.681Z",
         "type": "moved"
+      },
+      {
+        "rank": 16,
+        "date": "2026-10-24T18:44:52.329Z",
+        "type": "moved"
       }
     ]
   },
   {
     "id": "circuspircus",
     "gdId": 118051289,
-    "rank": 16,
+    "rank": 17,
     "name": "CircusPircus",
     "points": 12,
     "creator": "Muffles",
@@ -400,13 +464,18 @@
         "rank": 16,
         "date": "2026-10-24T05:30:05.681Z",
         "type": "moved"
+      },
+      {
+        "rank": 17,
+        "date": "2026-10-24T18:44:52.329Z",
+        "type": "moved"
       }
     ]
   },
   {
     "id": "light-breeze",
     "gdId": 114725754,
-    "rank": 17,
+    "rank": 18,
     "name": "LIGHT BREEZE",
     "points": 10,
     "creator": "Cheddar",
@@ -428,13 +497,18 @@
         "rank": 17,
         "date": "2026-10-24T05:30:05.681Z",
         "type": "moved"
+      },
+      {
+        "rank": 18,
+        "date": "2026-10-24T18:44:52.329Z",
+        "type": "moved"
       }
     ]
   },
   {
     "id": "huh",
     "gdId": 118138753,
-    "rank": 18,
+    "rank": 19,
     "name": "Huh",
     "points": 8,
     "creator": "Quova",
@@ -457,13 +531,18 @@
         "rank": 18,
         "date": "2026-10-24T05:30:05.681Z",
         "type": "moved"
+      },
+      {
+        "rank": 19,
+        "date": "2026-10-24T18:44:52.329Z",
+        "type": "moved"
       }
     ]
   },
   {
     "id": "ship-challenge",
     "gdId": 148605172,
-    "rank": 19,
+    "rank": 20,
     "name": "Ship Challenge",
     "points": 6,
     "creator": "mrchuppins",
@@ -486,13 +565,18 @@
         "rank": 19,
         "date": "2026-10-24T05:30:05.681Z",
         "type": "moved"
+      },
+      {
+        "rank": 20,
+        "date": "2026-10-24T18:44:52.329Z",
+        "type": "moved"
       }
     ]
   },
   {
     "id": "c",
     "gdId": 114860572,
-    "rank": 20,
+    "rank": 21,
     "name": "C",
     "points": 4,
     "creator": "Cheddar",
@@ -514,13 +598,18 @@
         "rank": 20,
         "date": "2026-10-24T05:30:05.681Z",
         "type": "moved"
+      },
+      {
+        "rank": 21,
+        "date": "2026-10-24T18:44:52.329Z",
+        "type": "moved"
       }
     ]
   },
   {
     "id": "muffles-challenge",
     "gdId": 115935975,
-    "rank": 21,
+    "rank": 22,
     "name": "Muffles Challenge",
     "points": 2,
     "creator": "Myst",
@@ -545,13 +634,18 @@
         "rank": 21,
         "date": "2026-10-24T05:30:05.681Z",
         "type": "moved"
+      },
+      {
+        "rank": 22,
+        "date": "2026-10-24T18:44:52.329Z",
+        "type": "moved"
       }
     ]
   },
   {
     "id": "big-steppin",
     "gdId": 114860847,
-    "rank": 22,
+    "rank": 23,
     "name": "Big Steppin",
     "points": 1,
     "creator": "Cheddar",
@@ -575,6 +669,11 @@
       {
         "rank": 22,
         "date": "2026-10-24T05:30:05.681Z",
+        "type": "moved"
+      },
+      {
+        "rank": 23,
+        "date": "2026-10-24T18:44:52.329Z",
         "type": "moved"
       }
     ]
