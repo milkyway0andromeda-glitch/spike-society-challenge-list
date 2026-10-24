@@ -9,7 +9,7 @@ async function loadLevel() {
     const response = await fetch("data/levels.json", { cache: "no-store", signal: AbortSignal.timeout(12000) });
     if (!response.ok) throw new Error(`levels.json returned ${response.status}`);
 
-    const levels = await response.json();
+    const levels = SSCLPoints.applyPoints(await response.json());
     const packsResponse = await fetch("data/packs.json", { cache: "no-store", signal: AbortSignal.timeout(6000) }).catch(() => null);
     const packData = packsResponse && packsResponse.ok ? await packsResponse.json().catch(() => []) : [];
     const packs = Array.isArray(packData) ? packData : [];
@@ -113,7 +113,7 @@ function renderLevel(level, packs = []) {
         <div class="detail-creator">Created by <strong>${escapeHTML(level.creator)}</strong></div>
       </div>
       <div class="detail-points">
-        ${level.points}
+        ${SSCLPoints.formatPoints(level.points)}
         <span>POINT${level.points === 1 ? "" : "S"}</span>
       </div>
     </section>
@@ -149,7 +149,7 @@ function renderLevel(level, packs = []) {
         </div>
         <div class="info-row">
           <div class="info-label">POINTS</div>
-          <div class="info-value blue-value">${level.points}</div>
+          <div class="info-value blue-value">${SSCLPoints.formatPoints(level.points)}</div>
         </div>
       </aside>
     </section>

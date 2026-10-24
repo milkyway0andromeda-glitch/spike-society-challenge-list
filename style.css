@@ -129,3 +129,12 @@ main{width:min(1120px,calc(100% - 30px));margin:0 auto;padding:38px 0 60px}
 .position-history-panel > .position-history-toggle:hover{background:rgba(255,255,255,.035)}
 .position-history-panel > .position-history-toggle:focus-visible{outline:2px solid #78b5ff;outline-offset:-3px}
 .position-history-content{border-top:1px solid #343b47}
+
+/* Main/Extended List sections */
+.list-section-divider{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 20px;margin:23px 0 13px;border:1px solid var(--border-light);border-left:4px solid var(--blue);border-radius:6px;background:linear-gradient(90deg,#233247,var(--panel) 70%);font-weight:900;font-size:16px;letter-spacing:1.4px;color:#e4efff}
+.list-section-divider:first-child{margin-top:0}
+.list-section-divider small{color:#9eb5d1;font-size:11px;letter-spacing:.8px}
+.extended-list-divider{border-left-color:#8d91aa;background:linear-gradient(90deg,#292a37,var(--panel) 70%);color:#e1e1ea}
+.extended-list-divider small{color:#b5b6c5}
+.extended-list-complete{border-color:#6872a3;background:linear-gradient(95deg,#2b3049,#1b1c27);color:#c7d1ff}
+.extended-list-complete span{color:#c1c8e5}

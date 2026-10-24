@@ -16,7 +16,7 @@ async function loadData() {
     if (!levelResponse.ok) throw new Error(`levels.json returned ${levelResponse.status}`);
     if (!playerResponse.ok) throw new Error(`players.json returned ${playerResponse.status}`);
 
-    levels = await levelResponse.json();
+    levels = SSCLPoints.applyPoints(await levelResponse.json());
     players = await playerResponse.json();
     packs = packResponse && packResponse.ok ? await packResponse.json() : [];
 
@@ -35,7 +35,19 @@ function renderLevels() {
   levelList.innerHTML = "";
   const sortedLevels = [...levels].sort((a, b) => a.rank - b.rank);
 
+  if (sortedLevels.length) {
+    const heading = document.createElement("div");
+    heading.className = "list-section-divider main-list-divider";
+    heading.innerHTML = '<span>MAIN LIST</span><small>#1–25</small>';
+    levelList.appendChild(heading);
+  }
   sortedLevels.forEach(level => {
+    if (Number(level.rank) === 26) {
+      const heading = document.createElement("div");
+      heading.className = "list-section-divider extended-list-divider";
+      heading.innerHTML = '<span>EXTENDED LIST</span><small>#26+</small>';
+      levelList.appendChild(heading);
+    }
     const card = document.createElement("a");
     card.className = `level-card rank-${level.rank}`;
     card.href = `level.html?id=${encodeURIComponent(level.id)}`;
@@ -50,7 +62,7 @@ function renderLevels() {
         <div class="level-creator">Created by ${escapeHTML(level.creator)}</div>
       </div>
       <div class="level-side">
-        <div class="level-points">${level.points}<span>POINT${level.points === 1 ? "" : "S"}</span></div>
+        <div class="level-points">${SSCLPoints.formatPoints(level.points)}<span>POINT${level.points === 1 ? "" : "S"}</span></div>
       </div>
     `;
     levelList.appendChild(card);
@@ -87,7 +99,7 @@ function calculatePlayerPoints(player) {
     if (completedNormally || isVerifier) total += level.points;
   });
 
-  return total;
+  return Number(total.toFixed(2));
 }
 
 function renderLeaderboard() {
@@ -104,7 +116,7 @@ function renderLeaderboard() {
     row.innerHTML = `
       <div class="player-rank">#${index + 1}</div>
       <div class="player-name">${escapeHTML(player.name)}</div>
-      <div class="player-points">${player.points} Points <span aria-hidden="true">›</span></div>
+      <div class="player-points">${SSCLPoints.formatPoints(player.points)} Points <span aria-hidden="true">›</span></div>
     `;
     playerList.appendChild(row);
   });

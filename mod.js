@@ -45,6 +45,7 @@ async function initMod() {
     packs = JSON.parse(decodeBase64Utf8(packsFile.content));
 
     normalizeRanks();
+    SSCLPoints.applyPoints(levels);
 
     originalPacks = structuredClone(packs);
     originalLevels = structuredClone(levels);
@@ -61,7 +62,7 @@ async function initMod() {
       "disabled-workspace"
     );
 
-    installEditPointsField();
+
 
     $("add-level-form").addEventListener(
       "submit",
@@ -255,10 +256,7 @@ function addLevel(event) {
 
     name,
 
-    points:
-      Number(
-        $("level-points").value
-      ),
+    points: SSCLPoints.pointsForRank(desiredRank),
 
     creator:
       $("level-creator")
@@ -306,7 +304,7 @@ function addLevel(event) {
   }
 
   changes.push(
-    `Added ${name} at #${desiredRank} with ${level.points} points`
+    `Added ${name} at #${desiredRank}`
   );
 
   event.target.reset();
@@ -385,29 +383,6 @@ function moveLevel(event) {
     changes.push(`Renamed ${oldName} to ${newName}`);
   }
 
-  const oldPoints =
-    Number(
-      level.points
-    ) || 0;
-
-  const enteredPoints =
-    Number(
-      $("move-level-points").value
-    );
-
-  const newPoints =
-    Number.isFinite(
-      enteredPoints
-    )
-      ? Math.max(
-          0,
-          enteredPoints
-        )
-      : oldPoints;
-
-  level.points =
-    newPoints;
-
   ordered.splice(
     desiredRank - 1,
     0,
@@ -423,31 +398,8 @@ function moveLevel(event) {
     oldRank !==
     desiredRank;
 
-  const pointsChanged =
-    oldPoints !==
-    level.points;
-
-  if (
-    rankChanged &&
-    pointsChanged
-  ) {
-    changes.push(
-      `Moved ${level.name} from #${oldRank} to #${desiredRank} and changed points from ${oldPoints} to ${level.points}`
-    );
-
-  } else if (
-    rankChanged
-  ) {
-    changes.push(
-      `Moved ${level.name} from #${oldRank} to #${desiredRank}`
-    );
-
-  } else if (
-    pointsChanged
-  ) {
-    changes.push(
-      `Changed ${level.name} points from ${oldPoints} to ${level.points}`
-    );
+  if (rankChanged) {
+    changes.push(`Moved ${level.name} from #${oldRank} to #${desiredRank}`);
   }
 
   refreshUI();
@@ -590,61 +542,12 @@ function ensurePlayer(name) {
   return name;
 }
 
-function installEditPointsField() {
-  const form =
-    $("move-level-form");
-
-  if (
-    !form ||
-    $("move-level-points")
-  ) {
-    return;
-  }
-
-  const pointsLabel =
-    document.createElement(
-      "label"
-    );
-
-  pointsLabel.innerHTML =
-    `
-      Points
-      <input
-        id="move-level-points"
-        type="number"
-        min="0"
-        step="1"
-        required
-      >
-    `;
-
-  const moveButton =
-    form.querySelector(
-      'button[type="submit"]'
-    );
-
-  form.insertBefore(
-    pointsLabel,
-    moveButton
-  );
-
-  $("move-level-select")
-    .addEventListener(
-      "change",
-      syncEditLevelFields
-    );
-}
-
 function syncEditLevelFields() {
   const select =
     $("move-level-select");
 
-  const pointsInput =
-    $("move-level-points");
-
   if (
-    !select ||
-    !pointsInput
+    !select
   ) {
     return;
   }
@@ -665,10 +568,6 @@ function syncEditLevelFields() {
 
   $("move-level-name").value = level.name;
 
-  pointsInput.value =
-    Number(
-      level.points
-    ) || 0;
 }
 
 function refreshUI() {
@@ -944,6 +843,7 @@ async function saveChanges() {
 }
 
 function recordPositionHistoryForSave() {
+  SSCLPoints.applyPoints(levels);
   const now = new Date().toISOString();
   for (const level of levels) {
     const previous = originalLevels.find(old => old.id === level.id ||
@@ -1053,12 +953,10 @@ function sortedLevels() {
 }
 
 function normalizeRanks() {
-  levels.forEach(
-    (level, index) => {
-      level.rank =
-        index + 1;
-    }
-  );
+  levels.forEach((level, index) => {
+    level.rank = index + 1;
+  });
+  SSCLPoints.applyPoints(levels);
 }
 
 function clampRank(

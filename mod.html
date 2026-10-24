@@ -21,7 +21,7 @@
 
   <div id="admin-workspace" class="admin-workspace disabled-workspace" hidden>
 <nav class="mod-jump-nav" aria-label="MOD tools"><a href="#mod-levels">Levels</a><a href="#mod-victors">Victors</a><a href="#mod-packs">Packs</a><a href="#mod-save">Save changes</a></nav>
-<div class="mod-tool-group" id="mod-levels"><div class="mod-group-heading"><h2>LEVEL MANAGEMENT</h2><p>Create levels, change placements, and rename challenges.</p></div>
+<div class="mod-tool-group" id="mod-levels"><div class="mod-group-heading"><h2>LEVEL MANAGEMENT</h2><p>Create levels, change placements, and rename challenges. Points are calculated automatically from rank.</p></div>
     <section class="admin-panel">
       <div class="panel-title">ADD LEVEL</div>
       <form id="add-level-form" class="admin-panel-body admin-form">
@@ -29,7 +29,7 @@
           <label>Level name<input id="level-name" required></label>
           <label>Placement<input id="level-rank" type="number" min="1" required></label>
           <label>GD Level ID<input id="level-gd-id" type="number" min="1" required></label>
-          <label>Points<input id="level-points" type="number" min="0" required></label>
+
           <label>Creator<input id="level-creator" required></label>
           <label>Verifier<input id="level-verifier" required></label>
           <label class="wide-field">Verification video<input id="level-video" type="url" placeholder="https://youtu.be/..."></label>
@@ -93,6 +93,7 @@
   </div>
 </main>
 <script src="auth.js"></script>
+<script src="points.js"></script>
 <script src="mod.js"></script>
 </body>
 </html>
