@@ -20,20 +20,6 @@ async function loadLevel() {
     renderLevel(level, packs);
   } catch (error) {
     console.error(error);
-    const history = Array.isArray(level.positionHistory) ? level.positionHistory : [];
-  const reversed = [...history].reverse();
-  const positionHistoryHTML = history.length ? `<div class="position-history-list">${reversed.map((entry, i) => {
-    const older = reversed[i+1];
-    const from = older ? Number(older.rank) : null;
-    const to = Number(entry.rank);
-    const movement = from === null ? "First recorded position"
-      : to < from ? `Moved up ${from-to} place(s)`
-      : to > from ? `Moved down ${to-from} place(s)` : "Position unchanged";
-    const date = entry.date && !Number.isNaN(Date.parse(entry.date))
-      ? new Date(entry.date).toLocaleDateString() : "Earlier position (date unavailable)";
-    return `<div class="position-history-row"><strong>#${to}</strong><div>${escapeHTML(movement)}<small>${escapeHTML(date)}</small></div></div>`;
-  }).join("")}</div>` : `<div class="no-victors">Current position: #${level.rank}. History begins with the next saved placement change.</div>`;
-
   levelPage.innerHTML = `
       <div class="error-message">
         Challenge could not be loaded.<br><small>${escapeHTML(error.message)}</small><br><br>
@@ -78,6 +64,21 @@ function renderLevel(level, packs = []) {
         </div>
       </div>
     `;
+
+    const history = Array.isArray(level.positionHistory) ? level.positionHistory : [];
+  const reversed = [...history].reverse();
+  const positionHistoryHTML = history.length ? `<div class="position-history-list">${reversed.map((entry, i) => {
+    const older = reversed[i+1];
+    const from = older ? Number(older.rank) : null;
+    const to = Number(entry.rank);
+    const movement = from === null ? "First recorded position"
+      : to < from ? `Moved up ${from-to} place(s)`
+      : to > from ? `Moved down ${to-from} place(s)` : "Position unchanged";
+    const date = entry.date && !Number.isNaN(Date.parse(entry.date))
+      ? new Date(entry.date).toLocaleDateString() : "Earlier position (date unavailable)";
+    return `<div class="position-history-row"><strong>#${to}</strong><div>${escapeHTML(movement)}<small>${escapeHTML(date)}</small></div></div>`;
+  }).join("")}</div>` : `<div class="no-victors">Current position: #${level.rank}. History begins with the next saved placement change.</div>`;
+
 
   levelPage.innerHTML = `
     <section class="detail-hero">
