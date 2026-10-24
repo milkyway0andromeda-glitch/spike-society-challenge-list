@@ -10,10 +10,12 @@ async function loadLevel() {
     if (!response.ok) throw new Error(`levels.json returned ${response.status}`);
 
     const levels = await response.json();
+    const packsResponse = await fetch("data/packs.json").catch(() => null);
+    const packs = packsResponse && packsResponse.ok ? await packsResponse.json() : [];
     const level = levels.find(item => item.id === levelId);
     if (!level) throw new Error(`Challenge "${levelId}" was not found.`);
 
-    renderLevel(level);
+    renderLevel(level, packs);
   } catch (error) {
     console.error(error);
     levelPage.innerHTML = `
@@ -25,7 +27,7 @@ async function loadLevel() {
   }
 }
 
-function renderLevel(level) {
+function renderLevel(level, packs = []) {
   document.title = `${level.name} - Spike Society Challenge List`;
 
   const youtubeEmbed = getYouTubeEmbedURL(level.video);
@@ -113,6 +115,7 @@ function renderLevel(level) {
       </aside>
     </section>
 
+    ${packs.some(pack => (pack.levelIds || []).includes(level.id)) ? `<section class="victors-panel"><div class="panel-title">FEATURED IN PACKS</div><div class="pack-tag-list">${packs.filter(pack => (pack.levelIds || []).includes(level.id)).map(pack => `<a class="pack-tag" style="--pack-color:${/^#[0-9a-fA-F]{6}$/.test(pack.color || "") ? pack.color : "#55aaff"}" href="pack.html?id=${encodeURIComponent(pack.id)}">${escapeHTML(pack.name)}</a>`).join("")}</div></section>` : ""}
     <section class="victors-panel">
       <div class="panel-title victors-title">
         <span>VICTORS</span>

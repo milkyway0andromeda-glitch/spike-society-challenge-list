@@ -2,7 +2,9 @@ let levels = [];
 let players = [];
 let originalLevels = [];
 let originalPlayers = [];
-let fileShas = { levels: null, players: null };
+let packs = [];
+let originalPacks = [];
+let fileShas = { levels: null, players: null, packs: null };
 let pendingImages = [];
 let changes = [];
 
@@ -25,9 +27,10 @@ async function initMod() {
 
     if (!user.canMod) return denyAccess();
 
-    const [levelsFile, playersFile] = await Promise.all([
+    const [levelsFile, playersFile, packsFile] = await Promise.all([
       getRepoFile("data/levels.json"),
-      getRepoFile("data/players.json")
+      getRepoFile("data/players.json"),
+      getRepoFile("data/packs.json")
     ]);
 
     levels = JSON.parse(
@@ -38,13 +41,17 @@ async function initMod() {
       decodeBase64Utf8(playersFile.content)
     );
 
+    packs = JSON.parse(decodeBase64Utf8(packsFile.content));
+
     normalizeRanks();
 
+    originalPacks = structuredClone(packs);
     originalLevels = structuredClone(levels);
     originalPlayers = structuredClone(players);
 
     fileShas.levels = levelsFile.sha;
     fileShas.players = playersFile.sha;
+    fileShas.packs = packsFile.sha;
 
     $("mod-loading").remove();
 
@@ -90,6 +97,7 @@ async function initMod() {
       discardChanges
     );
 
+    installPackTools();
     refreshUI();
 
   } catch (error) {
@@ -680,6 +688,7 @@ function refreshUI() {
 
   refreshRemoveVictorOptions();
 
+  refreshPackTools();
   refreshPendingSummary();
 }
 
@@ -754,6 +763,8 @@ function discardChanges() {
     structuredClone(
       originalPlayers
     );
+
+  packs = structuredClone(originalPacks);
 
   pendingImages = [];
 
@@ -837,6 +848,9 @@ async function saveChanges() {
         "Update challenge players"
       );
 
+    fileShas.packs = await putJsonFile("data/packs.json", packs, fileShas.packs, "Update challenge packs");
+
+    originalPacks = structuredClone(packs);
     originalLevels =
       structuredClone(
         levels
@@ -1162,4 +1176,75 @@ function escapeAttribute(
   return escapeHTML(
     value
   );
+}
+
+// Pack management uses the same staged changes and Save to GitHub flow.
+function packSlug(name) {
+  const base = slugify(name) || "pack";
+  let slug = base, n = 2;
+  while (packs.some(p => p.id === slug)) slug = `${base}-${n++}`;
+  return slug;
+}
+function activePack() { return packs.find(p => p.id === $("manage-pack-select").value); }
+function installPackTools() {
+  $("create-pack-form").addEventListener("submit", e => {
+    e.preventDefault();
+    const name = $("pack-name").value.trim(); if (!name) return;
+    const pack = {id:packSlug(name),name,color:$("pack-color").value,gradient:$("pack-use-gradient").checked ? $("pack-gradient").value : null,levelIds:[]};
+    const position = Math.max(1,Math.min(packs.length+1,Number($("pack-placement").value)||packs.length+1));
+    packs.splice(position-1,0,pack); changes.push(`Created pack ${name}`);
+    e.target.reset(); refreshUI(); $("manage-pack-select").value=pack.id; syncPackFields();
+  });
+  $("manage-pack-select").addEventListener("change",syncPackFields);
+  $("move-pack-form").addEventListener("submit",e=>{
+    e.preventDefault(); const pack=activePack(); if(!pack)return;
+    const old=packs.indexOf(pack); const next=Math.max(0,Math.min(packs.length-1,(Number($("pack-new-placement").value)||1)-1));
+    packs.splice(old,1);packs.splice(next,0,pack);changes.push(`Moved pack ${pack.name} to #${next+1}`);refreshUI();$("manage-pack-select").value=pack.id;syncPackFields();
+  });
+  $("edit-pack-form").addEventListener("submit",e=>{
+    e.preventDefault(); const pack=activePack();if(!pack)return;
+    const name=$("edit-pack-name").value.trim();if(!name)return;
+    pack.name=name;pack.color=$("edit-pack-color").value;pack.gradient=$("edit-pack-use-gradient").checked?$("edit-pack-gradient").value:null;
+    changes.push(`Updated pack ${name}`);refreshUI();$("manage-pack-select").value=pack.id;syncPackFields();
+  });
+  $("delete-pack-button").addEventListener("click",()=>{
+    const pack=activePack();if(!pack||!confirm(`Delete pack "${pack.name}"? Levels will not be deleted.`))return;
+    packs=packs.filter(p=>p.id!==pack.id);changes.push(`Deleted pack ${pack.name}`);refreshUI();
+  });
+  $("add-pack-level-form").addEventListener("submit",e=>{
+    e.preventDefault();const pack=activePack();if(!pack)return;
+    const id=$("pack-add-level").value;const level=levels.find(l=>l.id===id);if(!level)return;
+    pack.levelIds=Array.isArray(pack.levelIds)?pack.levelIds:[];
+    pack.levelIds=pack.levelIds.filter(x=>x!==id);
+    const position=Math.max(1,Math.min(pack.levelIds.length+1,Number($("pack-add-placement").value)||pack.levelIds.length+1));
+    pack.levelIds.splice(position-1,0,id);changes.push(`Placed ${level.name} at #${position} in ${pack.name}`);syncPackFields();refreshPendingSummary();
+  });
+  $("remove-pack-level-form").addEventListener("submit",e=>{
+    e.preventDefault();const pack=activePack();if(!pack)return;const id=$("pack-remove-level").value;
+    if(!(pack.levelIds||[]).includes(id))return;
+    pack.levelIds=pack.levelIds.filter(x=>x!==id);changes.push(`Removed level from ${pack.name}`);syncPackFields();refreshPendingSummary();
+  });
+}
+function refreshPackTools() {
+  const selected=$("manage-pack-select").value;
+  $("manage-pack-select").innerHTML=packs.map((p,i)=>`<option value="${escapeAttribute(p.id)}">#${i+1} — ${escapeHTML(p.name)}</option>`).join("");
+  if(packs.some(p=>p.id===selected))$("manage-pack-select").value=selected;
+  $("pack-placement").value=packs.length+1;$("pack-placement").max=packs.length+1;
+  $("pack-add-level").innerHTML=sortedLevels().map(l=>`<option value="${escapeAttribute(l.id)}">#${l.rank} — ${escapeHTML(l.name)}</option>`).join("");
+  syncPackFields();
+}
+function syncPackFields() {
+  const pack=activePack();
+  $("move-pack-form").querySelector("button").disabled=!pack;
+  $("edit-pack-form").querySelector("button").disabled=!pack;
+  $("delete-pack-button").disabled=!pack;
+  $("add-pack-level-form").querySelector("button").disabled=!pack;
+  $("remove-pack-level-form").querySelector("button").disabled=!pack;
+  if(!pack){$("pack-remove-level").innerHTML="";return;}
+  $("pack-new-placement").value=packs.indexOf(pack)+1;$("pack-new-placement").max=packs.length;
+  $("edit-pack-name").value=pack.name;$("edit-pack-color").value=pack.color||"#55aaff";
+  $("edit-pack-use-gradient").checked=!!pack.gradient;$("edit-pack-gradient").value=pack.gradient||"#171a1f";
+  $("pack-add-placement").value=(pack.levelIds||[]).length+1;
+  $("pack-add-placement").max=(pack.levelIds||[]).length+1;
+  $("pack-remove-level").innerHTML=(pack.levelIds||[]).map((id,i)=>{const l=levels.find(x=>x.id===id);return `<option value="${escapeAttribute(id)}">#${i+1} — ${escapeHTML(l?.name||id)}</option>`}).join("");
 }

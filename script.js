@@ -3,12 +3,14 @@ const playerList = document.getElementById("player-list");
 
 let levels = [];
 let players = [];
+let packs = [];
 
 async function loadData() {
   try {
-    const [levelResponse, playerResponse] = await Promise.all([
+    const [levelResponse, playerResponse, packResponse] = await Promise.all([
       fetch("data/levels.json"),
-      fetch("data/players.json")
+      fetch("data/players.json"),
+      fetch("data/packs.json").catch(() => null)
     ]);
 
     if (!levelResponse.ok) throw new Error(`levels.json returned ${levelResponse.status}`);
@@ -16,9 +18,11 @@ async function loadData() {
 
     levels = await levelResponse.json();
     players = await playerResponse.json();
+    packs = packResponse && packResponse.ok ? await packResponse.json() : [];
 
     renderLevels();
     renderLeaderboard();
+    renderPacks();
   } catch (error) {
     console.error(error);
     const message = `<div class="error-message">Failed to load challenge data.</div>`;
@@ -52,6 +56,25 @@ function renderLevels() {
     levelList.appendChild(card);
   });
 }
+
+function renderPacks() {
+  const target = document.getElementById("pack-list");
+  if (!target) return;
+  target.innerHTML = "";
+  if (!packs.length) { target.innerHTML = '<div class="no-victors">No packs have been added yet.</div>'; return; }
+  packs.forEach((pack, i) => {
+    const card = document.createElement("a");
+    card.className = "pack-card";
+    card.href = `pack.html?id=${encodeURIComponent(pack.id)}`;
+    const color = safeColor(pack.color);
+    const end = pack.gradient ? safeColor(pack.gradient) : color;
+    card.style.setProperty("--pack-color", color);
+    card.style.setProperty("--pack-end", end);
+    card.innerHTML = `<span class="pack-position">#${i + 1}</span><div class="pack-card-info"><strong>${escapeHTML(pack.name)}</strong><small>${(pack.levelIds || []).length} LEVELS</small></div><span class="pack-arrow">→</span>`;
+    target.appendChild(card);
+  });
+}
+function safeColor(value) { return /^#[0-9a-fA-F]{6}$/.test(value || "") ? value : "#55aaff"; }
 
 function calculatePlayerPoints(player) {
   let total = 0;
@@ -105,4 +128,7 @@ function escapeHTML(value) {
 }
 function escapeAttribute(value) { return escapeHTML(value); }
 
+if (location.hash === "#packs") {
+  document.querySelector('.nav-button[data-page="packs"]').click();
+}
 loadData();

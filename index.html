@@ -12,6 +12,7 @@
   <nav class="tabs">
     <button class="nav-button active" data-page="list">LIST</button>
     <button class="nav-button" data-page="leaderboard">LEADERBOARD</button>
+    <button class="nav-button" data-page="packs">PACKS</button>
     <span id="auth-nav-slot" class="auth-nav-slot"></span>
   </nav>
 </header>
@@ -29,6 +30,10 @@
       <p>Points are calculated automatically from completed challenges.</p>
     </div>
     <div id="player-list" class="leaderboard"></div>
+  </section>
+  <section id="packs-page" class="page">
+    <div class="page-header"><h1>Challenge Packs</h1><p>Collections of ranked challenges.</p></div>
+    <div id="pack-list" class="pack-list"></div>
   </section>
 </main>
 <script src="auth.js"></script>
