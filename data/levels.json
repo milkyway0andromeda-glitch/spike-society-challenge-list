@@ -30,27 +30,11 @@
     "positionHistory": []
   },
   {
-    "id": "unnamed-concrete",
-    "gdId": 147091256,
-    "rank": 3,
-    "name": "UNNAMED CONCRETE",
-    "points": 45.57,
-    "creator": "Muffles",
-    "verifier": "AegisXD0",
-    "video": "https://www.youtube.com/watch?v=gWJEgVGYfLM",
-    "image": "images/unnamed-concrete.png",
-    "victors": [
-      "Quova",
-      "Maow"
-    ],
-    "positionHistory": []
-  },
-  {
     "id": "denial",
     "gdId": 149890326,
-    "rank": 4,
+    "rank": 3,
     "name": "Denial",
-    "points": 43.4,
+    "points": 45.57,
     "creator": "Maow",
     "verifier": "Maow",
     "video": "https://youtu.be/Zh0hjkGiWrE",
@@ -63,6 +47,43 @@
         "rank": 4,
         "date": "2026-10-24T05:30:05.681Z",
         "type": "added"
+      },
+      {
+        "rank": 3,
+        "date": "2026-10-24T20:14:29.069Z",
+        "type": "moved"
+      }
+    ]
+  },
+  {
+    "id": "mega-trials",
+    "gdId": 120911543,
+    "rank": 4,
+    "name": "Mega Trials",
+    "points": 43.4,
+    "creator": "Quova",
+    "verifier": "Quova",
+    "video": "https://www.youtube.com/watch?v=j9_zXbNkRC4",
+    "image": "images/mega-trials.png",
+    "victors": [
+      "LMB8",
+      "AegisXD0"
+    ],
+    "positionHistory": [
+      {
+        "rank": 5,
+        "date": null,
+        "type": "initial"
+      },
+      {
+        "rank": 6,
+        "date": "2026-10-24T05:30:05.681Z",
+        "type": "moved"
+      },
+      {
+        "rank": 4,
+        "date": "2026-10-24T20:14:29.069Z",
+        "type": "moved"
       }
     ]
   },
@@ -94,28 +115,28 @@
     ]
   },
   {
-    "id": "mega-trials",
-    "gdId": 120911543,
+    "id": "unnamed-concrete",
+    "gdId": 147091256,
     "rank": 6,
-    "name": "Mega Trials",
+    "name": "UNNAMED CONCRETE",
     "points": 39.18,
-    "creator": "Quova",
-    "verifier": "Quova",
-    "video": "https://www.youtube.com/watch?v=j9_zXbNkRC4",
-    "image": "images/mega-trials.png",
+    "creator": "Muffles",
+    "verifier": "AegisXD0",
+    "video": "https://www.youtube.com/watch?v=gWJEgVGYfLM",
+    "image": "images/unnamed-concrete.png",
     "victors": [
-      "LMB8",
-      "AegisXD0"
+      "Quova",
+      "Maow"
     ],
     "positionHistory": [
       {
-        "rank": 5,
+        "rank": 3,
         "date": null,
         "type": "initial"
       },
       {
         "rank": 6,
-        "date": "2026-10-24T05:30:05.681Z",
+        "date": "2026-10-24T20:14:29.069Z",
         "type": "moved"
       }
     ]
