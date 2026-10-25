@@ -9,5 +9,16 @@
       "mega-trials",
       "buff-trials"
     ]
+  },
+  {
+    "id": "one-mode-pack",
+    "name": "One Mode Pack",
+    "color": "#7024ff",
+    "gradient": "#ff8800",
+    "levelIds": [
+      "soaring",
+      "spring",
+      "waveplex"
+    ]
   }
 ]
