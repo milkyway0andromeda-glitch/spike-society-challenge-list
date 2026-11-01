@@ -151,7 +151,9 @@
     "verifier": "AegisXD0",
     "video": "https://www.youtube.com/watch?v=ID1DagOfYSw",
     "image": "images/super-clutter.jpg",
-    "victors": [],
+    "victors": [
+      "LimeTime"
+    ],
     "positionHistory": [
       {
         "rank": 7,
@@ -254,7 +256,9 @@
     "video": "https://www.youtube.com/watch?v=W52Xj2lNICs",
     "image": "images/life-corridor.jpg",
     "victors": [
-      "AegisXD0"
+      "AegisXD0",
+      "LimeTime",
+      "Maow"
     ],
     "positionHistory": [
       {
@@ -701,7 +705,8 @@
       "AegisXD0",
       "Muffles",
       "Maow",
-      "Floppa"
+      "Floppa",
+      "Quova"
     ],
     "positionHistory": [
       {
@@ -776,7 +781,8 @@
     "image": "images/bloodied-grounds.jpg",
     "victors": [
       "AegisXD0",
-      "Muffles"
+      "Muffles",
+      "Quova"
     ],
     "positionHistory": [
       {
