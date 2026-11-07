@@ -81,7 +81,8 @@
     "video": "https://youtu.be/Zh0hjkGiWrE",
     "image": "images/denial.png",
     "victors": [
-      "AegisXD0"
+      "AegisXD0",
+      "LimeTime"
     ],
     "positionHistory": [
       {
@@ -171,43 +172,11 @@
     ]
   },
   {
-    "id": "unnamed-concrete",
-    "gdId": 147091256,
-    "rank": 7,
-    "name": "UNNAMED CONCRETE",
-    "points": 37.13,
-    "creator": "Muffles",
-    "verifier": "AegisXD0",
-    "video": "https://www.youtube.com/watch?v=gWJEgVGYfLM",
-    "image": "images/unnamed-concrete.png",
-    "victors": [
-      "Quova",
-      "Maow"
-    ],
-    "positionHistory": [
-      {
-        "rank": 3,
-        "date": null,
-        "type": "initial"
-      },
-      {
-        "rank": 6,
-        "date": "2026-10-24T20:14:29.069Z",
-        "type": "moved"
-      },
-      {
-        "rank": 7,
-        "date": "2026-11-04T01:20:01.405Z",
-        "type": "moved"
-      }
-    ]
-  },
-  {
     "id": "super-clutter",
     "gdId": 148695265,
-    "rank": 8,
+    "rank": 7,
     "name": "Super Clutter",
-    "points": 35.11,
+    "points": 37.13,
     "creator": "Floppa",
     "verifier": "AegisXD0",
     "video": "https://www.youtube.com/watch?v=ID1DagOfYSw",
@@ -224,6 +193,49 @@
       {
         "rank": 8,
         "date": "2026-11-04T01:20:01.405Z",
+        "type": "moved"
+      },
+      {
+        "rank": 7,
+        "date": "2026-11-07T02:16:25.461Z",
+        "type": "moved"
+      }
+    ]
+  },
+  {
+    "id": "unnamed-concrete",
+    "gdId": 147091256,
+    "rank": 8,
+    "name": "UNNAMED CONCRETE",
+    "points": 35.11,
+    "creator": "Muffles",
+    "verifier": "AegisXD0",
+    "video": "https://www.youtube.com/watch?v=gWJEgVGYfLM",
+    "image": "images/unnamed-concrete.png",
+    "victors": [
+      "Quova",
+      "Maow",
+      "LimeTime"
+    ],
+    "positionHistory": [
+      {
+        "rank": 3,
+        "date": null,
+        "type": "initial"
+      },
+      {
+        "rank": 6,
+        "date": "2026-10-24T20:14:29.069Z",
+        "type": "moved"
+      },
+      {
+        "rank": 7,
+        "date": "2026-11-04T01:20:01.405Z",
+        "type": "moved"
+      },
+      {
+        "rank": 8,
+        "date": "2026-11-07T02:16:25.461Z",
         "type": "moved"
       }
     ]
@@ -306,7 +318,8 @@
     "video": "https://youtu.be/5MqmOdBuvm4",
     "image": "images/soaring.jpg",
     "victors": [
-      "AegisXD0"
+      "AegisXD0",
+      "LimeTime"
     ],
     "positionHistory": [
       {
@@ -412,7 +425,8 @@
     "image": "images/waveplex.jpg",
     "victors": [
       "Quova",
-      "Muffles"
+      "Muffles",
+      "LimeTime"
     ],
     "positionHistory": [
       {
@@ -453,7 +467,8 @@
     "video": "https://www.youtube.com/watch?v=cg4mgn-7zOI",
     "image": "images/dead-love.png",
     "victors": [
-      "AegisXD0"
+      "AegisXD0",
+      "LimeTime"
     ],
     "positionHistory": [
       {
@@ -933,7 +948,8 @@
     "victors": [
       "AegisXD0",
       "Muffles",
-      "Quova"
+      "Quova",
+      "LimeTime"
     ],
     "positionHistory": [
       {
