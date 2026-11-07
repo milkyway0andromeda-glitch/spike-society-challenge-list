@@ -84,6 +84,53 @@
         "rank": 4,
         "date": "2026-10-24T20:14:29.069Z",
         "type": "moved"
+      },
+      {
+        "rank": 5,
+        "date": "2026-11-04T01:20:01.405Z",
+        "type": "moved"
+      },
+      {
+        "rank": 4,
+        "date": "2026-11-07T03:35:57.341Z",
+        "type": "moved"
+      }
+    ]
+  },
+  {
+    "id": "denial",
+    "gdId": 149890326,
+    "rank": 5,
+    "name": "Denial",
+    "points": 41.27,
+    "creator": "Maow",
+    "verifier": "Maow",
+    "video": "https://youtu.be/Zh0hjkGiWrE",
+    "image": "images/denial.png",
+    "victors": [
+      "AegisXD0",
+      "LimeTime"
+    ],
+    "positionHistory": [
+      {
+        "rank": 4,
+        "date": "2026-10-24T05:30:05.681Z",
+        "type": "added"
+      },
+      {
+        "rank": 3,
+        "date": "2026-10-24T20:14:29.069Z",
+        "type": "moved"
+      },
+      {
+        "rank": 4,
+        "date": "2026-11-04T01:20:01.405Z",
+        "type": "moved"
+      },
+      {
+        "rank": 5,
+        "date": "2026-11-07T03:35:57.341Z",
+        "type": "moved"
       }
     ]
   },
