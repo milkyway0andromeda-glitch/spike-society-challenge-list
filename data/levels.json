@@ -87,9 +87,9 @@
     ],
     "positionHistory": [
       {
-        "rank": 4,
+        "rank": 5,
         "date": "2026-10-24T05:30:05.681Z",
-        "type": "added"
+        "type": "moved"
       },
       {
         "rank": 3,
@@ -111,7 +111,7 @@
   {
     "id": "disphoria",
     "gdId": 148811532,
-    "rank": 5,
+    "rank": 6,
     "name": "Disphoria",
     "points": 41.27,
     "creator": "Maow",
@@ -138,7 +138,7 @@
   {
     "id": "unnamed-concrete",
     "gdId": 147091256,
-    "rank": 6,
+    "rank": 7,
     "name": "UNNAMED CONCRETE",
     "points": 39.18,
     "creator": "Muffles",
@@ -165,7 +165,7 @@
   {
     "id": "super-clutter",
     "gdId": 148695265,
-    "rank": 7,
+    "rank": 8,
     "name": "Super Clutter",
     "points": 37.13,
     "creator": "Floppa",
@@ -184,7 +184,7 @@
   {
     "id": "buff-trials",
     "gdId": 114124401,
-    "rank": 8,
+    "rank": 9,
     "name": "Buff Trials",
     "points": 35.11,
     "creator": "Quova",
@@ -218,7 +218,7 @@
   {
     "id": "just-dancin",
     "gdId": 114083386,
-    "rank": 9,
+    "rank": 10,
     "name": "Just Dancin",
     "points": 33.14,
     "creator": "Cheddar",
@@ -241,7 +241,7 @@
   {
     "id": "soaring",
     "gdId": 149337183,
-    "rank": 10,
+    "rank": 11,
     "name": "Soaring",
     "points": 31.21,
     "creator": "Maow",
@@ -267,7 +267,7 @@
   {
     "id": "life-corridor",
     "gdId": 150022459,
-    "rank": 11,
+    "rank": 12,
     "name": "Life Corridor",
     "points": 29.32,
     "creator": "mrchuppins",
@@ -293,7 +293,7 @@
   {
     "id": "spring",
     "gdId": 146606522,
-    "rank": 12,
+    "rank": 13,
     "name": "Spring",
     "points": 27.48,
     "creator": "AegisXD0",
@@ -329,7 +329,7 @@
   {
     "id": "waveplex",
     "gdId": 149125551,
-    "rank": 13,
+    "rank": 14,
     "name": "WAVEPLEX",
     "points": 25.69,
     "creator": "Floppa",
@@ -366,7 +366,7 @@
   {
     "id": "dead-love",
     "gdId": 149168359,
-    "rank": 14,
+    "rank": 15,
     "name": "DEAD LOVE",
     "points": 23.95,
     "creator": "Muffles",
@@ -402,7 +402,7 @@
   {
     "id": "ach-funk",
     "gdId": 148859634,
-    "rank": 15,
+    "rank": 16,
     "name": "ACH Funk",
     "points": 22.27,
     "creator": "Maow",
@@ -440,7 +440,7 @@
   {
     "id": "absolute-masterpeice",
     "gdId": 147539403,
-    "rank": 16,
+    "rank": 17,
     "name": "Absolute Masterpeice",
     "points": 20.64,
     "creator": "Floppa",
@@ -478,7 +478,7 @@
   {
     "id": "true-toppat-material",
     "gdId": 108491792,
-    "rank": 17,
+    "rank": 18,
     "name": "True Toppat Material",
     "points": 19.08,
     "creator": "Playerano6",
@@ -516,7 +516,7 @@
   {
     "id": "the-red-haze",
     "gdId": 146884854,
-    "rank": 18,
+    "rank": 19,
     "name": "The Red Haze",
     "points": 17.58,
     "creator": "Muffles",
@@ -556,7 +556,7 @@
   {
     "id": "4u2beat",
     "gdId": 118045844,
-    "rank": 19,
+    "rank": 20,
     "name": "4u2Beat",
     "points": 16.16,
     "creator": "Muffles",
@@ -595,7 +595,7 @@
   {
     "id": "circuspircus",
     "gdId": 118051289,
-    "rank": 20,
+    "rank": 21,
     "name": "CircusPircus",
     "points": 14.81,
     "creator": "Muffles",
@@ -634,7 +634,7 @@
   {
     "id": "light-breeze",
     "gdId": 114725754,
-    "rank": 21,
+    "rank": 22,
     "name": "LIGHT BREEZE",
     "points": 13.56,
     "creator": "Cheddar",
@@ -671,7 +671,7 @@
   {
     "id": "huh",
     "gdId": 118138753,
-    "rank": 22,
+    "rank": 23,
     "name": "Huh",
     "points": 12.41,
     "creator": "Quova",
@@ -710,7 +710,7 @@
   {
     "id": "ship-challenge",
     "gdId": 148605172,
-    "rank": 23,
+    "rank": 24,
     "name": "Ship Challenge",
     "points": 11.4,
     "creator": "mrchuppins",
@@ -750,7 +750,7 @@
   {
     "id": "c",
     "gdId": 114860572,
-    "rank": 24,
+    "rank": 25,
     "name": "C",
     "points": 10.55,
     "creator": "Cheddar",
@@ -788,7 +788,7 @@
   {
     "id": "bloodied-grounds",
     "gdId": 151172450,
-    "rank": 25,
+    "rank": 26,
     "name": "Bloodied Grounds",
     "points": 10,
     "creator": "Floppa",
@@ -815,7 +815,7 @@
   {
     "id": "muffles-challenge",
     "gdId": 115935975,
-    "rank": 26,
+    "rank": 27,
     "name": "Muffles Challenge",
     "points": 9.75,
     "creator": "Myst",
@@ -862,7 +862,7 @@
   {
     "id": "big-steppin",
     "gdId": 114860847,
-    "rank": 27,
+    "rank": 28,
     "name": "Big Steppin",
     "points": 9.48,
     "creator": "Cheddar",
