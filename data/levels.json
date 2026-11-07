@@ -1,10 +1,29 @@
 [
   {
+    "id": "azarus",
+    "gdId": 151320905,
+    "rank": 1,
+    "name": "Azarus",
+    "points": 50,
+    "creator": "AegisXD0",
+    "verifier": "AegisXD0",
+    "video": "https://youtu.be/_3wxKubTYQI",
+    "image": "images/azarus.png",
+    "victors": [],
+    "positionHistory": [
+      {
+        "rank": 1,
+        "date": "2026-11-07T03:54:53.933Z",
+        "type": "added"
+      }
+    ]
+  },
+  {
     "id": "pain-trials",
     "gdId": 148983932,
     "rank": 2,
     "name": "Pain Trials",
-    "points": 50,
+    "points": 47.77,
     "creator": "Quova",
     "verifier": "Quova",
     "video": "https://www.youtube.com/watch?v=WBrgR9oxKcA",
@@ -12,14 +31,25 @@
     "victors": [
       "AegisXD0"
     ],
-    "positionHistory": []
+    "positionHistory": [
+      {
+        "rank": 1,
+        "date": null,
+        "type": "initial"
+      },
+      {
+        "rank": 2,
+        "date": "2026-11-07T03:54:53.933Z",
+        "type": "moved"
+      }
+    ]
   },
   {
     "id": "absolute-garbage",
     "gdId": 147540400,
     "rank": 3,
     "name": "Absolute Garbage",
-    "points": 47.77,
+    "points": 45.57,
     "creator": "Floppa",
     "verifier": "AegisXD0",
     "video": "https://www.youtube.com/watch?v=9PqVFynRnqQ",
@@ -27,7 +57,18 @@
     "victors": [
       "Maow"
     ],
-    "positionHistory": []
+    "positionHistory": [
+      {
+        "rank": 2,
+        "date": null,
+        "type": "initial"
+      },
+      {
+        "rank": 3,
+        "date": "2026-11-07T03:54:53.933Z",
+        "type": "moved"
+      }
+    ]
   },
   {
     "id": "mega-trials",
@@ -68,6 +109,11 @@
         "rank": 4,
         "date": "2026-11-07T03:35:57.341Z",
         "type": "moved"
+      },
+      {
+        "rank": 4,
+        "date": "2026-11-07T03:54:53.933Z",
+        "type": "moved"
       }
     ]
   },
@@ -105,6 +151,11 @@
         "rank": 5,
         "date": "2026-11-07T03:35:57.341Z",
         "type": "moved"
+      },
+      {
+        "rank": 5,
+        "date": "2026-11-07T03:54:53.933Z",
+        "type": "moved"
       }
     ]
   },
@@ -113,7 +164,7 @@
     "gdId": 148811532,
     "rank": 6,
     "name": "Disphoria",
-    "points": 41.27,
+    "points": 39.18,
     "creator": "Maow",
     "verifier": "Maow",
     "video": "https://www.youtube.com/watch?v=xqOPolzAGXs",
@@ -132,6 +183,11 @@
         "rank": 5,
         "date": "2026-10-24T05:30:05.681Z",
         "type": "moved"
+      },
+      {
+        "rank": 6,
+        "date": "2026-11-07T03:54:53.933Z",
+        "type": "moved"
       }
     ]
   },
@@ -140,14 +196,15 @@
     "gdId": 147091256,
     "rank": 7,
     "name": "UNNAMED CONCRETE",
-    "points": 39.18,
+    "points": 37.13,
     "creator": "Muffles",
     "verifier": "AegisXD0",
     "video": "https://www.youtube.com/watch?v=gWJEgVGYfLM",
     "image": "images/unnamed-concrete.png",
     "victors": [
       "Quova",
-      "Maow"
+      "Maow",
+      "LimeTime"
     ],
     "positionHistory": [
       {
@@ -159,6 +216,11 @@
         "rank": 6,
         "date": "2026-10-24T20:14:29.069Z",
         "type": "moved"
+      },
+      {
+        "rank": 7,
+        "date": "2026-11-07T03:54:53.933Z",
+        "type": "moved"
       }
     ]
   },
@@ -167,7 +229,7 @@
     "gdId": 148695265,
     "rank": 8,
     "name": "Super Clutter",
-    "points": 37.13,
+    "points": 35.11,
     "creator": "Floppa",
     "verifier": "AegisXD0",
     "video": "https://www.youtube.com/watch?v=ID1DagOfYSw",
@@ -178,6 +240,11 @@
         "rank": 7,
         "date": "2026-10-24T20:06:40.401Z",
         "type": "added"
+      },
+      {
+        "rank": 8,
+        "date": "2026-11-07T03:54:53.933Z",
+        "type": "moved"
       }
     ]
   },
@@ -186,7 +253,7 @@
     "gdId": 114124401,
     "rank": 9,
     "name": "Buff Trials",
-    "points": 35.11,
+    "points": 33.14,
     "creator": "Quova",
     "verifier": "Quova",
     "video": "https://www.youtube.com/watch?v=14jaDs7Yamk",
@@ -212,6 +279,11 @@
         "rank": 8,
         "date": "2026-10-24T20:06:40.401Z",
         "type": "moved"
+      },
+      {
+        "rank": 9,
+        "date": "2026-11-07T03:54:53.933Z",
+        "type": "moved"
       }
     ]
   },
@@ -220,7 +292,7 @@
     "gdId": 114083386,
     "rank": 10,
     "name": "Just Dancin",
-    "points": 33.14,
+    "points": 31.21,
     "creator": "Cheddar",
     "verifier": "Cheddar",
     "video": "https://youtube.com/shorts/YI28I6taE9o",
@@ -235,6 +307,11 @@
         "rank": 9,
         "date": "2026-10-25T02:26:38.151Z",
         "type": "added"
+      },
+      {
+        "rank": 10,
+        "date": "2026-11-07T03:54:53.933Z",
+        "type": "moved"
       }
     ]
   },
@@ -243,13 +320,14 @@
     "gdId": 149337183,
     "rank": 11,
     "name": "Soaring",
-    "points": 31.21,
+    "points": 29.32,
     "creator": "Maow",
     "verifier": "Maow",
     "video": "https://youtu.be/5MqmOdBuvm4",
     "image": "images/soaring.jpg",
     "victors": [
-      "AegisXD0"
+      "AegisXD0",
+      "LimeTime"
     ],
     "positionHistory": [
       {
@@ -261,6 +339,11 @@
         "rank": 10,
         "date": "2026-10-25T02:26:38.151Z",
         "type": "moved"
+      },
+      {
+        "rank": 11,
+        "date": "2026-11-07T03:54:53.933Z",
+        "type": "moved"
       }
     ]
   },
@@ -269,13 +352,14 @@
     "gdId": 150022459,
     "rank": 12,
     "name": "Life Corridor",
-    "points": 29.32,
+    "points": 27.48,
     "creator": "mrchuppins",
     "verifier": "mrchuppins",
     "video": "https://www.youtube.com/watch?v=W52Xj2lNICs",
     "image": "images/life-corridor.jpg",
     "victors": [
-      "AegisXD0"
+      "AegisXD0",
+      "LimeTime"
     ],
     "positionHistory": [
       {
@@ -287,6 +371,11 @@
         "rank": 11,
         "date": "2026-10-25T02:26:38.151Z",
         "type": "moved"
+      },
+      {
+        "rank": 12,
+        "date": "2026-11-07T03:54:53.933Z",
+        "type": "moved"
       }
     ]
   },
@@ -295,7 +384,7 @@
     "gdId": 146606522,
     "rank": 13,
     "name": "Spring",
-    "points": 27.48,
+    "points": 25.69,
     "creator": "AegisXD0",
     "verifier": "LimeTime",
     "video": "https://youtu.be/QC_AWYvo0t4",
@@ -323,6 +412,11 @@
         "rank": 12,
         "date": "2026-10-25T02:26:38.151Z",
         "type": "moved"
+      },
+      {
+        "rank": 13,
+        "date": "2026-11-07T03:54:53.933Z",
+        "type": "moved"
       }
     ]
   },
@@ -331,14 +425,15 @@
     "gdId": 149125551,
     "rank": 14,
     "name": "WAVEPLEX",
-    "points": 25.69,
+    "points": 23.95,
     "creator": "Floppa",
     "verifier": "AegisXD0",
     "video": "https://youtu.be/X-pRc4vGns4",
     "image": "images/waveplex.jpg",
     "victors": [
       "Quova",
-      "Muffles"
+      "Muffles",
+      "LimeTime"
     ],
     "positionHistory": [
       {
@@ -360,6 +455,11 @@
         "rank": 13,
         "date": "2026-10-25T02:26:38.151Z",
         "type": "moved"
+      },
+      {
+        "rank": 14,
+        "date": "2026-11-07T03:54:53.933Z",
+        "type": "moved"
       }
     ]
   },
@@ -368,13 +468,14 @@
     "gdId": 149168359,
     "rank": 15,
     "name": "DEAD LOVE",
-    "points": 23.95,
+    "points": 22.27,
     "creator": "Muffles",
     "verifier": "Muffles",
     "video": "https://www.youtube.com/watch?v=cg4mgn-7zOI",
     "image": "images/dead-love.png",
     "victors": [
-      "AegisXD0"
+      "AegisXD0",
+      "LimeTime"
     ],
     "positionHistory": [
       {
@@ -396,6 +497,11 @@
         "rank": 14,
         "date": "2026-10-25T02:26:38.151Z",
         "type": "moved"
+      },
+      {
+        "rank": 15,
+        "date": "2026-11-07T03:54:53.933Z",
+        "type": "moved"
       }
     ]
   },
@@ -404,7 +510,7 @@
     "gdId": 148859634,
     "rank": 16,
     "name": "ACH Funk",
-    "points": 22.27,
+    "points": 20.64,
     "creator": "Maow",
     "verifier": "Maow",
     "video": "https://www.youtube.com/watch?v=92e2N33CYVE",
@@ -434,6 +540,11 @@
         "rank": 15,
         "date": "2026-10-25T02:26:38.151Z",
         "type": "moved"
+      },
+      {
+        "rank": 16,
+        "date": "2026-11-07T03:54:53.933Z",
+        "type": "moved"
       }
     ]
   },
@@ -442,7 +553,7 @@
     "gdId": 147539403,
     "rank": 17,
     "name": "Absolute Masterpeice",
-    "points": 20.64,
+    "points": 19.08,
     "creator": "Floppa",
     "verifier": "AegisXD0",
     "video": "https://youtu.be/ebK_620FcWQ",
@@ -472,6 +583,11 @@
         "rank": 16,
         "date": "2026-10-25T02:26:38.151Z",
         "type": "moved"
+      },
+      {
+        "rank": 17,
+        "date": "2026-11-07T03:54:53.933Z",
+        "type": "moved"
       }
     ]
   },
@@ -480,7 +596,7 @@
     "gdId": 108491792,
     "rank": 18,
     "name": "True Toppat Material",
-    "points": 19.08,
+    "points": 17.58,
     "creator": "Playerano6",
     "verifier": "Playerano6",
     "video": "https://youtu.be/qxlAZ92AbLc?si=DA22GPD9HnyVR-Oe",
@@ -510,6 +626,11 @@
         "rank": 17,
         "date": "2026-10-25T02:26:38.151Z",
         "type": "moved"
+      },
+      {
+        "rank": 18,
+        "date": "2026-11-07T03:54:53.933Z",
+        "type": "moved"
       }
     ]
   },
@@ -518,7 +639,7 @@
     "gdId": 146884854,
     "rank": 19,
     "name": "The Red Haze",
-    "points": 17.58,
+    "points": 16.16,
     "creator": "Muffles",
     "verifier": "Muffles",
     "video": "https://www.youtube.com/watch?v=6jfQ0vSiyEo",
@@ -550,6 +671,11 @@
         "rank": 18,
         "date": "2026-10-25T02:26:38.151Z",
         "type": "moved"
+      },
+      {
+        "rank": 19,
+        "date": "2026-11-07T03:54:53.933Z",
+        "type": "moved"
       }
     ]
   },
@@ -558,7 +684,7 @@
     "gdId": 118045844,
     "rank": 20,
     "name": "4u2Beat",
-    "points": 16.16,
+    "points": 14.81,
     "creator": "Muffles",
     "verifier": "Muffles",
     "video": "https://youtu.be/8luO6qyZQpQ",
@@ -589,6 +715,11 @@
         "rank": 19,
         "date": "2026-10-25T02:26:38.151Z",
         "type": "moved"
+      },
+      {
+        "rank": 20,
+        "date": "2026-11-07T03:54:53.933Z",
+        "type": "moved"
       }
     ]
   },
@@ -597,7 +728,7 @@
     "gdId": 118051289,
     "rank": 21,
     "name": "CircusPircus",
-    "points": 14.81,
+    "points": 13.56,
     "creator": "Muffles",
     "verifier": "LimeTime",
     "video": "https://www.youtube.com/watch?v=yBkfJzh8cvQ",
@@ -628,6 +759,11 @@
         "rank": 20,
         "date": "2026-10-25T02:26:38.151Z",
         "type": "moved"
+      },
+      {
+        "rank": 21,
+        "date": "2026-11-07T03:54:53.933Z",
+        "type": "moved"
       }
     ]
   },
@@ -636,7 +772,7 @@
     "gdId": 114725754,
     "rank": 22,
     "name": "LIGHT BREEZE",
-    "points": 13.56,
+    "points": 12.41,
     "creator": "Cheddar",
     "verifier": "Cheddar",
     "video": "https://youtube.com/shorts/03jbPsbt-gg",
@@ -665,6 +801,11 @@
         "rank": 21,
         "date": "2026-10-25T02:26:38.151Z",
         "type": "moved"
+      },
+      {
+        "rank": 22,
+        "date": "2026-11-07T03:54:53.933Z",
+        "type": "moved"
       }
     ]
   },
@@ -673,7 +814,7 @@
     "gdId": 118138753,
     "rank": 23,
     "name": "Huh",
-    "points": 12.41,
+    "points": 11.4,
     "creator": "Quova",
     "verifier": "Quova",
     "video": "https://www.youtube.com/watch?v=bCyKX3Id6IA",
@@ -704,6 +845,11 @@
         "rank": 22,
         "date": "2026-10-25T02:26:38.151Z",
         "type": "moved"
+      },
+      {
+        "rank": 23,
+        "date": "2026-11-07T03:54:53.933Z",
+        "type": "moved"
       }
     ]
   },
@@ -712,7 +858,7 @@
     "gdId": 148605172,
     "rank": 24,
     "name": "Ship Challenge",
-    "points": 11.4,
+    "points": 10.55,
     "creator": "mrchuppins",
     "verifier": "mrchuppins",
     "video": "https://www.youtube.com/watch?v=UAWA-F5jCFo",
@@ -744,6 +890,11 @@
         "rank": 23,
         "date": "2026-10-25T02:26:38.151Z",
         "type": "moved"
+      },
+      {
+        "rank": 24,
+        "date": "2026-11-07T03:54:53.933Z",
+        "type": "moved"
       }
     ]
   },
@@ -752,7 +903,7 @@
     "gdId": 114860572,
     "rank": 25,
     "name": "C",
-    "points": 10.55,
+    "points": 10,
     "creator": "Cheddar",
     "verifier": "Cheddar",
     "video": "https://youtube.com/shorts/t7xyGCf5_6M",
@@ -782,6 +933,11 @@
         "rank": 24,
         "date": "2026-10-25T02:26:38.151Z",
         "type": "moved"
+      },
+      {
+        "rank": 25,
+        "date": "2026-11-07T03:54:53.933Z",
+        "type": "moved"
       }
     ]
   },
@@ -790,14 +946,15 @@
     "gdId": 151172450,
     "rank": 26,
     "name": "Bloodied Grounds",
-    "points": 10,
+    "points": 9.75,
     "creator": "Floppa",
     "verifier": "Floppa",
     "video": "https://youtu.be/VIUuYc8o6eU",
     "image": "images/bloodied-grounds.jpg",
     "victors": [
       "AegisXD0",
-      "Muffles"
+      "Muffles",
+      "LimeTime"
     ],
     "positionHistory": [
       {
@@ -809,6 +966,11 @@
         "rank": 25,
         "date": "2026-10-25T02:26:38.151Z",
         "type": "moved"
+      },
+      {
+        "rank": 26,
+        "date": "2026-11-07T03:54:53.933Z",
+        "type": "moved"
       }
     ]
   },
@@ -817,7 +979,7 @@
     "gdId": 115935975,
     "rank": 27,
     "name": "Muffles Challenge",
-    "points": 9.75,
+    "points": 9.48,
     "creator": "Myst",
     "verifier": "Myst",
     "video": "https://www.youtube.com/watch?v=nL-BvQYFB2U",
@@ -856,6 +1018,11 @@
         "rank": 26,
         "date": "2026-10-25T02:26:38.151Z",
         "type": "moved"
+      },
+      {
+        "rank": 27,
+        "date": "2026-11-07T03:54:53.933Z",
+        "type": "moved"
       }
     ]
   },
@@ -864,7 +1031,7 @@
     "gdId": 114860847,
     "rank": 28,
     "name": "Big Steppin",
-    "points": 9.48,
+    "points": 9.22,
     "creator": "Cheddar",
     "verifier": "Cheddar",
     "video": "https://youtube.com/shorts/-4xxlof2RwI",
@@ -902,6 +1069,11 @@
       {
         "rank": 27,
         "date": "2026-10-25T02:26:38.151Z",
+        "type": "moved"
+      },
+      {
+        "rank": 28,
+        "date": "2026-11-07T03:54:53.933Z",
         "type": "moved"
       }
     ]
