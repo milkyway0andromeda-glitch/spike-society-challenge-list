@@ -2,7 +2,7 @@
   {
     "id": "pain-trials",
     "gdId": 148983932,
-    "rank": 1,
+    "rank": 2,
     "name": "Pain Trials",
     "points": 50,
     "creator": "Quova",
@@ -17,7 +17,7 @@
   {
     "id": "absolute-garbage",
     "gdId": 147540400,
-    "rank": 2,
+    "rank": 3,
     "name": "Absolute Garbage",
     "points": 47.77,
     "creator": "Floppa",
@@ -28,32 +28,6 @@
       "Maow"
     ],
     "positionHistory": []
-  },
-  {
-    "id": "denial",
-    "gdId": 149890326,
-    "rank": 3,
-    "name": "Denial",
-    "points": 45.57,
-    "creator": "Maow",
-    "verifier": "Maow",
-    "video": "https://youtu.be/Zh0hjkGiWrE",
-    "image": "images/denial.png",
-    "victors": [
-      "AegisXD0"
-    ],
-    "positionHistory": [
-      {
-        "rank": 4,
-        "date": "2026-10-24T05:30:05.681Z",
-        "type": "added"
-      },
-      {
-        "rank": 3,
-        "date": "2026-10-24T20:14:29.069Z",
-        "type": "moved"
-      }
-    ]
   },
   {
     "id": "mega-trials",
