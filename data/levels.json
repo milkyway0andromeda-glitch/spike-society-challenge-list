@@ -19,11 +19,40 @@
     ]
   },
   {
+    "id": "absolute-garbage",
+    "gdId": 147540400,
+    "rank": 2,
+    "name": "Absolute Garbage",
+    "points": 47.77,
+    "creator": "Floppa",
+    "verifier": "AegisXD0",
+    "video": "https://www.youtube.com/watch?v=9PqVFynRnqQ",
+    "image": "images/absolute-garbage.png",
+    "victors": [],
+    "positionHistory": [
+      {
+        "rank": 2,
+        "date": null,
+        "type": "initial"
+      },
+      {
+        "rank": 3,
+        "date": "2026-11-07T03:54:53.933Z",
+        "type": "moved"
+      },
+      {
+        "rank": 2,
+        "date": "2026-11-08T06:47:19.376Z",
+        "type": "moved"
+      }
+    ]
+  },
+  {
     "id": "pain-trials",
     "gdId": 148983932,
-    "rank": 2,
+    "rank": 3,
     "name": "Pain Trials",
-    "points": 47.77,
+    "points": 45.57,
     "creator": "Quova",
     "verifier": "Quova",
     "video": "https://www.youtube.com/watch?v=WBrgR9oxKcA",
@@ -41,31 +70,10 @@
         "rank": 2,
         "date": "2026-11-07T03:54:53.933Z",
         "type": "moved"
-      }
-    ]
-  },
-  {
-    "id": "absolute-garbage",
-    "gdId": 147540400,
-    "rank": 3,
-    "name": "Absolute Garbage",
-    "points": 45.57,
-    "creator": "Floppa",
-    "verifier": "AegisXD0",
-    "video": "https://www.youtube.com/watch?v=9PqVFynRnqQ",
-    "image": "images/absolute-garbage.png",
-    "victors": [
-      "Maow"
-    ],
-    "positionHistory": [
-      {
-        "rank": 2,
-        "date": null,
-        "type": "initial"
       },
       {
         "rank": 3,
-        "date": "2026-11-07T03:54:53.933Z",
+        "date": "2026-11-08T06:47:19.376Z",
         "type": "moved"
       }
     ]
