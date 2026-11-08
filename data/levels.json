@@ -580,11 +580,70 @@
     ]
   },
   {
+    "id": "4u2beat",
+    "gdId": 118045844,
+    "rank": 16,
+    "name": "4u2Beat",
+    "points": 20.64,
+    "creator": "Muffles",
+    "verifier": "Muffles",
+    "video": "https://youtu.be/8luO6qyZQpQ",
+    "image": "images/4u2beat.png",
+    "victors": [
+      "LMB8",
+      "AegisXD0",
+      "LimeTime",
+      "Maow"
+    ],
+    "positionHistory": [
+      {
+        "rank": 14,
+        "date": null,
+        "type": "initial"
+      },
+      {
+        "rank": 15,
+        "date": "2026-10-24T05:30:05.681Z",
+        "type": "moved"
+      },
+      {
+        "rank": 18,
+        "date": "2026-10-24T20:06:40.401Z",
+        "type": "moved"
+      },
+      {
+        "rank": 19,
+        "date": "2026-10-25T02:26:38.151Z",
+        "type": "moved"
+      },
+      {
+        "rank": 20,
+        "date": "2026-11-07T03:54:53.933Z",
+        "type": "moved"
+      },
+      {
+        "rank": 21,
+        "date": "2026-11-08T11:06:57.954Z",
+        "type": "moved"
+      },
+      {
+        "rank": 22,
+        "date": "2026-11-08T22:13:28.616Z",
+        "type": "moved"
+      },
+      {
+        "rank": 16,
+        "date": "2026-11-08T22:25:01.355Z",
+        "type": "moved"
+      }
+    ]
+  },
+  {
     "id": "waveplex",
     "gdId": 149125551,
-    "rank": 16,
+    "rank": 17,
     "name": "WAVEPLEX",
-    "points": 20.64,
+    "points": 19.08,
     "creator": "Floppa",
     "verifier": "AegisXD0",
     "video": "https://youtu.be/X-pRc4vGns4",
@@ -630,15 +689,20 @@
         "rank": 16,
         "date": "2026-11-08T22:13:28.616Z",
         "type": "moved"
+      },
+      {
+        "rank": 17,
+        "date": "2026-11-08T22:25:01.355Z",
+        "type": "moved"
       }
     ]
   },
   {
     "id": "dead-love",
     "gdId": 149168359,
-    "rank": 17,
+    "rank": 18,
     "name": "DEAD LOVE",
-    "points": 19.08,
+    "points": 17.58,
     "creator": "Muffles",
     "verifier": "Muffles",
     "video": "https://www.youtube.com/watch?v=cg4mgn-7zOI",
@@ -683,15 +747,20 @@
         "rank": 17,
         "date": "2026-11-08T22:13:28.616Z",
         "type": "moved"
+      },
+      {
+        "rank": 18,
+        "date": "2026-11-08T22:25:01.355Z",
+        "type": "moved"
       }
     ]
   },
   {
     "id": "ach-funk",
     "gdId": 148859634,
-    "rank": 18,
+    "rank": 19,
     "name": "ACH Funk",
-    "points": 17.58,
+    "points": 16.16,
     "creator": "Maow",
     "verifier": "Maow",
     "video": "https://www.youtube.com/watch?v=92e2N33CYVE",
@@ -736,15 +805,20 @@
         "rank": 18,
         "date": "2026-11-08T22:13:28.616Z",
         "type": "moved"
+      },
+      {
+        "rank": 19,
+        "date": "2026-11-08T22:25:01.355Z",
+        "type": "moved"
       }
     ]
   },
   {
     "id": "absolute-masterpeice",
     "gdId": 147539403,
-    "rank": 19,
+    "rank": 20,
     "name": "Absolute Masterpeice",
-    "points": 16.16,
+    "points": 14.81,
     "creator": "Floppa",
     "verifier": "AegisXD0",
     "video": "https://youtu.be/ebK_620FcWQ",
@@ -789,15 +863,20 @@
         "rank": 19,
         "date": "2026-11-08T22:13:28.616Z",
         "type": "moved"
+      },
+      {
+        "rank": 20,
+        "date": "2026-11-08T22:25:01.355Z",
+        "type": "moved"
       }
     ]
   },
   {
     "id": "true-toppat-material",
     "gdId": 108491792,
-    "rank": 20,
+    "rank": 21,
     "name": "True Toppat Material",
-    "points": 14.81,
+    "points": 13.56,
     "creator": "Playerano6",
     "verifier": "Playerano6",
     "video": "https://youtu.be/qxlAZ92AbLc?si=DA22GPD9HnyVR-Oe",
@@ -842,15 +921,20 @@
         "rank": 20,
         "date": "2026-11-08T22:13:28.616Z",
         "type": "moved"
+      },
+      {
+        "rank": 21,
+        "date": "2026-11-08T22:25:01.355Z",
+        "type": "moved"
       }
     ]
   },
   {
     "id": "the-red-haze",
     "gdId": 146884854,
-    "rank": 21,
+    "rank": 22,
     "name": "The Red Haze",
-    "points": 13.56,
+    "points": 12.41,
     "creator": "Muffles",
     "verifier": "Muffles",
     "video": "https://www.youtube.com/watch?v=6jfQ0vSiyEo",
@@ -897,59 +981,10 @@
         "rank": 21,
         "date": "2026-11-08T22:13:28.616Z",
         "type": "moved"
-      }
-    ]
-  },
-  {
-    "id": "4u2beat",
-    "gdId": 118045844,
-    "rank": 22,
-    "name": "4u2Beat",
-    "points": 12.41,
-    "creator": "Muffles",
-    "verifier": "Muffles",
-    "video": "https://youtu.be/8luO6qyZQpQ",
-    "image": "images/4u2beat.png",
-    "victors": [
-      "LMB8",
-      "AegisXD0",
-      "LimeTime",
-      "Maow"
-    ],
-    "positionHistory": [
-      {
-        "rank": 14,
-        "date": null,
-        "type": "initial"
-      },
-      {
-        "rank": 15,
-        "date": "2026-10-24T05:30:05.681Z",
-        "type": "moved"
-      },
-      {
-        "rank": 18,
-        "date": "2026-10-24T20:06:40.401Z",
-        "type": "moved"
-      },
-      {
-        "rank": 19,
-        "date": "2026-10-25T02:26:38.151Z",
-        "type": "moved"
-      },
-      {
-        "rank": 20,
-        "date": "2026-11-07T03:54:53.933Z",
-        "type": "moved"
-      },
-      {
-        "rank": 21,
-        "date": "2026-11-08T11:06:57.954Z",
-        "type": "moved"
       },
       {
         "rank": 22,
-        "date": "2026-11-08T22:13:28.616Z",
+        "date": "2026-11-08T22:25:01.355Z",
         "type": "moved"
       }
     ]
