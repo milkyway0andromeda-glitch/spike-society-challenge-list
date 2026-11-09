@@ -12,6 +12,7 @@ function escapeHTML(value) {
 function getCompletedLevels(levels, playerName) {
   return levels
     .filter(level => {
+      if (Number(level.rank) >= 76 || level.legacy === true) return false;
       const isVictor = Array.isArray(level.victors)
         && level.victors.includes(playerName);
       return isVictor || level.verifier === playerName;
@@ -62,8 +63,8 @@ function renderPlayerProfile(player, levels, players) {
   document.title = `${player.name} - Spike Society`;
   playerProfile.innerHTML = `
     <div class="page-header">
-      <h1>${escapeHTML(player.name)}</h1>
-      <p>Spike Society player profile</p>
+      <h1>${escapeHTML(player.name)}'s</h1>
+      <p>player profile</p>
     </div>
     ${completedMainList ? `
       <div class="main-list-complete">
@@ -72,7 +73,7 @@ function renderPlayerProfile(player, levels, players) {
       </div>
     ` : ""}
     ${completedExtendedList ? `
-      <div class="main-list-complete">
+      <div class="extended-list-complete">
         EXTENDED LIST COMPLETIONIST
         <span>Completed every challenge on the Extended List!</span>
       </div>

@@ -3,7 +3,7 @@
 (function (global) {
   function pointsForRank(rank) {
     rank = Math.floor(Number(rank));
-    if (!Number.isFinite(rank) || rank < 1) return 0;
+    if (!Number.isFinite(rank) || rank < 1 || rank > 75) return 0;
     let value;
     if (rank <= 25) {
       value = 10 + 40 * Math.pow((25 - rank) / 24, 1.35);

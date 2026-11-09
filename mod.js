@@ -427,6 +427,10 @@ function addVictor(event) {
     return;
   }
 
+  if (Number(level.rank) >= 76 || level.legacy === true) {
+    return setSaveStatus("Legacy List levels do not track victors.", "error");
+  }
+
   level.victors =
     Array.isArray(
       level.victors
@@ -846,6 +850,12 @@ function recordPositionHistoryForSave() {
   SSCLPoints.applyPoints(levels);
   const now = new Date().toISOString();
   for (const level of levels) {
+    if (Number(level.rank) >= 76 || level.legacy === true) {
+      level.points = 0;
+      delete level.positionHistory;
+      level.victors = [];
+      continue;
+    }
     const previous = originalLevels.find(old => old.id === level.id ||
       (old.gdId && old.gdId === level.gdId));
     const history = Array.isArray(previous?.positionHistory)
@@ -953,9 +963,23 @@ function sortedLevels() {
 }
 
 function normalizeRanks() {
-  levels.forEach((level, index) => {
+  const active = levels.filter(level => Number(level.rank) < 76 && level.legacy !== true)
+    .sort((a, b) => Number(a.rank) - Number(b.rank));
+  const legacy = levels.filter(level => Number(level.rank) >= 76 || level.legacy === true)
+    .sort((a, b) => Number(a.rank) - Number(b.rank));
+
+  active.forEach((level, index) => {
     level.rank = index + 1;
+    delete level.legacy;
   });
+  legacy.forEach((level, index) => {
+    level.rank = Math.max(76, Number(level.rank) || 76 + index);
+    level.legacy = true;
+    level.points = 0;
+    level.victors = [];
+    delete level.positionHistory;
+  });
+  levels = [...active, ...legacy];
   SSCLPoints.applyPoints(levels);
 }
 
