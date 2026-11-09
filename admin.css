@@ -30,3 +30,29 @@
 .mod-tool-group .admin-panel:last-child{margin-bottom:0}
 #mod-save{scroll-margin-top:145px;border-color:#45658c}
 @media(max-width:600px){.mod-tool-group{padding:10px}.mod-jump-nav{top:0;position:relative}}
+
+/* MOD page: intentionally plain, compact admin tools */
+.admin-main{width:min(980px,calc(100% - 30px));max-width:980px}
+.admin-panel,.mod-tool-group{border:0;border-radius:0;background:transparent;box-shadow:none}
+.admin-panel{margin:0 0 18px;border-bottom:1px solid #414141;overflow:visible}
+.admin-panel-body{padding:12px 0 16px}
+.admin-panel .panel-title,.mod-group-heading{padding:0 0 8px;margin:0 0 12px;border:0;border-bottom:1px solid #484848;background:none;color:#fff;font-size:15px;font-weight:700;letter-spacing:0}
+.mod-jump-nav{position:static;top:auto;z-index:auto;gap:18px;margin:0 0 24px;padding:0 0 10px;border:0;border-bottom:1px solid #444;border-radius:0;background:transparent}
+.mod-jump-nav a{padding:3px 0;background:transparent;border:0;border-radius:0;color:#eee;font-weight:600}
+.mod-jump-nav a:hover,.mod-jump-nav a:focus{background:transparent;border:0;color:#fff;text-decoration:underline}
+.mod-tool-group{padding:0;margin:0 0 24px;scroll-margin-top:15px}
+.mod-group-heading{margin:0 0 12px;padding:0 0 8px}
+.mod-group-heading h2{margin:0;color:#fff;font-size:16px;letter-spacing:0}
+.mod-group-heading p{margin:5px 0 0;color:#aaa;font-size:12px}
+.admin-form label{gap:5px;color:#ddd;font-size:12px;font-weight:600;letter-spacing:0}
+.admin-form input,.admin-form select,.admin-inline input{min-height:36px;padding:7px 9px;border:1px solid #555;border-radius:2px;background:#191919;color:#eee;box-shadow:none}
+.admin-form input:focus,.admin-form select:focus,.admin-inline input:focus{border-color:#aaa;outline:1px solid #777}
+.admin-button{min-height:34px;padding:0 12px;border:1px solid #555;border-radius:2px;background:#303030;color:#eee;font-weight:600}
+.admin-button:hover:not(:disabled){background:#3a3a3a}
+.admin-button.primary,.admin-button.primary:hover:not(:disabled){background:#383838;border-color:#777;color:#fff}
+.admin-button.danger,.admin-button.danger:hover:not(:disabled){background:#382626;border-color:#765050;color:#fff}
+.admin-actions{margin-top:12px;gap:8px}
+.pending-summary{color:#ddd}
+#mod-save{border:0;scroll-margin-top:15px}
+#mod-save .admin-panel-body{padding-top:4px}
+@media(max-width:700px){.mod-jump-nav{gap:12px}.admin-panel-body{padding:10px 0 14px}}

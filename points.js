@@ -3,7 +3,7 @@
 (function (global) {
   function pointsForRank(rank) {
     rank = Math.floor(Number(rank));
-    if (!Number.isFinite(rank) || rank < 1 || rank > 75) return 0;
+    if (!Number.isFinite(rank) || rank < 1) return 0;
     let value;
     if (rank <= 25) {
       value = 10 + 40 * Math.pow((25 - rank) / 24, 1.35);
@@ -12,9 +12,20 @@
     }
     return Math.round(value * 100) / 100;
   }
+  function isLegacy(level) {
+    return !!level && (level.legacy === true || Number(level.rank) >= 76);
+  }
   function applyPoints(levels) {
     if (!Array.isArray(levels)) return levels;
-    for (const level of levels) level.points = pointsForRank(level.rank);
+    for (const level of levels) {
+      if (isLegacy(level)) {
+        level.points = 0;
+        level.victors = [];
+        delete level.positionHistory;
+      } else {
+        level.points = pointsForRank(level.rank);
+      }
+    }
     return levels;
   }
   function formatPoints(points) {
@@ -24,5 +35,5 @@
     const [whole, fraction] = formatPoints(points).split('.');
     return `<span class="points-number">${whole}<span class="points-fraction">.${fraction}</span></span>`;
   }
-  global.SSCLPoints = { pointsForRank, applyPoints, formatPoints, formatPointsHTML, MAIN_LIST_END: 25 };
+  global.SSCLPoints = { pointsForRank, isLegacy, applyPoints, formatPoints, formatPointsHTML, MAIN_LIST_END: 25 };
 })(window);

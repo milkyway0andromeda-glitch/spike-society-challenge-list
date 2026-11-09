@@ -12,10 +12,9 @@ function escapeHTML(value) {
 function getCompletedLevels(levels, playerName) {
   return levels
     .filter(level => {
-      if (Number(level.rank) >= 76 || level.legacy === true) return false;
       const isVictor = Array.isArray(level.victors)
         && level.victors.includes(playerName);
-      return isVictor || level.verifier === playerName;
+      return !SSCLPoints.isLegacy(level) && (isVictor || level.verifier === playerName);
     })
     .sort((a, b) => Number(a.rank) - Number(b.rank));
 }
@@ -40,8 +39,9 @@ function renderPlayerProfile(player, levels, players) {
 
   const rank = leaderboard.findIndex(entry => entry.name === player.name) + 1;
   const hardest = completedLevels[0];
-  const mainLevels = levels.filter(level => Number(level.rank) <= SSCLPoints.MAIN_LIST_END);
-  const extendedLevels = levels.filter(level => Number(level.rank) > SSCLPoints.MAIN_LIST_END);
+  const activeLevels = levels.filter(level => !SSCLPoints.isLegacy(level));
+  const mainLevels = activeLevels.filter(level => Number(level.rank) <= SSCLPoints.MAIN_LIST_END);
+  const extendedLevels = activeLevels.filter(level => Number(level.rank) > SSCLPoints.MAIN_LIST_END);
   const completedIds = new Set(completedLevels.map(level => level.id));
 
   const completedMainList = mainLevels.length > 0
@@ -66,26 +66,18 @@ function renderPlayerProfile(player, levels, players) {
       <h1>${escapeHTML(player.name)}'s</h1>
       <p>player profile</p>
     </div>
-    ${completedMainList ? `
-      <div class="main-list-complete">
-        MAIN LIST COMPLETIONIST
-        <span>Completed every challenge on the Main List!</span>
-      </div>
-    ` : ""}
-    ${completedExtendedList ? `
-      <div class="extended-list-complete">
-        EXTENDED LIST COMPLETIONIST
-        <span>Completed every challenge on the Extended List!</span>
-      </div>
-    ` : ""}
     <div class="profile-stats">
       <div><small>LEADERBOARD RANK</small><strong>#${rank}</strong></div>
       <div><small>TOTAL POINTS</small><strong>${SSCLPoints.formatPointsHTML(totalPoints)}</strong></div>
-      <div><small>LEVELS BEATEN</small><strong>${completedLevels.length} / ${levels.length}</strong></div>
+      <div><small>LEVELS BEATEN</small><strong>${completedLevels.length} / ${activeLevels.length}</strong></div>
       <div>
         <small>HARDEST COMPLETION</small>
         <strong>${hardest ? `#${hardest.rank} — ${escapeHTML(hardest.name)}` : "None yet"}</strong>
       </div>
+    </div>
+    <div class="profile-awards">
+      ${completedMainList ? '<div class="main-list-complete">MAIN LIST COMPLETIONIST<span>Completed every challenge on the Main List!</span></div>' : ""}
+      ${completedExtendedList ? '<div class="extended-list-complete">EXTENDED LIST COMPLETIONIST<span>Completed every challenge on the Extended List!</span></div>' : ""}
     </div>
     <section class="profile-completions">
       <div class="panel-title">COMPLETED CHALLENGES <span>${completedLevels.length}</span></div>

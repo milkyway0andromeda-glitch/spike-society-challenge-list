@@ -235,16 +235,14 @@ main{padding-top:28px}
 }
 .extended-list-complete span { color: #eee0bd; }
 
-
-/* Darker neutral palette and white point values. */
-:root{--background:#141414;--panel:#202020;--panel-hover:#292929;--panel-light:#303030;--border:#3b3b3b;--border-light:#4a4a4a;--text:#f0f0f0;--muted:#b5b5b5;--muted-dark:#969696;--blue:#fff}
-html,body{background:#141414}
-.level-points,.detail-points,.player-points,.profile-level>strong,.blue-value,.pack-level-number{color:#fff}
-.points-number,.points-fraction{color:#fff!important}
-.list-section-divider{font-size:18px;font-weight:800;margin-top:27px;padding-bottom:11px;border-bottom-color:#777}
-.list-section-divider small{color:#ddd}
+/* Final neutral theme adjustments */
+:root{--background:#141414;--panel:#202020;--panel-hover:#282828;--panel-light:#292929;--border:#3d3d3d;--border-light:#505050;--text:#f1f1f1;--muted:#b4b4b4;--muted-dark:#929292;--blue:#f1f1f1}
+.level-points,.player-points,.detail-points,.profile-level>strong,.blue-value,.victor-count,.pack-number,.profile-stats>div:nth-child(2) strong{color:#f1f1f1!important}
+.profile-stats>div:nth-child(2) .points-fraction{color:inherit!important}
+.profile-awards{display:grid;gap:9px;margin:12px 0 20px}
+.profile-awards .main-list-complete,.profile-awards .extended-list-complete{min-height:0;margin:0;padding:10px 15px;border:1px solid #75663d;border-radius:2px;background:#292929;color:#e3d49d;font-size:15px;line-height:1.25}
+.profile-awards .extended-list-complete{border-color:#6872a3;background:#292929;color:#c7d1ff}
+.profile-awards .main-list-complete span,.profile-awards .extended-list-complete span{display:block;margin-top:3px;color:#dedede;font-size:12px;font-weight:400}
+.legacy-list-divider{margin-top:24px}
 .legacy-level-card{cursor:default}
-.legacy-placement-label{color:#ddd;font-size:12px;font-weight:700;letter-spacing:.5px}
-/* Extended completionist keeps its original blue-violet award treatment. */
-.extended-list-complete{border:1px solid #6872a3;background:linear-gradient(95deg,#2b3049,#1b1c27);color:#c7d1ff}
-.extended-list-complete span{color:#c1c8e5}
+.legacy-level-card .level-info{grid-column:auto}

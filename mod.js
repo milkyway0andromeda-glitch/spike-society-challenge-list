@@ -323,7 +323,7 @@ function moveLevel(event) {
       Number(
         $("move-level-rank").value
       ),
-      levels.length
+      levels.length + 1
     );
 
   const ordered =
@@ -426,8 +426,7 @@ function addVictor(event) {
   ) {
     return;
   }
-
-  if (Number(level.rank) >= 76 || level.legacy === true) {
+  if (SSCLPoints.isLegacy(level)) {
     return setSaveStatus("Legacy List levels do not track victors.", "error");
   }
 
@@ -500,6 +499,9 @@ function removeVictor(event) {
     !playerName
   ) {
     return;
+  }
+  if (SSCLPoints.isLegacy(level)) {
+    return setSaveStatus("Legacy List levels do not track victors.", "error");
   }
 
   const index =
@@ -850,16 +852,16 @@ function recordPositionHistoryForSave() {
   SSCLPoints.applyPoints(levels);
   const now = new Date().toISOString();
   for (const level of levels) {
-    if (Number(level.rank) >= 76 || level.legacy === true) {
-      level.points = 0;
-      delete level.positionHistory;
-      level.victors = [];
-      continue;
-    }
     const previous = originalLevels.find(old => old.id === level.id ||
       (old.gdId && old.gdId === level.gdId));
     const history = Array.isArray(previous?.positionHistory)
       ? structuredClone(previous.positionHistory) : [];
+    if (SSCLPoints.isLegacy(level)) {
+      delete level.positionHistory;
+      level.victors = [];
+      level.points = 0;
+      continue;
+    }
     if (!previous) {
       level.positionHistory = [{rank:level.rank,date:now,type:"added"}];
     } else {
@@ -963,23 +965,9 @@ function sortedLevels() {
 }
 
 function normalizeRanks() {
-  const active = levels.filter(level => Number(level.rank) < 76 && level.legacy !== true)
-    .sort((a, b) => Number(a.rank) - Number(b.rank));
-  const legacy = levels.filter(level => Number(level.rank) >= 76 || level.legacy === true)
-    .sort((a, b) => Number(a.rank) - Number(b.rank));
-
-  active.forEach((level, index) => {
+  levels.forEach((level, index) => {
     level.rank = index + 1;
-    delete level.legacy;
   });
-  legacy.forEach((level, index) => {
-    level.rank = Math.max(76, Number(level.rank) || 76 + index);
-    level.legacy = true;
-    level.points = 0;
-    level.victors = [];
-    delete level.positionHistory;
-  });
-  levels = [...active, ...legacy];
   SSCLPoints.applyPoints(levels);
 }
 

@@ -34,20 +34,35 @@ async function loadData() {
 function renderLevels() {
   levelList.innerHTML = "";
   const sortedLevels = [...levels].sort((a, b) => a.rank - b.rank);
-  const activeLevels = sortedLevels.filter(level => Number(level.rank) <= 75);
-  const legacyLevels = sortedLevels.filter(level => Number(level.rank) >= 76 || level.legacy === true);
 
-  if (activeLevels.length) {
+  if (sortedLevels.length) {
     const heading = document.createElement("div");
     heading.className = "list-section-divider main-list-divider";
     heading.innerHTML = '<span>MAIN LIST</span><small>#1–25</small>';
     levelList.appendChild(heading);
   }
-  activeLevels.forEach(level => {
+  sortedLevels.forEach(level => {
+    if (SSCLPoints.isLegacy(level)) {
+      if (!levelList.querySelector(".legacy-list-divider")) {
+        const heading = document.createElement("div");
+        heading.className = "list-section-divider legacy-list-divider";
+        heading.innerHTML = '<span>LEGACY LIST</span><small>#76+</small>';
+        levelList.appendChild(heading);
+      }
+      const legacyCard = document.createElement("div");
+      legacyCard.className = "level-card legacy-level-card";
+      legacyCard.innerHTML = `
+        <div class="level-rank">#${Number(level.rank)}</div>
+        <div class="level-image-wrap"><img class="level-image" src="${escapeAttribute(level.image)}" alt="${escapeAttribute(level.name)} thumbnail" loading="lazy"></div>
+        <div class="level-info"><div class="level-name">${escapeHTML(level.name)}</div><div class="level-creator">Created by ${escapeHTML(level.creator)}</div></div>
+      `;
+      levelList.appendChild(legacyCard);
+      return;
+    }
     if (Number(level.rank) === 26) {
       const heading = document.createElement("div");
       heading.className = "list-section-divider extended-list-divider";
-      heading.innerHTML = '<span>EXTENDED LIST</span><small>#26–75</small>';
+      heading.innerHTML = '<span>EXTENDED LIST</span><small>#26+</small>';
       levelList.appendChild(heading);
     }
     const card = document.createElement("a");
@@ -69,25 +84,6 @@ function renderLevels() {
     `;
     levelList.appendChild(card);
   });
-
-  if (legacyLevels.length) {
-    const heading = document.createElement("div");
-    heading.className = "list-section-divider legacy-list-divider";
-    heading.innerHTML = '<span>LEGACY LIST</span><small>#76+</small>';
-    levelList.appendChild(heading);
-
-    legacyLevels.forEach(level => {
-      const card = document.createElement("div");
-      card.className = "level-card legacy-level-card";
-      card.innerHTML = `
-        <div class="level-rank">#${Number(level.rank)}</div>
-        <div class="level-image-wrap"><img class="level-image" src="${escapeAttribute(level.image)}" alt="${escapeAttribute(level.name)} thumbnail" loading="lazy"></div>
-        <div class="level-info"><div class="level-name">${escapeHTML(level.name)}</div><div class="level-creator">Created by ${escapeHTML(level.creator)}</div></div>
-        <div class="level-side legacy-placement-label">LEGACY</div>
-      `;
-      levelList.appendChild(card);
-    });
-  }
 }
 
 function renderPacks() {
@@ -113,12 +109,11 @@ function calculatePlayerPoints(player) {
   let total = 0;
 
   levels.forEach(level => {
-    if (Number(level.rank) >= 76 || level.legacy === true) return;
     const victors = Array.isArray(level.victors) ? level.victors : [];
     const completedNormally = victors.includes(player.name);
     const isVerifier = level.verifier === player.name;
 
-    if (completedNormally || isVerifier) total += level.points;
+    if (!SSCLPoints.isLegacy(level) && (completedNormally || isVerifier)) total += level.points;
   });
 
   return Number(total.toFixed(2));
