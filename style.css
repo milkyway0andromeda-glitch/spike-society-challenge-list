@@ -142,3 +142,58 @@ main{width:min(1120px,calc(100% - 30px));margin:0 auto;padding:38px 0 60px}
 /* Decimal points: keep the whole-number value prominent, decimals quieter. */
 .points-number{display:inline!important;margin:0!important;color:inherit!important;font-size:inherit!important;font-weight:inherit!important;letter-spacing:normal!important;white-space:nowrap;font-variant-numeric:tabular-nums;}
 .points-fraction{display:inline!important;margin:0!important;color:inherit!important;font-size:.62em!important;font-weight:700!important;letter-spacing:0!important;opacity:.72;vertical-align:baseline;}
+
+/* Plain, straightforward presentation: intentionally avoids the glossy dashboard look. */
+:root{--background:#171717;--panel:#222;--panel-hover:#292929;--panel-light:#303030;--border:#444;--border-light:#555;--text:#eee;--muted:#aaa;--muted-dark:#888;--blue:#78a9d4;--gold:#d8bd69;--silver:#c5c5c5;--bronze:#bd8d68}
+html,body{background:#171717}
+body{background:#171717;font-family:Arial,Helvetica,sans-serif}
+.topbar{height:60px;background:#202020;border-bottom:1px solid #444;backdrop-filter:none}
+.brand{font-size:18px;font-weight:700;letter-spacing:0}
+.nav-button{font-weight:600;border-bottom-width:2px}
+main{padding-top:28px}
+.page-header h1{font-size:28px;font-weight:600}
+.level-card{border-radius:2px;background:#222;transition:background .12s ease;border-color:#444}
+.level-card.rank-1,.level-card.rank-2,.level-card.rank-3{background:#222}
+.level-card:hover{transform:none;background:#2b2b2b;border-color:#666}
+.level-rank{font-size:23px;font-weight:700}
+.level-info{padding:17px 20px}
+.level-name{font-size:21px;font-weight:700}
+.level-points{font-size:22px;font-weight:700}
+.level-points>.points-label{letter-spacing:0;font-size:11px}
+.leaderboard{border-radius:2px}
+.player-card{background:#222}
+.player-card:hover{background:#2b2b2b}
+.player-rank,.player-name,.player-points{font-weight:600}
+.back-arrow{border-radius:3px;transition:background .12s ease}
+.back-arrow:hover{transform:none}
+.detail-hero,.video-panel,.info-panel,.victors-panel,.profile-completions{border-radius:2px}
+.detail-hero{background:#222}
+.detail-title-area h1{font-size:27px;font-weight:600}
+.panel-title{font-weight:700;letter-spacing:.4px}
+.info-label{letter-spacing:.3px}
+.youtube-button{letter-spacing:0}
+.victor-count{border-radius:3px}
+.pack-card{border-radius:2px;background:#222;border:1px solid #444;border-left:4px solid var(--pack-color);transition:background .12s ease}
+.pack-card:hover{transform:none;background:#2b2b2b;border-color:#666}
+.pack-card-info strong{font-size:20px;font-weight:700}
+.pack-card-info small{letter-spacing:.3px}
+.pack-detail-header{border-radius:2px;background:#222;border:1px solid #444;border-left:4px solid var(--pack-color)}
+.pack-detail-header h1{font-size:28px;font-weight:600}
+.pack-level{border-radius:2px;background:#222}
+.pack-level:hover{background:#2b2b2b}
+.pack-level img,.profile-level img{border-radius:0}
+.pack-tag{border-radius:2px;background:#292929}
+.pack-tag:hover{background:#333}
+.profile-stats>div{border-radius:2px;padding:18px}
+.profile-stats small{letter-spacing:.3px;font-weight:600}
+.profile-completions{border-radius:2px}
+.profile-level:hover{background:#2b2b2b}
+.main-list-complete{border-radius:2px;background:#292929;border-color:#75663d;color:#e3d49d}
+.position-history-table th{background:#252525}
+.position-history-table .history-up{background:rgba(30,90,45,.18)}
+.position-history-panel>.position-history-toggle:hover{background:#292929}
+.position-history-chevron{transition:none}
+.list-section-divider,.extended-list-divider,.extended-list-complete{border-radius:2px;background:#242424;border:1px solid #444;border-left:3px solid #7898b5;color:#ddd;letter-spacing:.5px}
+.list-section-divider small,.extended-list-divider small{color:#aaa}
+.error-message{border-radius:2px}
+@media(max-width:760px){main{padding-top:20px}}
