@@ -1151,70 +1151,215 @@ function escapeAttribute(
 // Pack management uses the same staged changes and Save to GitHub flow.
 function packSlug(name) {
   const base = slugify(name) || "pack";
-  let slug = base, n = 2;
-  while (packs.some(p => p.id === slug)) slug = `${base}-${n++}`;
+  let slug = base;
+  let suffix = 2;
+
+  while (packs.some(pack => pack.id === slug)) {
+    slug = `${base}-${suffix++}`;
+  }
+
   return slug;
 }
-function activePack() { return packs.find(p => p.id === $("manage-pack-select").value); }
+
+function activePack() {
+  const selectedId = $("manage-pack-select").value;
+  return packs.find(pack => pack.id === selectedId);
+}
+
 function installPackTools() {
-  $("create-pack-form").addEventListener("submit", e => {
-    e.preventDefault();
-    const name = $("pack-name").value.trim(); if (!name) return;
-    const pack = {id:packSlug(name),name,color:$("pack-color").value,gradient:$("pack-use-gradient").checked ? $("pack-gradient").value : null,levelIds:[]};
-    const position = Math.max(1,Math.min(packs.length+1,Number($("pack-placement").value)||packs.length+1));
-    packs.splice(position-1,0,pack); changes.push(`Created pack ${name}`);
-    e.target.reset(); refreshUI(); $("manage-pack-select").value=pack.id; syncPackFields();
+  $("create-pack-form").addEventListener("submit", event => {
+    event.preventDefault();
+
+    const name = $("pack-name").value.trim();
+    if (!name) return;
+
+    const pack = {
+      id: packSlug(name),
+      name,
+      color: $("pack-color").value,
+      gradient: $("pack-use-gradient").checked
+        ? $("pack-gradient").value
+        : null,
+      levelIds: []
+    };
+
+    const requestedPosition = Number($("pack-placement").value) || packs.length + 1;
+    const position = Math.max(1, Math.min(packs.length + 1, requestedPosition));
+
+    packs.splice(position - 1, 0, pack);
+    changes.push(`Created pack ${name}`);
+
+    event.target.reset();
+    refreshUI();
+    $("manage-pack-select").value = pack.id;
+    syncPackFields();
   });
-  $("manage-pack-select").addEventListener("change",syncPackFields);
-  $("move-pack-form").addEventListener("submit",e=>{
-    e.preventDefault(); const pack=activePack(); if(!pack)return;
-    const old=packs.indexOf(pack); const next=Math.max(0,Math.min(packs.length-1,(Number($("pack-new-placement").value)||1)-1));
-    packs.splice(old,1);packs.splice(next,0,pack);changes.push(`Moved pack ${pack.name} to #${next+1}`);refreshUI();$("manage-pack-select").value=pack.id;syncPackFields();
+
+  $("manage-pack-select").addEventListener("change", syncPackFields);
+
+  $("move-pack-form").addEventListener("submit", event => {
+    event.preventDefault();
+
+    const pack = activePack();
+    if (!pack) return;
+
+    const oldIndex = packs.indexOf(pack);
+    const requestedPosition = Number($("pack-new-placement").value) || 1;
+    const newIndex = Math.max(0, Math.min(packs.length - 1, requestedPosition - 1));
+
+    packs.splice(oldIndex, 1);
+    packs.splice(newIndex, 0, pack);
+    changes.push(`Moved pack ${pack.name} to #${newIndex + 1}`);
+
+    refreshUI();
+    $("manage-pack-select").value = pack.id;
+    syncPackFields();
   });
-  $("edit-pack-form").addEventListener("submit",e=>{
-    e.preventDefault(); const pack=activePack();if(!pack)return;
-    const name=$("edit-pack-name").value.trim();if(!name)return;
-    pack.name=name;pack.color=$("edit-pack-color").value;pack.gradient=$("edit-pack-use-gradient").checked?$("edit-pack-gradient").value:null;
-    changes.push(`Updated pack ${name}`);refreshUI();$("manage-pack-select").value=pack.id;syncPackFields();
+
+  $("edit-pack-form").addEventListener("submit", event => {
+    event.preventDefault();
+
+    const pack = activePack();
+    if (!pack) return;
+
+    const name = $("edit-pack-name").value.trim();
+    if (!name) return;
+
+    pack.name = name;
+    pack.color = $("edit-pack-color").value;
+    pack.gradient = $("edit-pack-use-gradient").checked
+      ? $("edit-pack-gradient").value
+      : null;
+
+    changes.push(`Updated pack ${name}`);
+    refreshUI();
+    $("manage-pack-select").value = pack.id;
+    syncPackFields();
   });
-  $("delete-pack-button").addEventListener("click",()=>{
-    const pack=activePack();if(!pack||!confirm(`Delete pack "${pack.name}"? Levels will not be deleted.`))return;
-    packs=packs.filter(p=>p.id!==pack.id);changes.push(`Deleted pack ${pack.name}`);refreshUI();
+
+  $("delete-pack-button").addEventListener("click", () => {
+    const pack = activePack();
+    if (!pack || !confirm(`Delete pack "${pack.name}"? Levels will not be deleted.`)) {
+      return;
+    }
+
+    packs = packs.filter(item => item.id !== pack.id);
+    changes.push(`Deleted pack ${pack.name}`);
+    refreshUI();
   });
-  $("add-pack-level-form").addEventListener("submit",e=>{
-    e.preventDefault();const pack=activePack();if(!pack)return;
-    const id=$("pack-add-level").value;const level=levels.find(l=>l.id===id);if(!level)return;
-    pack.levelIds=Array.isArray(pack.levelIds)?pack.levelIds:[];
-    pack.levelIds=pack.levelIds.filter(x=>x!==id);
-    const position=Math.max(1,Math.min(pack.levelIds.length+1,Number($("pack-add-placement").value)||pack.levelIds.length+1));
-    pack.levelIds.splice(position-1,0,id);changes.push(`Placed ${level.name} at #${position} in ${pack.name}`);syncPackFields();refreshPendingSummary();
+
+  $("add-pack-level-form").addEventListener("submit", event => {
+    event.preventDefault();
+
+    const pack = activePack();
+    if (!pack) return;
+
+    const levelId = $("pack-add-level").value;
+    const level = levels.find(item => item.id === levelId);
+    if (!level) return;
+
+    pack.levelIds = Array.isArray(pack.levelIds) ? pack.levelIds : [];
+    pack.levelIds = pack.levelIds.filter(id => id !== levelId);
+
+    const requestedPosition = Number($("pack-add-placement").value) || pack.levelIds.length + 1;
+    const position = Math.max(1, Math.min(pack.levelIds.length + 1, requestedPosition));
+
+    pack.levelIds.splice(position - 1, 0, levelId);
+    changes.push(`Placed ${level.name} at #${position} in ${pack.name}`);
+
+    syncPackFields();
+    refreshPendingSummary();
   });
-  $("remove-pack-level-form").addEventListener("submit",e=>{
-    e.preventDefault();const pack=activePack();if(!pack)return;const id=$("pack-remove-level").value;
-    if(!(pack.levelIds||[]).includes(id))return;
-    pack.levelIds=pack.levelIds.filter(x=>x!==id);changes.push(`Removed level from ${pack.name}`);syncPackFields();refreshPendingSummary();
+
+  $("remove-pack-level-form").addEventListener("submit", event => {
+    event.preventDefault();
+
+    const pack = activePack();
+    if (!pack) return;
+
+    const levelId = $("pack-remove-level").value;
+    if (!Array.isArray(pack.levelIds) || !pack.levelIds.includes(levelId)) {
+      return;
+    }
+
+    pack.levelIds = pack.levelIds.filter(id => id !== levelId);
+    changes.push(`Removed level from ${pack.name}`);
+
+    syncPackFields();
+    refreshPendingSummary();
   });
 }
+
 function refreshPackTools() {
-  const selected=$("manage-pack-select").value;
-  $("manage-pack-select").innerHTML=packs.map((p,i)=>`<option value="${escapeAttribute(p.id)}">#${i+1} — ${escapeHTML(p.name)}</option>`).join("");
-  if(packs.some(p=>p.id===selected))$("manage-pack-select").value=selected;
-  $("pack-placement").value=packs.length+1;$("pack-placement").max=packs.length+1;
-  $("pack-add-level").innerHTML=sortedLevels().map(l=>`<option value="${escapeAttribute(l.id)}">#${l.rank} — ${escapeHTML(l.name)}</option>`).join("");
+  const selectedId = $("manage-pack-select").value;
+
+  $("manage-pack-select").innerHTML = packs
+    .map((pack, index) => `
+      <option value="${escapeAttribute(pack.id)}">
+        #${index + 1} — ${escapeHTML(pack.name)}
+      </option>
+    `)
+    .join("");
+
+  if (packs.some(pack => pack.id === selectedId)) {
+    $("manage-pack-select").value = selectedId;
+  }
+
+  $("pack-placement").value = packs.length + 1;
+  $("pack-placement").max = packs.length + 1;
+
+  $("pack-add-level").innerHTML = sortedLevels()
+    .map(level => `
+      <option value="${escapeAttribute(level.id)}">
+        #${level.rank} — ${escapeHTML(level.name)}
+      </option>
+    `)
+    .join("");
+
   syncPackFields();
 }
+
 function syncPackFields() {
-  const pack=activePack();
-  $("move-pack-form").querySelector("button").disabled=!pack;
-  $("edit-pack-form").querySelector("button").disabled=!pack;
-  $("delete-pack-button").disabled=!pack;
-  $("add-pack-level-form").querySelector("button").disabled=!pack;
-  $("remove-pack-level-form").querySelector("button").disabled=!pack;
-  if(!pack){$("pack-remove-level").innerHTML="";return;}
-  $("pack-new-placement").value=packs.indexOf(pack)+1;$("pack-new-placement").max=packs.length;
-  $("edit-pack-name").value=pack.name;$("edit-pack-color").value=pack.color||"#55aaff";
-  $("edit-pack-use-gradient").checked=!!pack.gradient;$("edit-pack-gradient").value=pack.gradient||"#171a1f";
-  $("pack-add-placement").value=(pack.levelIds||[]).length+1;
-  $("pack-add-placement").max=(pack.levelIds||[]).length+1;
-  $("pack-remove-level").innerHTML=(pack.levelIds||[]).map((id,i)=>{const l=levels.find(x=>x.id===id);return `<option value="${escapeAttribute(id)}">#${i+1} — ${escapeHTML(l?.name||id)}</option>`}).join("");
+  const pack = activePack();
+  const packActions = [
+    ["move-pack-form", "button"],
+    ["edit-pack-form", "button"],
+    ["add-pack-level-form", "button"],
+    ["remove-pack-level-form", "button"]
+  ];
+
+  for (const [formId, selector] of packActions) {
+    $(formId).querySelector(selector).disabled = !pack;
+  }
+  $("delete-pack-button").disabled = !pack;
+
+  if (!pack) {
+    $("pack-remove-level").innerHTML = "";
+    return;
+  }
+
+  const levelIds = Array.isArray(pack.levelIds) ? pack.levelIds : [];
+
+  $("pack-new-placement").value = packs.indexOf(pack) + 1;
+  $("pack-new-placement").max = packs.length;
+
+  $("edit-pack-name").value = pack.name;
+  $("edit-pack-color").value = pack.color || "#55aaff";
+  $("edit-pack-use-gradient").checked = Boolean(pack.gradient);
+  $("edit-pack-gradient").value = pack.gradient || "#171a1f";
+
+  $("pack-add-placement").value = levelIds.length + 1;
+  $("pack-add-placement").max = levelIds.length + 1;
+
+  $("pack-remove-level").innerHTML = levelIds
+    .map((levelId, index) => {
+      const level = levels.find(item => item.id === levelId);
+      const label = level ? level.name : levelId;
+      return `
+        <option value="${escapeAttribute(levelId)}">
+          #${index + 1} — ${escapeHTML(label)}
+        </option>
+      `;
+    })
+    .join("");
 }

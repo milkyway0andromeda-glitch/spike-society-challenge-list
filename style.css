@@ -197,3 +197,40 @@ main{padding-top:28px}
 .list-section-divider small,.extended-list-divider small{color:#aaa}
 .error-message{border-radius:2px}
 @media(max-width:760px){main{padding-top:20px}}
+
+
+/* Plain section labels on the challenge list */
+.list-section-divider,
+.extended-list-divider {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 0 0 9px;
+  margin: 24px 0 13px;
+  border: 0;
+  border-bottom: 1px solid #555;
+  border-radius: 0;
+  background: transparent;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: .4px;
+}
+.list-section-divider:first-child { margin-top: 0; }
+.list-section-divider small,
+.extended-list-divider small {
+  color: #aaa;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* Both completionist awards use the same appearance. */
+.extended-list-complete {
+  border-color: #75663d;
+  background: #292929;
+  color: #e3d49d;
+}
+.extended-list-complete span { color: #eee0bd; }
