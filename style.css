@@ -246,3 +246,22 @@ main{padding-top:28px}
 .legacy-list-divider{margin-top:24px}
 .legacy-level-card{cursor:default}
 .legacy-level-card .level-info{grid-column:auto}
+
+/* Keep typography consistent across every page and component. */
+*, *::before, *::after { font-family: Arial, Helvetica, sans-serif !important; }
+
+/* Completionist awards share one typographic scale and weight. */
+.profile-awards .main-list-complete,
+.profile-awards .extended-list-complete {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.profile-awards .main-list-complete span,
+.profile-awards .extended-list-complete span {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.35;
+}
