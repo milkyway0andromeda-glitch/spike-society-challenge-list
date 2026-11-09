@@ -117,7 +117,9 @@
     "verifier": "Maow",
     "video": "https://www.youtube.com/watch?v=hGBsbGzKnG0",
     "image": "images/happi-happi-happi.jpg",
-    "victors": [],
+    "victors": [
+      "AegisXD0"
+    ],
     "positionHistory": [
       {
         "rank": 4,
