@@ -117,7 +117,9 @@
     "verifier": "Maow",
     "video": "https://www.youtube.com/watch?v=hGBsbGzKnG0",
     "image": "images/happi-happi-happi.jpg",
-    "victors": [],
+    "victors": [
+      "AegisXD0"
+    ],
     "positionHistory": [
       {
         "rank": 4,
@@ -1366,11 +1368,34 @@
     ]
   },
   {
+    "id": "gavite-challenge",
+    "gdId": 150534963,
+    "rank": 30,
+    "name": "Gavite Challenge",
+    "points": 8.72,
+    "creator": "AegisXD0",
+    "verifier": "AegisXD0",
+    "video": "https://www.youtube.com/watch?v=VCge7TKtIFI",
+    "image": "images/gavite-challenge.png",
+    "victors": [
+      "LimeTime",
+      "Floppa",
+      "Muffles"
+    ],
+    "positionHistory": [
+      {
+        "rank": 30,
+        "date": "2026-11-08T23:04:24.463Z",
+        "type": "added"
+      }
+    ]
+  },
+  {
     "id": "big-steppin",
     "gdId": 114860847,
-    "rank": 30,
+    "rank": 31,
     "name": "Big Steppin",
-    "points": 8.72,
+    "points": 8.48,
     "creator": "Cheddar",
     "verifier": "Cheddar",
     "video": "https://youtube.com/shorts/-4xxlof2RwI",
@@ -1423,6 +1448,11 @@
       {
         "rank": 30,
         "date": "2026-11-08T22:13:28.616Z",
+        "type": "moved"
+      },
+      {
+        "rank": 31,
+        "date": "2026-11-08T23:04:24.463Z",
         "type": "moved"
       }
     ]
