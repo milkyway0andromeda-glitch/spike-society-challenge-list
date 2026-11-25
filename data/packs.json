@@ -1,5 +1,15 @@
 [
   {
+    "id": "descent-trilogy-pack",
+    "name": "Descent Trilogy Pack",
+    "color": "#bc57ff",
+    "gradient": "#171a1f",
+    "levelIds": [
+      "path-of-corruption",
+      "path-of-temptation"
+    ]
+  },
+  {
     "id": "trial-pack",
     "name": "Trial Pack",
     "color": "#ff0000",
